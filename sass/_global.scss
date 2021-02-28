@@ -1,0 +1,95 @@
+body {
+    background: #FFFFFF;
+    //padding: $spacing-md $spacing-md 0px $spacing-md;
+    overflow: hidden;
+    /* Set initially. When Pace is finished it sets overflow to auto (scripts.js) */
+    font-size: 18px;
+}
+
+// @media (min-width: $device-md) {
+//     body {
+//         padding: $spacing-lg $spacing-lg 0 $spacing-lg;
+//     }
+// }
+h1, h2, h3, h4, h5, h6, .section-content .btn a {
+    font-family: $serif;
+    text-transform: uppercase;
+}
+
+[class*="col-"] {
+    //z-index: 1; // Removed this z-index to fix the video full screen issue. I'm not sure what this was originally in for, but don't add it back
+}
+
+.gray-area {
+    background-color: $color-lightest-gray;
+}
+
+.dark-gray-area {
+    background-color: $color-darkest-gray;
+    color: white;
+}
+
+.gold-area {
+    background-color: $brand-primary;
+    color: white;
+}
+
+.custom-background-img-area {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: auto 120vh !important;
+    color: white;
+}
+
+.full-width {
+    margin-left: -$spacing-lg;
+    margin-right: -$spacing-lg;
+}
+
+a {
+    color: $brand-primary;
+    &:hover, &:active {
+        color: $brand-lighter;
+    }
+}
+
+.window-mobile {
+    float: left;
+}
+
+@media (max-width: $device-sm) {
+    .window-mobile {
+        float: none;
+    }
+}
+
+.dgd_stb_box {
+    max-height: auto;
+}
+
+@media (max-width: $device-sm) {
+    .dgd_stb_box {
+        overflow-y: auto;
+        max-height: 100%;
+    }
+}
+
+@media (max-width: $device-sm) {
+    .hidden-xs {
+        display: none;
+    }
+}
+
+#alert-message {
+    min-height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        font-size: 14px;
+        display: inline-block;
+        line-height: 1.3;
+    }
+}

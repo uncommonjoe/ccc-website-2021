@@ -1,0 +1,129 @@
+$serif: 'Cormorant Garamond', Georgia, 'Times New Roman', Times, serif;
+$sans-serif: Montserrat, -apple-system, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+body {
+    font-size: $font-md;
+    font-family: $serif;
+    color: $color-darkest-gray;
+}
+
+.serif {
+    font-family: $serif;
+}
+
+.sans-serif {
+    font-family: $sans-serif;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.font-spaced {
+    letter-spacing: 1px;
+}
+
+.break-word {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.font-100 {
+    font-weight: 100;
+}
+
+.font-200 {
+    font-weight: 200;
+}
+
+.font-300 {
+    font-weight: 300;
+}
+
+.font-400 {
+    font-weight: 400;
+}
+
+.font-500 {
+    font-weight: 500;
+}
+
+.font-700 {
+    font-weight: 700;
+}
+
+.font-800 {
+    font-weight: 800;
+}
+
+.font-900 {
+    font-weight: 900;
+}
+
+.font-color-darkest {
+    color: $color-darkest-gray;
+}
+
+.font-color-dark {
+    color: $color-dark-gray;
+}
+
+.font-color-darker {
+    color: $color-darker-gray;
+}
+
+.font-color-gray {
+    color: $color-gray;
+}
+
+.font-color-light {
+    color: $color-light-gray;
+}
+
+.font-color-lightest {
+    color: $color-lightest-gray;
+}
+
+
+/*** FONT SIZE ***/
+
+.font-size-xs {
+    font-size: $font-xs;
+}
+
+.font-size-sm {
+    font-size: $font-sm;
+}
+
+.font-size-md {
+    font-size: $font-md;
+}
+
+.font-size-lg {
+    font-size: $font-lg;
+}
+
+.font-size-xl {
+    font-size: $font-xl;
+}
+
+.font-size-xxl {
+    font-size: $font-xxl;
+}
+
+@media (max-width: $device-sm) {
+    h1.text-uppercase.font-700 {
+        font-size: 2.0rem !important;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -ms-word-break: break-all;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+}

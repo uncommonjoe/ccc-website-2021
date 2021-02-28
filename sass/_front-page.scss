@@ -1,0 +1,52 @@
+    #front-page {
+        .latest-sermon {
+            margin: $spacing-lg 0;
+            max-height: none;
+            .latest-sermon-title {
+                background-color: $color-darkest-gray;
+                color: white;
+                padding: 20px;
+                h2 {
+                    font-weight: bold;
+                }
+            }
+            #latest_sermon {
+                a img {
+                    object-fit: cover;
+                    height: 100% !important;
+                    width: 100% !important;
+                    max-height: 300px;
+                    position: relative;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 15px;
+                    right: 0;
+                    height: 4px; // border height
+                    width: calc(100% - 30px);
+                    background-color: $brand-primary;
+                    transform: scaleX(0);
+                    transform-origin: center;
+                    transition: transform 0.2s ease-in-out;
+                }
+                &:hover {
+                    &:after {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+        @media (min-width: $device-sm) {
+            .latest-sermon {
+                //max-height: 300px;
+            }
+            .card-holder {
+                padding: $spacing-lg 0;
+            }
+            .latest-sermon {
+                margin: $spacing-xxl 0;
+            }
+        }
+    }

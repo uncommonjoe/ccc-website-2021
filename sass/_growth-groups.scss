@@ -1,0 +1,13 @@
+.gg-container {
+    border: 1px solid $color-light-gray;
+    padding: 25px $spacing-lg;
+    margin-bottom: $spacing-lg;
+}
+
+.page-growth-groups {
+    .gg-map {
+        img {
+            width: 100%;
+        }
+    }
+}

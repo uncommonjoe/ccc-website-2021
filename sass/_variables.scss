@@ -1,0 +1,51 @@
+/**** SPACING ****/
+
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 40px;
+$spacing-xl: 75px;
+$spacing-xxl: 100px;
+
+/**** COLORS ****/
+
+$color-darkest: #1A1B1D;
+$color-darkest-gray: #3b3c3f;
+$color-dark-gray: #53575E;
+$color-darker-gray: #797D84;
+$color-gray: #BDC0C6;
+$color-light-gray: #E4E5E8;
+$color-lightest-gray: #f0f0f0;
+//$brand-primary: rgb(193, 141, 25); // #c18d19
+$brand-primary: #0c7b93; // #c18d19
+$brand-lighter: lighten($brand-primary, 30%);
+$brand-light: lighten($brand-primary, 60%);
+$brand-primary-8: rgba(12, 123, 147, .8);
+$brand-primary-5: rgba(12, 123, 147, .5);
+//$brand-primary-8: rgba(193, 141, 25, .8);
+//$brand-primary-5: rgba(193, 141, 25, .5);
+$plyr-background: $color-light-gray;
+$plyr-control: rgba(26, 27, 29, .4);
+$plyr-progress: $color-gray;
+$plyr-buffer: $color-darker-gray;
+
+/**** FONT SIZE ****/
+
+$font-xs: 12px;
+$font-sm: 16px;
+$font-md: 18px;
+$font-lg: 22px;
+$font-xl: 34px;
+$font-xxl: 40px;
+
+/**** RESPONSIVE SIZES ****/
+
+$mobile: 600px;
+$tablet: 782px;
+
+/**** DEVICE SIZES ****/
+
+$device-xs: 576px;
+$device-sm: 768px;
+$device-md: 992px;
+$device-lg: 1200px;

@@ -1,0 +1,89 @@
+.wpfc_sermon {
+    margin: $spacing-lg 0;
+    >.wpfc-sermon-inner {
+        border: 1px solid $color-light-gray !important;
+        padding: $spacing-lg !important;
+        .wpfc-sermon-image-img {
+            min-height: 200px;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
+
+#latest_sermon {
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+ul#wpfc_images_grid {
+    list-style: none !important;
+    padding: 0 !important;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: $spacing-lg;
+    li.wpfc_grid_image {
+        border: 1px solid $color-light-gray !important;
+        padding: $spacing-lg !important;
+        display: inline-block;
+        img {
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+        }
+        h3.wpfc_grid_title {
+            @extend .text-uppercase;
+            @extend .font-700;
+            @extend .break-word;
+            margin-top: $spacing-md;
+        }
+    }
+}
+
+.wpfc-sermon-single-navigation {
+    background-color: white;
+    padding-top: $spacing-md;
+    border-top: 1px solid $color-light-gray;
+    @extend .clearfix;
+    a {
+        padding: $spacing-xs $spacing-lg;
+        background-color: transparent;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: all 0.2s ease;
+        &:hover {
+            background-color: $brand-primary;
+            color: white;
+        }
+        &:first-child {
+            float: left;
+        }
+        &:nth-child(2) {
+            float: right;
+        }
+    }
+}
+
+@media (min-width: $device-sm) {
+    ul#wpfc_images_grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: $spacing-lg;
+    }
+}
+
+@media (min-width: $device-md) {
+    ul#wpfc_images_grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: $spacing-lg;
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    .wpfc_sermon {
+        margin: $spacing-md 0;
+    }
+}

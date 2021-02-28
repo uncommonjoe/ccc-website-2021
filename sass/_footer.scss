@@ -1,0 +1,38 @@
+#connect {
+    background-color: $color-darkest;
+    color: white;
+    padding: 75px 0;
+    h3 {
+        color: $brand-lighter;
+    }
+    .social-icons {
+        text-align: right;
+        a {
+            display: inline-block;
+            background-color: $brand-primary;
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+            position: relative;
+            transition: background-color 0.2s ease;
+            &:hover {
+                background-color: $brand-lighter;
+            }
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 23px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    #connect {
+        .social-icons {
+            text-align: center;
+        }
+    }
+}

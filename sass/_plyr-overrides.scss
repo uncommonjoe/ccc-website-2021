@@ -1,0 +1,75 @@
+.plyr {
+    &.plyr--audio {
+        .plyr__controls {
+            background-color: $plyr-background !important;
+            position: relative;
+            button.plyr__control[data-plyr=play] {
+                background-color: $plyr-control !important;
+                color: white !important;
+                padding-left: $spacing-lg !important;
+                padding-right: $spacing-lg !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                border-radius: 0 !important;
+                &:hover {
+                    background-color: $brand-primary !important;
+                }
+            }
+            .plyr__progress {
+                margin-left: 100px !important;
+            }
+            .plyr--full-ui input[type=range] {
+                color: $brand-primary !important;
+            }
+        }
+        .plyr__control.plyr__tab-focus,
+        .plyr__control:hover,
+        .plyr__control[aria-expanded=true] {
+            background: $brand-primary !important;
+        }
+    }
+    &.plyr--video {
+        .plyr__control.plyr__tab-focus,
+        .plyr__control:hover,
+        .plyr__control[aria-expanded=true] {
+            background: $brand-primary !important;
+        }
+    }
+}
+
+.plyr__control--overlaid:focus,
+.plyr__control--overlaid:hover,
+.plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
+    background: $brand-primary !important;
+}
+
+.plyr--full-ui input[type=range] {
+    color: $brand-primary !important;
+}
+
+.plyr__control.plyr__tab-focus {
+    box-shadow: 0 0 0 5px $brand-primary-8 !important;
+}
+
+.plyr__control--overlaid {
+    background: rgba(26, 27, 29, .8) !important;
+}
+
+.plyr--full-ui input[type=range].plyr__tab-focus::-webkit-slider-runnable-track,
+.plyr--full-ui input[type=range].plyr__tab-focus::-ms-track,
+.plyr--full-ui input[type=range].plyr__tab-focus::-moz-range-track {
+    box-shadow: 0 0 0 5px $brand-primary-5 !important;
+}
+
+.plyr--full-ui.plyr--audio input[type=range]::-webkit-slider-runnable-track,
+.plyr--full-ui.plyr--audio input[type=range]::-ms-track,
+.plyr--full-ui.plyr--audio input[type=range]::-moz-range-track {
+    background-color: $plyr-progress !important;
+}
+
+.plyr--audio .plyr__progress__buffer,
+.plyr--audio.plyr--loading .plyr__progress__buffer {
+    background-color: $plyr-buffer !important;
+}

@@ -1,0 +1,62 @@
+.page-leadership,
+.page-staff {
+    .nav {
+        flex-wrap: initial;
+    }
+    .page-content {
+        .profile {
+            margin-top: 100px;
+            h1 {
+                color: $color-darkest-gray;
+                font-size: $font-xxl;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin: 0 0 15px 0;
+            }
+            h6 {
+                color: $color-darker-gray;
+                font-size: $font-lg;
+                font-style: italic;
+                font-family: 'Times New Roman', Times, serif
+            }
+            hr {
+                border-color: $color-light-gray;
+                width: 350px;
+            }
+            p {
+                text-align: left;
+                padding: 25px 100px;
+                color: $color-darker-gray;
+            }
+        }
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .profile-preview {
+        cursor: pointer;
+        a {
+            &:hover {
+                h6 {
+                    text-decoration: underline;
+                }
+            }
+            &:hover,
+            &.active {
+                img {
+                    filter: grayscale(0);
+                }
+            }
+            img {
+                filter: grayscale(100%);
+                transition: filter 0.2s ease;
+                cursor: pointer;
+            }
+            h6 {
+                color: $color-darkest-gray;
+                margin-top: 25px;
+            }
+        }
+    }
+}

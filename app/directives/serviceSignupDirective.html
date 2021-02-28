@@ -1,0 +1,126 @@
+<div class="row">
+    <div class="col-12 offset-0 col-md-8 offset-md-2">
+        <h2 class="mb-0">Service Signup</h2>
+        <h5 class="sans-serif text-muted mb-3">{{sunday | date : "EEEE, MMM d"}}</h5>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 offset-0 col-md-4 offset-md-2 mb-5">
+        <div class="alert alert-warning" ng-show="servicesAreFull && !overflowIsFull">
+            <strong>Overflow Seating Only!</strong> All seats for both services have been filled for this coming Sunday but we do have just a few left in the overflow.
+        </div>
+
+        Due to current physical distancing requirements, service sizes are limited. Please sign up to reserve your seat. If our regular seating is full, you will have the opportunity to sign up to sit in overflow seating across the foyer in the multi-purpose
+        room.
+    </div>
+
+    <div class="col-12 offset-0 col-md-4">
+        <form name="serviceSignup" class="needs-validation" data-ng-submit="serviceSignup.$valid && submit()" data-ng-hide="confirmed || servicesAreFull && overflowIsFull" novalidate>
+            <div class="form-group has-feedback">
+                <label for="name">Your Name&nbsp;<span class="text-danger">*</span></label>
+                <input type="text" id="name" name="name" class="form-control form-control-lg" ng-class="{'is-invalid' : serviceSignup.name.$error.required && serviceSignup.$submitted}" ng-model="signup.name" ng-disabled="isLoading" required />
+                <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+
+            <div class="form-group has-feedback">
+                <label for="email">Email&nbsp;<span class="text-danger">*</span></label>
+                <input type="email" id="email" name="email" class="form-control form-control-lg" ng-class="{'is-invalid' : serviceSignup.email.$error.required && serviceSignup.$submitted || serviceSignup.email.$error.email && serviceSignup.$submitted}" ng-model="signup.email"
+                    ng-disabled="isLoading" required />
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+            </div>
+
+            <div class="form-group has-feedback">
+                <label for="time">Preferred service to attend&nbsp;<span class="text-danger">*</span></label>
+
+                <!-- First Service-->
+                <div class="form-check">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="firstService" name="service" data-ng-model="signup.time" ng-value="firstServiceValue" class="custom-control-input" ng-class="{'is-invalid' : serviceSignup.service.$error.required && serviceSignup.$submitted}" ng-disabled="firstServiceAttendees >= maxAttendance || isLoading"
+                            ng-change="updateMaxValue()" required>
+
+                        <label class="custom-control-label" for="firstService">
+                    {{firstServiceValue}}
+                    <span class="badge small" ng-class="firstServiceAttendees >= attendanceWarning && firstServiceLeft > 0 ? 'badge-warning' : 'badge-secondary'" ng-hide="firstServiceAttendees >= maxAttendance">{{firstServiceLeft}} seats left</span>
+                    <span class="badge badge-danger small" ng-show="firstServiceAttendees >= maxAttendance">Full</span>
+                </label>
+                    </div>
+                </div>
+
+                <!-- Second Service-->
+                <div class="form-check">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="secondService" name="service" data-ng-model="signup.time" ng-value="secondServiceValue" class="custom-control-input" ng-class="{'is-invalid' : serviceSignup.service.$error.required && serviceSignup.$submitted}" ng-disabled="secondServiceAttendees >= maxAttendance || isLoading"
+                            ng-change="updateMaxValue()" required>
+                        <label class="custom-control-label" for="secondService">
+                    {{secondServiceValue}}
+                    <span class="badge small" ng-class="secondServiceAttendees >= attendanceWarning && secondServiceLeft > 0 ? 'badge-warning' : 'badge-secondary'" ng-hide="secondServiceAttendees >= maxAttendance">{{secondServiceLeft}} seats left</span>
+                    <span class="badge badge-danger small" ng-show="secondServiceAttendees >= maxAttendance">Full</span>
+                </label>
+                    </div>
+                </div>
+
+                <!-- First Service OVERFLOW-->
+                <div class="form-check" ng-if="firstServiceAttendees >= maxAttendance && secondServiceAttendees >= maxAttendance">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="firstServiceOverflow" name="service" data-ng-model="signup.time" ng-value="firstServiceOverflowValue" class="custom-control-input" ng-class="{'is-invalid' : serviceSignup.service.$error.required && serviceSignup.$submitted}" ng-disabled="firstServiceOverflowAttendees >= overflowMaxAttendance || isLoading"
+                            ng-change="updateMaxValue()" required>
+
+                        <label class="custom-control-label" for="firstServiceOverflow">
+                            {{firstServiceOverflowValue}}
+                            <span class="badge small" ng-class="firstServiceOverflowAttendees >= overflowAttendanceWarning && firstServiceOverflowLeft > 0 ? 'badge-warning' : 'badge-secondary'" ng-hide="firstServiceOverflowAttendees >= overflowMaxAttendance">
+                                {{firstServiceOverflowLeft}} left
+                            </span>
+                            <span class="badge badge-danger small" ng-show="firstServiceOverflowAttendees >= overflowMaxAttendance">Full</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Second Service OVERFLOW-->
+                <div class="form-check" ng-if="firstServiceAttendees >= maxAttendance && secondServiceAttendees >= maxAttendance">
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="secondServiceOverflow" name="service" data-ng-model="signup.time" ng-value="secondServiceOverflowValue" class="custom-control-input" ng-class="{'is-invalid' : serviceSignup.service.$error.required && serviceSignup.$submitted}"
+                            ng-disabled="secondServiceOverflowAttendees >= overflowMaxAttendance || isLoading" ng-change="updateMaxValue()" required>
+                        <label class="custom-control-label" for="secondServiceOverflow">
+                            {{secondServiceOverflowValue}}
+                            <span class="badge small" ng-class="secondServiceOverflowAttendees >= overflowAttendanceWarning && secondServiceOverflowLeft > 0 ? 'badge-warning' : 'badge-secondary'" ng-hide="secondServiceOverflowAttendees >= overflowMaxAttendance">
+                                {{secondServiceOverflowLeft}} left
+                            </span>
+                            <span class="badge badge-danger small" ng-show="secondServiceOverflowAttendees >= overflowMaxAttendance">Full</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="invalid-feedback d-block" ng-show="serviceSignup.service.$error.required && serviceSignup.$submitted">Please select a service time.</div>
+            </div>
+
+            <div class="form-group has-feedback">
+                <label for="people">Number of people attending including myself&nbsp;<span class="text-danger">*</span></label>
+                <input type="number" name="people" min="1" ng-max="maxLength" class="form-control form-control-lg" ng-class="{'is-invalid' : serviceSignup.people.$error.required && serviceSignup.$submitted || serviceSignup.people.$error.max && serviceSignup.$submitted}"
+                    id="people" ng-model="signup.people" ng-disabled="isLoading" required />
+                <div class="invalid-feedback">Please enter up to {{maxLength}} people.</div>
+            </div>
+
+            <div class="form-group">
+                <div class="from-check custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" ng-model="signup.kindergarden" id="customCheck1">
+
+                    <label class="custom-control-label" for="customCheck1">We have kindergarten age children or younger who will attend Children’s Church or nursery</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg px-5" ng-disabled="isLoading">
+                <span ng-hide="isLoading">Signup</span>
+                <span ng-show="isLoading">Sending...</span>
+            </button>
+        </form>
+
+        <div class="alert alert-danger" ng-show="servicesAreFull && overflowIsFull">
+            <strong>We're so sorry!</strong> All seats for both services have been filled for this coming Sunday.
+        </div>
+
+        <div class="alert alert-success" ng-show="confirmed">
+            <strong>Success!</strong> You have signed up for the <strong>{{signup.time}}</strong> service this coming Sunday. We are looking forward to seeing you!
+        </div>
+    </div>
+</div>

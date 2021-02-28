@@ -1,0 +1,25 @@
+<?php if ($latest_sermon->have_posts()) :
+                        while ($latest_sermon->have_posts()) : $latest_sermon->the_post();
+                            global $post; ?>
+                                <div id="latest_sermon">
+                                    <?php render_sermon_image('medium'); ?>
+
+                                    <a id="latest_sermon_title" title="<?php echo esc_attr( get_the_title() ); ?>" href="<?php the_permalink() ?>">
+                                        <?php the_title(); ?>
+                                    </a>
+                                    
+                                    <span class="meta">
+                                        <?php wpfc_sermon_meta('bible_passage',
+                                            '<span class="bible_passage">'.__( 'Bible Text: ', 'sermon-manager'), '</span> | ');
+                                            wpfc_sermon_date(get_option('date_format')); ?>
+                                    </span>
+                                    
+                                    <?php // this will output the media links ?>
+                                    <?php wpfc_sermon_files(); ?> 
+                                </div>
+                    <?php endwhile;
+
+                        wp_reset_postdata();
+                    
+                        endif;
+                    ?>

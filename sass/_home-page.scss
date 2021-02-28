@@ -1,0 +1,161 @@
+.home .section {
+    height: calc(100vh - 80px);
+    margin-bottom: 40px;
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+
+.section-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+    width: 50%;
+    z-index: 1;
+}
+
+.section-content h1 {
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: calc(1em + 4vw);
+}
+
+.section-content a {
+    font-family: $serif;
+    margin-top: 20px;
+}
+
+// @media screen and (max-width: $tablet) {
+//     .section-content {
+//         h1 {
+//             font-size: 30px;
+//         }
+//     }
+// }
+.home .welcome {
+    z-index: 3;
+}
+
+.home #welcome a.scroll {
+    height: 50px;
+    width: 30px;
+    border: 3px solid rgba(225, 225, 225, .5);
+    border-radius: 10px 10px 20px 20px;
+    display: block;
+    margin: auto;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    z-index: 1;
+}
+
+.home #welcome a.scroll .indicator {
+    text-align: center;
+    width: 0;
+    margin: auto;
+    position: relative;
+    display: block;
+    height: 15px;
+    border-left: 4px solid rgba(225, 225, 225, .5);
+    border-radius: 3px;
+    animation: desktop-scroll-indicator 2s infinite;
+}
+
+.home #welcome a.scroll h6 {
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 5px;
+    color: rgba(225, 225, 225, .5);
+    text-transform: uppercase;
+    position: absolute;
+    top: 60px;
+    left: -36px;
+    white-space: nowrap;
+}
+
+#welcome:before {
+    background-color: $color-darkest-gray;
+    display: block;
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#welcome:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100vh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, rgba(77, 81, 113, 0.5), rgba(77, 81, 113, 0.5)), url(img/img1.jpg) center center / cover no-repeat;
+}
+
+#service {
+    background: linear-gradient(to right, rgba(103, 50, 50, 0.35), rgba(103, 50, 50, 0.35)), url(img/img2.jpg) center center / cover no-repeat;
+    z-index: 1;
+}
+
+#preaching {
+    background: linear-gradient(to right, rgba(62, 60, 85, 0.66), rgba(62, 60, 85, 0.66)), url(img/img3.jpg) center center / cover no-repeat;
+    z-index: 1;
+}
+
+#doctrine {
+    background: linear-gradient(to right, rgba(30, 35, 41, 0.45), rgba(30, 35, 41, 0.45)), url(img/img4.jpg) center center / cover no-repeat;
+    z-index: 1;
+}
+
+#contact {
+    background: linear-gradient(to right, rgba(30, 35, 41, 0.45), rgba(30, 35, 41, 0.45)), url(img/img5.jpg) center center / cover no-repeat;
+    z-index: 1;
+    height: calc(100vh - 80px);
+}
+
+@media (max-width: $device-sm) {
+    .section-content {
+        top: 70%;
+        width: 95% !important;
+    }
+    #the-daily {
+        .section-content {
+            top: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: $device-sm) and (max-height: 737px) {
+    #alert-bar-active.page-template-daily-pastoral-checkin {
+        #the-daily {
+            height: 130vh;
+        }
+        .section-content {
+            top: 50%;
+        }
+    }
+    .section-content {
+        top: 70%;
+    }
+    #the-daily {
+        .section-content {
+            top: 60%;
+        }
+    }
+}
+
+@media (max-width: $device-md) {
+    .section-content {
+        width: 70%;
+    }
+}
+
+*[id^='readlink'] {
+    background: transparent !important;
+}
