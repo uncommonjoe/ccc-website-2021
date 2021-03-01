@@ -85,7 +85,7 @@
                         <?php endif; ?>
                     </div>
 
-                    <div class="col-12 col-sm-8 sm-no-padding">
+                    <div class="col-12 col-sm-8 r-no-padding-left r-no-padding-right r-xs r-sm">
                         <div id="latest_sermon">
                             <a href="<?php the_permalink(); ?>">
                                 <img class="wpfc-sermon-single-image-img" alt="<?php the_title(); ?>" src="<?php echo get_sermon_image_url(); ?>">

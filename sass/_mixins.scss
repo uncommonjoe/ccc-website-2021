@@ -1,0 +1,4 @@
+@mixin dropshadow(){
+	box-shadow: 0 0 26px $ccc-dropshadow;
+	border: 0;
+}

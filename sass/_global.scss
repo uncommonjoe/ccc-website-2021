@@ -1,23 +1,20 @@
 body {
     background: #FFFFFF;
-    //padding: $spacing-md $spacing-md 0px $spacing-md;
-    overflow: hidden;
-    /* Set initially. When Pace is finished it sets overflow to auto (scripts.js) */
     font-size: 18px;
+
+    &.admin-bar {
+        margin-top: 32px;
+
+        nav {
+            margin-top: 32px;
+        }
+    }
 }
 
-// @media (min-width: $device-md) {
-//     body {
-//         padding: $spacing-lg $spacing-lg 0 $spacing-lg;
-//     }
-// }
+
 h1, h2, h3, h4, h5, h6, .section-content .btn a {
     font-family: $serif;
     text-transform: uppercase;
-}
-
-[class*="col-"] {
-    //z-index: 1; // Removed this z-index to fix the video full screen issue. I'm not sure what this was originally in for, but don't add it back
 }
 
 .gray-area {
@@ -30,7 +27,7 @@ h1, h2, h3, h4, h5, h6, .section-content .btn a {
 }
 
 .gold-area {
-    background-color: $brand-primary;
+    background-color: $ccc-primary;
     color: white;
 }
 
@@ -48,9 +45,9 @@ h1, h2, h3, h4, h5, h6, .section-content .btn a {
 }
 
 a {
-    color: $brand-primary;
+    color: $ccc-primary;
     &:hover, &:active {
-        color: $brand-lighter;
+        color: $ccc-lighter;
     }
 }
 

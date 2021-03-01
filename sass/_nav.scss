@@ -1,329 +1,100 @@
-    #header-nav {
-        position: absolute;
-        top: 100px;
-        left: 80px;
-        right: 80px;
-        z-index: 4;
-        a {
-            color: white;
-        }
-        a.logo h1 {
-            font-size: $font-lg;
-            font-weight: 500;
-            font-family: $sans-serif;
-            letter-spacing: 1px;
-            margin-bottom: 0;
-            margin-left: 20px;
-        }
-        #menu-primary {
-            >li {
+@mixin nav-link(){
+    color: $color-darkest-gray !important;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav {
+    background-color: $ccc-white;
+    @include dropshadow();
+
+    a {
+        text-decoration: none !important;
+        @include nav-link();
+        @extend .padding-md-left;
+        @extend .padding-md-right;
+    }
+
+    .dropdown {
+        a.dropdown-toggle {
+            &::after {
+                content: "";
                 display: inline-block;
-                a {
-                    display: block;
-                    padding: 7px 15px;
+                margin-left: 6px;
+                margin-bottom: -2px;
+                border: 0;
+                background-image: url('img/carrot.svg');
+                background-repeat: no-repeat;
+                background-size: 9px 13px;
+                height: 9px;
+                width: 9px;
+            }
+
+            &:hover {
+                &::after {
+                    //margin-left: 10px;
+                    animation: carrot-bounce 1s 1;
+                    
                 }
             }
         }
-        .dropdown-menu {
-            //top: auto !important;
-            a {
-                color: $color-darkest-gray;
-                &.active, &:active {
-                    color: white;
-                    background-color: $brand-primary !important;
-                }
-            }
-        }
     }
     
-    #alert-bar-active.page-template-daily-pastoral-checkin {
-        #header-nav {
-            top: 80px;
-        }
-    }
-    
-    #header-nav img {
-        width: 100%;
-        max-width: 220px;
-    }
-    
-    #top-fixed-nav img {
-        height: 100px;
-    }
-    
-    #header-nav a.logo, #top-fixed-nav a.logo {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-    }
-    
-    #top-fixed-nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        height: 50px;
-        background-color: $color-darkest;
-        color: white;
-        z-index: 6;
+    .dropdown-menu {
+        @include dropshadow();
+        @extend .padding-sm;
+        border-radius: $radius-md;
         a {
-            color: white;
-        }
-        img {
-            height: 30px;
-            margin-top: 10px;
-        }
-        #hamburger {
-            margin-top: 5px;
-            padding: 10px 0 0 9px;
-            cursor: pointer;
-            height: 40px;
-            width: 40px;
-            border: 1px solid transparent;
-            -webkit-transition: all 0.2s ease;
-            -moz-transition: all 0.2s ease;
-            -o-transition: all 0.2s ease;
+            @include nav-link();
+            border-radius: $radius-md;
             transition: all 0.2s ease;
-            &:hover, &:focus {
-                outline: none;
+
+            &:hover {
+                background-color: $color-lightest-gray;
             }
-            &:active {
-                background-color: white;
-                outline: none;
+
+            &.active, &:active {
+                color: $ccc-white;
+                background-color: $ccc-primary !important;
             }
-            >div {
-                border: 2px solid white;
-                width: 25px;
-                margin-bottom: 5px;
-                display: block;
-                transition: width 0.2s ease;
-                &:nth-child(2) {
-                    width: 15px;
-                }
-            }
-            &:hover>div:nth-child(2) {
-                width: 25px;
-            }
-            &:before {
-                content: "MENU";
-                color: white;
-                float: left;
-                font-weight: 800;
-                font-size: $font-xs;
-                font-family: muli;
-                position: relative;
-                right: 60px;
-                top: -2px;
-                border: 2px solid white;
-                padding: 2px 5px;
-                opacity: 0;
-            }
-            &:hover:before {
-                opacity: 1;
-                animation: fade-in-right 0.2s ease forwards;
-            }
+            
         }
     }
-    /* ###### SLIDEOUT NAV ###### */
-    
-    #top-nav-slideout {
-        position: fixed;
-        top: -110vmax;
-        right: 0;
-        left: 0;
-        height: 350px;
-        background-color: $brand-primary;
-        z-index: 5;
-        transition: all 0.4s ease;
-        transform: translateY(-100vh);
-        z-index: 5;
-    }
-    
-    #menu {
-        background-color: $brand-primary;
-        padding: 50px 0;
-        color: $color-darkest;
-        overflow: hidden;
-        //margin-bottom: $spacing-lg;
-        h3 {
-            color: $brand-light;
-        }
-        ul {
-            padding: 0;
-            li {
-                list-style: none;
-                a {
-                    color: $brand-light;
-                    font-weight: 100;
-                    padding: 4px 0;
-                    letter-spacing: 1px;
-                }
-            }
-        }
-        .slogan {
-            color: $brand-light;
-            text-align: center;
-            line-height: 0;
-            @extend .serif;
-            font-style: italic;
-            margin: $spacing-lg 0;
-            p {
-                display: inline-block;
-                position: relative;
-                &:before, &:after {
-                    content: "";
-                    position: absolute;
-                    height: 5px;
-                    border-top: 1px solid $brand-lighter;
-                    top: 0;
-                    width: 10vw;
-                }
-                &:before {
-                    right: 100%;
-                    margin-right: 15px;
-                }
-                &:after {
-                    left: 100%;
-                    margin-left: 15px;
-                }
-            }
-        }
-        .copyright {
-            margin-top: $spacing-xl;
+
+    #menu-nav-secondary {
+        li {
             a {
-                color: white;
-                font-weight: 700;
-                &.logo {
-                    &:hover {
-                        text-decoration: none;
-                    }
-                    &.logo {
-                        img {
-                            display: inline-block;
-                            height: 50px;
-                        }
-                        h1 {
-                            font-size: $font-lg;
-                            font-weight: bold;
-                            letter-spacing: 1px;
-                            margin-bottom: 0;
-                            margin-left: 20px;
-                            display: inline-block;
-                        }
-                    }
-                }
-            }
-            p {
-                font-size: 12px;
-                color: $brand-light;
-                text-align: right;
-            }
-        }
-    }
-    
-    @media screen and (max-width: $mobile) {
-        #menu {
-            //margin-bottom: $spacing-md;
-            .slogan {
-                margin: $spacing-xl 0;
-                line-height: 1;
-                p {
-                    width: 50vw;
-                    &:before, &:after {
-                        top: 50%;
+                font-size: 18px;
+                font-weight: bold;
+                padding: 5px 15px;
+                @extend .btn;
+                @extend .btn-dark;
+                @extend .margin-md-left;
+
+                &[title=Live]{
+                    position: relative;
+                    padding-left: 35px !important;
+
+                    &::before {
+                        content: '';
+                        height: 10px;
+                        width: 10px;
+                        border-radius: $radius-sm;
+                        position: absolute;
+                        left: 15px;
+                        top: 14px;
+                        background-color: $color-darkest;
                     }
                 }
             }
-            .logo {
-                margin-bottom: $spacing-lg;
-                text-align: center;
-                display: block;
-            }
-            .copyright {
-                margin-top: $spacing-md;
-                p {
-                    text-align: left;
+            
+            &:last-child {
+                a {
+                @extend .btn-dark;
+                @extend .btn-inverse;
                 }
             }
         }
     }
-    
-    .nav-open {
-        #top-nav-slideout {
-            top: 50px;
-            transform: translateY(0);
-        }
-        #overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 4;
-        }
-        #top-fixed-nav {
-            #hamburger {
-                div:nth-child(2) {
-                    width: 25px !important;
-                }
-                &:before {
-                    content: "CLOSE" !important;
-                    opacity: 1 !important;
-                    right: 63px;
-                }
-            }
-        }
-    }
-    
-    @media screen and (max-width: $mobile) {
-        #alert-bar-active.page-template-daily-pastoral-checkin {
-            #header-nav {
-                top: calc(80px + 72px);
-            }
-        }
-        .admin-bar {
-            &#alert-bar-active.page-template-daily-pastoral-checkin {
-                #header-nav {
-                    //top: calc(80px + 32px);
-                }
-            }
-            #header-nav {
-                top: calc(80px + 32px);
-            }
-            #top-fixed-nav {
-                top: 32px;
-            }
-            &.nav-open #top-nav-slideout {
-                top: 82px;
-            }
-        }
-        .admin-bar {
-            #header-nav {
-                top: calc(80px + 40px);
-            }
-            #top-fixed-nav {
-                top: 0px;
-            }
-            &.nav-open #top-nav-slideout {
-                top: 40px;
-            }
-        }
-        #top-fixed-nav {
-            display: block !important;
-        }
-    }
-    
-    @media screen and (min-width: $mobile) and (max-width: $tablet) {
-        .admin-bar {
-            #header-nav {
-                top: calc(80px + 40px);
-            }
-            #top-fixed-nav {
-                top: 46px;
-            }
-            &.nav-open #top-nav-slideout {
-                top: calc(40px + 46px);
-            }
-        }
-    }
+}

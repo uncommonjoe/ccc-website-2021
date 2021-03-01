@@ -5,7 +5,8 @@
 
 // Register Menu
 register_nav_menus( array(
-    'primary' => 'Header Primary Nav',
+    'nav-primary' => 'Nav Primary',
+    'nav-secondary' => 'Nav Secondary',
     'menu_about' => 'Menu About',
     'menu_connect' => 'Menu Connect',
     'menu_resources' => 'Menu Resources',

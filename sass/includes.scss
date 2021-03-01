@@ -1,29 +1,32 @@
 /*!
-Theme Name: Cornerstone Community Church
+Theme Name: CCC 2021
 Author: Joe McLean
-Description: Created custom for CCC
+Description: Created custom for CCC 2021
 */
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,200i,300,300i,400,400i,500i,700,700i,800,900');
-@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:100,200,200i,300,300i,400,400i,500i,700,700i,800,900');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap');
 
-/* Utilities */
+// Utilities
 
+@import 'mixins';
 @import 'animate';
 @import 'variables';
 @import 'typography';
 @import 'bootstrap';
 @import 'bootstrap-overrides';
 @import 'animate';
-@import 'loader';
 @import 'global';
 @import 'whitespace';
 @import 'footer';
+
+// Components
+
+@import 'buttons';
 @import 'plyr-overrides';
 @import 'cards.scss';
 @import 'table.scss';
 
-/* Pages */
+// Pages
 
 @import 'nav';
 @import 'home-page';

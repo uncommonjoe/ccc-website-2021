@@ -14,27 +14,27 @@
                 bottom: 0;
                 border-radius: 0 !important;
                 &:hover {
-                    background-color: $brand-primary !important;
+                    background-color: $ccc-primary !important;
                 }
             }
             .plyr__progress {
                 margin-left: 100px !important;
             }
             .plyr--full-ui input[type=range] {
-                color: $brand-primary !important;
+                color: $ccc-primary !important;
             }
         }
         .plyr__control.plyr__tab-focus,
         .plyr__control:hover,
         .plyr__control[aria-expanded=true] {
-            background: $brand-primary !important;
+            background: $ccc-primary !important;
         }
     }
     &.plyr--video {
         .plyr__control.plyr__tab-focus,
         .plyr__control:hover,
         .plyr__control[aria-expanded=true] {
-            background: $brand-primary !important;
+            background: $ccc-primary !important;
         }
     }
 }
@@ -42,15 +42,15 @@
 .plyr__control--overlaid:focus,
 .plyr__control--overlaid:hover,
 .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
-    background: $brand-primary !important;
+    background: $ccc-primary !important;
 }
 
 .plyr--full-ui input[type=range] {
-    color: $brand-primary !important;
+    color: $ccc-primary !important;
 }
 
 .plyr__control.plyr__tab-focus {
-    box-shadow: 0 0 0 5px $brand-primary-8 !important;
+    box-shadow: 0 0 0 5px $ccc-primary-8 !important;
 }
 
 .plyr__control--overlaid {
@@ -60,7 +60,7 @@
 .plyr--full-ui input[type=range].plyr__tab-focus::-webkit-slider-runnable-track,
 .plyr--full-ui input[type=range].plyr__tab-focus::-ms-track,
 .plyr--full-ui input[type=range].plyr__tab-focus::-moz-range-track {
-    box-shadow: 0 0 0 5px $brand-primary-5 !important;
+    box-shadow: 0 0 0 5px $ccc-primary-5 !important;
 }
 
 .plyr--full-ui.plyr--audio input[type=range]::-webkit-slider-runnable-track,

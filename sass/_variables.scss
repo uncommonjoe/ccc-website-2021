@@ -3,31 +3,42 @@
 $spacing-xs: 5px;
 $spacing-sm: 10px;
 $spacing-md: 15px;
-$spacing-lg: 40px;
+$spacing-lg: 50px;
 $spacing-xl: 75px;
 $spacing-xxl: 100px;
 
 /**** COLORS ****/
 
 $color-darkest: #1A1B1D;
-$color-darkest-gray: #3b3c3f;
+$color-darkest-gray: $color-darkest;
 $color-dark-gray: #53575E;
 $color-darker-gray: #797D84;
-$color-gray: #BDC0C6;
-$color-light-gray: #E4E5E8;
-$color-lightest-gray: #f0f0f0;
-//$brand-primary: rgb(193, 141, 25); // #c18d19
-$brand-primary: #0c7b93; // #c18d19
-$brand-lighter: lighten($brand-primary, 30%);
-$brand-light: lighten($brand-primary, 60%);
-$brand-primary-8: rgba(12, 123, 147, .8);
-$brand-primary-5: rgba(12, 123, 147, .5);
-//$brand-primary-8: rgba(193, 141, 25, .8);
-//$brand-primary-5: rgba(193, 141, 25, .5);
+$color-gray: #797D84;
+$color-light-gray: #CFCFD2;
+$color-lightest-gray: #E4E5E8;
+
+$ccc-dropshadow: rgba(0,0,0,.2);
+
+$ccc-primary: #0C7B93;
+$ccc-lighter: lighten($ccc-primary, 30%);
+
+$ccc-primary-8: rgba(12, 123, 147, .8);
+$ccc-primary-5: rgba(12, 123, 147, .5);
+
+$ccc-gold: #C18D19;
+$ccc-red: #C72323;
+$ccc-white: #FFFFFF;
+
 $plyr-background: $color-light-gray;
 $plyr-control: rgba(26, 27, 29, .4);
 $plyr-progress: $color-gray;
 $plyr-buffer: $color-darker-gray;
+
+/**** BORDER RADIUS ****/
+
+$radius-sm: 5px;
+$radius-md: 10px;
+$radius-lg: 26px;
 
 /**** FONT SIZE ****/
 
