@@ -73,6 +73,9 @@ nav {
 
 				// Live button
 				&[title="Live"] {
+					position: relative;
+					padding-left: 35px !important;
+
 					&.active {
 						color: $ccc-white !important;
 						background-color: $ccc-red !important;
@@ -86,9 +89,6 @@ nav {
 							@include hoverOutline(2px, $ccc-red);
 						}
 					}
-
-					position: relative;
-					padding-left: 35px !important;
 
 					&::before {
 						content: "";
@@ -183,6 +183,20 @@ nav {
 							top: 7px;
 						}
 					}
+				}
+			}
+		}
+
+		#menu-nav-primary {
+			margin: 25px 0;
+		}
+
+		#menu-nav-secondary {
+			li {
+				margin-bottom: 10px;
+				a {
+					display: block;
+					text-align: left;
 				}
 			}
 		}
