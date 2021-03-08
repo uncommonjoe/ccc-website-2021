@@ -9,36 +9,45 @@ $spacing-xxl: 100px;
 
 /**** COLORS ****/
 
-$color-darkest: #1A1B1D;
+$color-darkest: #1a1b1d;
 $color-darkest-gray: $color-darkest;
-$color-dark-gray: #53575E;
-$color-darker-gray: #797D84;
-$color-gray: #797D84;
-$color-light-gray: #CFCFD2;
-$color-lightest-gray: #E4E5E8;
+$color-dark-gray: #53575e;
+$color-darker-gray: #797d84;
+$color-gray: #797d84;
+$color-light-gray: #cfcfd2;
+$color-lightest-gray: #e4e5e8;
 
-$ccc-dropshadow: rgba(0,0,0,.2);
+$ccc-dropshadow: rgba(0, 0, 0, 0.2);
 
-$ccc-primary: #0C7B93;
+$ccc-primary: #0c7b93;
 $ccc-lighter: lighten($ccc-primary, 30%);
 
-$ccc-primary-8: rgba(12, 123, 147, .8);
-$ccc-primary-5: rgba(12, 123, 147, .5);
+$ccc-primary-8: rgba(12, 123, 147, 0.8);
+$ccc-primary-5: rgba(12, 123, 147, 0.5);
 
-$ccc-gold: #C18D19;
-$ccc-red: #C72323;
-$ccc-white: #FFFFFF;
+$ccc-gold: #c18d19;
+$ccc-gold-lighter: lighten($ccc-gold, 20%);
+$ccc-gold-darker: darken($ccc-gold, 20%);
+
+$ccc-red: #c72323;
+$ccc-white: #ffffff;
 
 $plyr-background: $color-light-gray;
-$plyr-control: rgba(26, 27, 29, .4);
+$plyr-control: rgba(26, 27, 29, 0.4);
 $plyr-progress: $color-gray;
 $plyr-buffer: $color-darker-gray;
 
 /**** BORDER RADIUS ****/
 
-$radius-sm: 5px;
-$radius-md: 10px;
-$radius-lg: 26px;
+$radius-xs: 5px;
+$radius-sm: 10px;
+$radius-md: 15px;
+$radius-lg: 25px;
+
+/**** GLOW SIZES ****/
+$glow-sm: 5px;
+$glow-md: 16px;
+$glow-lg: 26px;
 
 /**** FONT SIZE ****/
 

@@ -1,92 +1,96 @@
 body {
-    background: #FFFFFF;
-    font-size: 18px;
+	background: #ffffff;
+	font-size: 18px;
+	margin-top: 81px;
 
-    &.admin-bar {
-        margin-top: 32px;
+	&.admin-bar {
+		nav {
+			margin-top: 32px;
+		}
 
-        nav {
-            margin-top: 32px;
-        }
-    }
-}
-
-
-h1, h2, h3, h4, h5, h6, .section-content .btn a {
-    font-family: $serif;
-    text-transform: uppercase;
+		#wpadminbar {
+			position: fixed !important;
+		}
+	}
 }
 
 .gray-area {
-    background-color: $color-lightest-gray;
+	background-color: $color-lightest-gray;
 }
 
 .dark-gray-area {
-    background-color: $color-darkest-gray;
-    color: white;
+	background-color: $color-darkest-gray;
+	color: white;
 }
 
 .gold-area {
-    background-color: $ccc-primary;
-    color: white;
+	background-color: $ccc-primary;
+	color: white;
 }
 
 .custom-background-img-area {
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-size: auto 120vh !important;
-    color: white;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: auto 120vh !important;
+	color: white;
 }
 
 .full-width {
-    margin-left: -$spacing-lg;
-    margin-right: -$spacing-lg;
+	margin-left: -$spacing-lg;
+	margin-right: -$spacing-lg;
 }
 
 a {
-    color: $ccc-primary;
-    &:hover, &:active {
-        color: $ccc-lighter;
-    }
+	color: $ccc-primary;
+	&:hover,
+	&:active {
+		color: $ccc-lighter;
+	}
 }
 
 .window-mobile {
-    float: left;
-}
-
-@media (max-width: $device-sm) {
-    .window-mobile {
-        float: none;
-    }
-}
-
-.dgd_stb_box {
-    max-height: auto;
-}
-
-@media (max-width: $device-sm) {
-    .dgd_stb_box {
-        overflow-y: auto;
-        max-height: 100%;
-    }
-}
-
-@media (max-width: $device-sm) {
-    .hidden-xs {
-        display: none;
-    }
+	float: left;
 }
 
 #alert-message {
-    min-height: 60px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    span {
-        font-size: 14px;
-        display: inline-block;
-        line-height: 1.3;
-    }
+	min-height: 60px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	span {
+		font-size: 14px;
+		display: inline-block;
+		line-height: 1.3;
+	}
+}
+
+@media (max-width: $device-sm) {
+	.window-mobile {
+		float: none;
+	}
+
+	.dgd_stb_box {
+		max-height: auto;
+
+		.dgd_stb_box {
+			overflow-y: auto;
+			max-height: 100%;
+		}
+
+		.hidden-xs {
+			display: none;
+		}
+	}
+
+	@media (max-width: $device-md) {
+		body {
+			&.admin-bar {
+				nav {
+					margin-top: 46px;
+				}
+			}
+		}
+	}
 }

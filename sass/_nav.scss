@@ -1,100 +1,190 @@
-@mixin nav-link(){
-    color: $color-darkest-gray !important;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 1px;
+@mixin nav-link() {
+	color: $color-darkest-gray !important;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 1px;
 }
 
 nav {
-    background-color: $ccc-white;
-    @include dropshadow();
+	background-color: $ccc-white;
+	@include dropshadow($glow-lg);
 
-    a {
-        text-decoration: none !important;
-        @include nav-link();
-        @extend .padding-md-left;
-        @extend .padding-md-right;
-    }
+	a {
+		text-decoration: none !important;
+		@include nav-link();
+		@extend .padding-md-left;
+		@extend .padding-md-right;
+	}
 
-    .dropdown {
-        a.dropdown-toggle {
-            &::after {
-                content: "";
-                display: inline-block;
-                margin-left: 6px;
-                margin-bottom: -2px;
-                border: 0;
-                background-image: url('img/carrot.svg');
-                background-repeat: no-repeat;
-                background-size: 9px 13px;
-                height: 9px;
-                width: 9px;
-            }
+	.dropdown {
+		a.dropdown-toggle {
+			&::after {
+				content: "";
+				display: inline-block;
+				margin-left: 6px;
+				margin-bottom: -2px;
+				border: 0;
+				background-image: url("img/carrot.svg");
+				background-repeat: no-repeat;
+				background-size: 9px 13px;
+				height: 9px;
+				width: 9px;
+			}
 
-            &:hover {
-                &::after {
-                    //margin-left: 10px;
-                    animation: carrot-bounce 1s 1;
-                    
-                }
-            }
-        }
-    }
-    
-    .dropdown-menu {
-        @include dropshadow();
-        @extend .padding-sm;
-        border-radius: $radius-md;
-        a {
-            @include nav-link();
-            border-radius: $radius-md;
-            transition: all 0.2s ease;
+			&:hover {
+				&::after {
+					//margin-left: 10px;
+					animation: carrot-bounce 1s 1;
+				}
+			}
+		}
+	}
 
-            &:hover {
-                background-color: $color-lightest-gray;
-            }
+	.dropdown-menu {
+		@include dropshadow($glow-lg);
+		@extend .padding-sm;
+		border-radius: $radius-sm;
+		a {
+			@include nav-link();
+			border-radius: $radius-sm;
+			transition: all 0.2s ease-in-out;
 
-            &.active, &:active {
-                color: $ccc-white;
-                background-color: $ccc-primary !important;
-            }
-            
-        }
-    }
+			&:hover {
+				background-color: $color-lightest-gray;
+			}
 
-    #menu-nav-secondary {
-        li {
-            a {
-                font-size: 18px;
-                font-weight: bold;
-                padding: 5px 15px;
-                @extend .btn;
-                @extend .btn-dark;
-                @extend .margin-md-left;
+			&.active,
+			&:active {
+				color: $ccc-white !important;
+				background-color: $ccc-primary !important;
+			}
+		}
+	}
 
-                &[title=Live]{
-                    position: relative;
-                    padding-left: 35px !important;
+	#menu-nav-secondary {
+		li {
+			a {
+				font-size: 18px;
+				font-weight: bold;
+				padding: 5px 15px;
+				@extend .btn;
+				@extend .btn-dark;
+				@extend .margin-md-left;
 
-                    &::before {
-                        content: '';
-                        height: 10px;
-                        width: 10px;
-                        border-radius: $radius-sm;
-                        position: absolute;
-                        left: 15px;
-                        top: 14px;
-                        background-color: $color-darkest;
-                    }
-                }
-            }
-            
-            &:last-child {
-                a {
-                @extend .btn-dark;
-                @extend .btn-inverse;
-                }
-            }
-        }
-    }
+				// Live button
+				&[title="Live"] {
+					&.active {
+						color: $ccc-white !important;
+						background-color: $ccc-red !important;
+						border-color: $ccc-red !important;
+
+						&::before {
+							background-color: $ccc-white;
+						}
+
+						&:hover {
+							@include hoverOutline(2px, $ccc-red);
+						}
+					}
+
+					position: relative;
+					padding-left: 35px !important;
+
+					&::before {
+						content: "";
+						height: 10px;
+						width: 10px;
+						border-radius: $radius-xs;
+						position: absolute;
+						left: 15px;
+						top: 14px;
+						background-color: $color-darkest;
+						transition: all 0.2s ease-in-out;
+					}
+
+					&:hover {
+						&::before {
+							left: 18px;
+						}
+					}
+				}
+			}
+
+			&:last-child {
+				a {
+					@extend .btn-dark;
+					@extend .btn-inverse;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $device-md) {
+	nav {
+		#mobile-toggle {
+			display: flex;
+			flex-flow: row;
+			position: relative;
+			justify-content: center;
+			padding: 10px 20px;
+
+			&[aria-expanded="false"],
+			&:not(.collapsed) {
+				.icon {
+					position: relative;
+					height: 20px;
+					width: 25px;
+					margin-left: $spacing-sm;
+					border: 1px solid yellow;
+
+					span {
+						position: absolute;
+						display: block;
+						height: 4px;
+						background-color: $color-darkest-gray;
+						width: 25px;
+						border-radius: 2px;
+						transition: all 0.2s linear;
+
+						&:first-child {
+							top: 0;
+							transform: rotate(0deg);
+						}
+
+						&:nth-child(2) {
+							top: 7px;
+						}
+
+						&:last-child {
+							top: 14px;
+							transform: rotate(0deg);
+						}
+					}
+				}
+			}
+
+			&[aria-expanded="true"] {
+				.icon {
+					margin-left: $spacing-sm;
+
+					span {
+						&:first-child {
+							transform: rotate(45deg);
+							top: 7px;
+						}
+
+						&:nth-child(2) {
+							opacity: 0;
+						}
+
+						&:last-child {
+							transform: rotate(-45deg);
+							top: 7px;
+						}
+					}
+				}
+			}
+		}
+	}
 }

@@ -4,23 +4,23 @@
 //add_action( 'after_setup_theme', 'wpt_setup' );
 
 // Register Menu
-register_nav_menus( array(
+register_nav_menus(array(
     'nav-primary' => 'Nav Primary',
     'nav-secondary' => 'Nav Secondary',
     'menu_about' => 'Menu About',
     'menu_connect' => 'Menu Connect',
     'menu_resources' => 'Menu Resources',
     'menu_contact' => 'Menu Contact'
-) );
+));
 
 // Removes jQuery include file that is duplicated with the template
-add_filter( 'wpcf7_load_js', '__return_false' );
+add_filter('wpcf7_load_js', '__return_false');
 
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
 
-// Register latest sermon 
+// Register latest sermon
 $latest_sermon = new WP_Query(array(
     'post_type' => 'wpfc_sermon',
     'posts_per_page' => 1,
@@ -32,22 +32,21 @@ $latest_sermon = new WP_Query(array(
     'update_post_meta_cache' => false
 ));
 
-add_filter( 'body_class', 'sk_body_class_for_pages' );
+add_filter('body_class', 'sk_body_class_for_pages');
 /**
  * Adds a css class to the body element
  *
  * @param  array $classes the current body classes
  * @return array $classes modified classes
  */
-function sk_body_class_for_pages( $classes ) {
+function sk_body_class_for_pages($classes)
+{
+    if (is_singular('page')) {
+        global $post;
+        $classes[] = 'page-' . $post->post_name;
+    }
 
-	if ( is_singular( 'page' ) ) {
-		global $post;
-		$classes[] = 'page-' . $post->post_name;
-	}
-
-	return $classes;
-
+    return $classes;
 }
 
 $defaults = array(
@@ -64,5 +63,4 @@ $defaults = array(
     'admin-head-callback'       => '',
     'admin-preview-callback'    => '',
 );
-add_theme_support( 'custom-header', $defaults );
-?>
+add_theme_support('custom-header', $defaults);

@@ -1,5 +1,9 @@
+@mixin hoverOutline($size, $color) {
+	box-shadow: 0 0 0 $size $color;
+}
+
 .btn {
-	border-radius: $radius-sm;
+	border-radius: $radius-xs;
 }
 
 .btn-dark {
@@ -12,61 +16,46 @@
 		background-color: $color-darkest !important;
 		color: $ccc-white !important;
 	}
+
+	&:hover {
+		transition: all 0.2s ease-in-out;
+		@include hoverOutline(2px, $color-darkest);
+	}
 }
 
+.btn-glow {
+	border: 0;
+	background-color: $ccc-white;
+	color: $color-darkest-gray;
+	border-radius: $radius-md;
+	padding: 15px 25px;
+	margin-bottom: 15px;
+	@include dropshadow($glow-md);
+}
 
+.btn-yellow {
+	background-color: $ccc-gold;
+	border-color: $ccc-gold;
+	color: $ccc-white;
 
+	&:hover {
+		color: $ccc-white;
+		opacity: 0.8;
+	}
 
-// .btn-primary {
-// 	background-color: $ccc-primary;
-// 	color: white !important;
-// 	border: 0;
-// 	&:hover, &:active, &.active {
-// 		background-color: $ccc-lighter !important;
-// 	}
-// }
+	&:active,
+	&:focus {
+		color: $ccc-white;
+		box-shadow: 0 0 0 0.2rem $ccc-gold-darker;
+	}
+}
 
-// .btn-secondary {
-// 	background-color: $color-dark-gray;
-// 	color: white !important;
-// 	border: 0 !important;
-// 	&:hover, &:active, &.active {
-// 		background-color: $color-darker-gray !important;
-// 	}
-// }
+.btn-link {
+	&.light {
+		color: $ccc-white;
+	}
 
-// .btn-light {
-// 	background-color: white;
-// 	border: 2px solid white;
-// 	color: $color-darkest;
-// 	&.inverse {
-// 		background-color: transparent;
-// 		color: white;
-// 		transition: all 0.2s ease;
-// 		&:hover {
-// 			background-color: white;
-// 			color: $color-darkest !important;
-// 			transition: all 0.2s ease;
-// 		}
-// 	}
-// }
-
-// .btn-clear {
-// 	color: #fff;
-// 	background-color: transparent;
-// 	border: 2px solid white;
-// 	padding: 13px 60px;
-// }
-
-// .btn-clear:hover {
-// 	color: #1A1B1D;
-// 	background-color: white;
-// }
-
-// .btn-clear:focus, .btn-clear.focus {
-// 	box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.1);
-// }
-
-// .btn-clear.disabled, .btn-clear:disabled {
-// 	background-color: rgba(255, 255, 255, 0.2);
-// }
+	&.dark {
+		color: $color-darkest-gray;
+	}
+}
