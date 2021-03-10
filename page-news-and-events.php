@@ -1,6 +1,6 @@
 <?php
     /**
-     * Template Name: News and Events
+     * Template Name: Page - News and Events
      */
 
     get_header();
@@ -62,4 +62,7 @@
 	</div>
 </div>
 
-<?php get_footer(); ?>
+<?php
+    include('menu.php');
+    get_footer();
+?>

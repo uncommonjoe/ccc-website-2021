@@ -93,24 +93,26 @@
 
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-7">
-
 					<?php
                         $latest_sermon = new WP_Query(array(
                             'orderby' => get_field('recent_sermon_order_by'),
                             'order' => get_field('recent_sermon_order'),
-                            'posts_per_page' => get_field('recent_sermon_posts_per_page'),
-                            'post_type' => get_field('recent_sermon_post_type'),
+                            'posts_per_page' => 1,
+                            'post_type' => 'wpfc_sermon',
                             'post_status' => get_field('recent_sermon_post_status'),
+                            'no_found_rows' => true,
+                            'update_post_term_cache' => false,
+                            'update_post_meta_cache' => false
                         ));
                         
                         if ($latest_sermon->have_posts()) :
-                        while ($latest_sermon->have_posts()) :
-                        $latest_sermon->the_post();
-                        global $post;
+                            while ($latest_sermon->have_posts()) :
+                                $latest_sermon->the_post();
+                                global $post;
                     ?>
 
 					<div class="card">
-						<div class="card-img-top">
+						<div class="card-img">
 							<img class="wpfc-sermon-single-image-img" alt="<?php the_title(); ?>"
 								src="<?php echo get_sermon_image_url(); ?>" />
 						</div>
@@ -140,7 +142,6 @@
 				<div class="col-12 col-md-6 col-lg-5">
 					<?php
                         //$terms = get_terms(array('wpfc_sermon_series'));
-
 
                         echo "order by " . get_field('sermon_order_by') . "<br /><br />";
                         echo "order " . get_field('sermon_order') . "<br /><br />";

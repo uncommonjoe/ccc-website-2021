@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Connect */
+/* Template Name: Page - Connect */
 
 get_header();
 ?>
@@ -11,7 +11,6 @@ get_header();
 		</h1>
 	</div>
 </div>
-
 
 <div class="page-content">
 
@@ -113,4 +112,7 @@ get_header();
 	</div>
 </div>
 
-<?php get_footer(); ?>
+<?php
+    include('menu.php');
+    get_footer();
+?>

@@ -25,7 +25,7 @@ $latest_sermon = new WP_Query(array(
     'post_type' => 'wpfc_sermon',
     'posts_per_page' => 1,
     'post_status' => 'publish',
-    'wpfc_service_type' => 'sunday-am',
+    //'wpfc_service_type' => 'sunday-am',
     // The last three parameters will optimize your query
     'no_found_rows' => true,
     'update_post_term_cache' => false,

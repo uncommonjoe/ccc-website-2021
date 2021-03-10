@@ -1,3 +1,55 @@
+<div class="clearfix"></div>
+
+</div><!-- .page -->
+
+<div id="connect">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-6">
+				<h3 class="bold">Connect with us</h3>
+				<p class="font-size-sm margin-xs-bottom">
+					4525 Grand Ave.<br />Billings, MT 59106</p>
+
+				<p class="font-size-sm margin-xs-bottom">
+					<a class="btn-link light" href="tel:+14066564407">(406) 656-4407</a>
+				</p>
+
+				<p class="font-size-sm margin-xs-bottom">
+					<a class="btn-link light" href="about/contact/">office@cornerstonebillings.org</a>
+				</p>
+				</p>
+			</div>
+
+			<div class="col-12 offset-md-2 col-md-4 offset-lg-3 col-lg-3 text-right margin-md-top">
+				<a class="btn btn-yellow d-block text-left font-500 padding-md-left margin-sm-bottom" href=""
+					alt="Download our mobile app on Apple Store and Google Play"
+					title="Download our mobile app on Apple Store and Google Play">
+					<img class="padding-md-right"
+						src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-app.svg"
+						alt="Download our mobile app on Apple Store and Google Play" />
+					Get the app
+				</a>
+
+				<a class="btn btn-light d-block text-left font-500 padding-md-left margin-sm-bottom"
+					href="https://www.facebook.com/cornerstonebillings/" target="_blank"
+					alt="Cornerstone Community Church Facebook Page" title="Cornerstone Community Church Facebook Page">
+					<img class="padding-md-right"
+						src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-facebook.svg" alt="Facebook" />
+					Facebook
+				</a>
+
+				<a class="btn btn-light d-block text-left font-500 padding-md-left margin-sm-bottom"
+					href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg" target="_blank"
+					alt="Cornerstone Community Church YouTube Page" title="Cornerstone Community Church YouTube Page">
+					<img class="padding-md-right"
+						src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-youtube.svg" alt="YouTube" />
+					YouTube
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div id="menu">
 	<div class="container">
 		<div class="row footer-links">
