@@ -6,33 +6,33 @@ Description: Created custom for CCC 2021
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap");
 
-// Utilities
+// Base
 
-@import "mixins";
-@import "animate";
-@import "variables";
-@import "typography";
-@import "bootstrap";
-@import "bootstrap-overrides";
-@import "animate";
-@import "global";
-@import "whitespace";
-@import "footer";
-@import "image";
+@import "base/variables";
+@import "base/mixins";
+
+@import "base/animate";
+@import "base/bootstrap-overrides";
+@import "base/bootstrap";
+@import "base/global";
+@import "base/typography";
+@import "base/whitespace";
 
 // Components
 
-@import "buttons";
-@import "plyr-overrides";
-@import "cards.scss";
-@import "table.scss";
+@import "components/buttons";
+@import "components/cards";
+@import "components/footer";
+@import "components/image";
+@import "components/nav";
+@import "components/plyr-overrides";
+@import "components/table";
 
 // Pages
 
-@import "nav";
-@import "home-page";
-@import "page";
-@import "leadership";
-@import "growth-groups";
-@import "sermons";
-@import "contact";
+@import "pages/contact";
+@import "pages/growth-groups";
+@import "pages/home-page";
+@import "pages/leadership";
+@import "pages/page";
+@import "pages/sermons";
