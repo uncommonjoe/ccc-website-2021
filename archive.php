@@ -50,4 +50,6 @@ get_header();
 </div><!-- #primary -->
 
 <?php
-get_footer();
+    include('menu.php');
+    get_footer();
+?>

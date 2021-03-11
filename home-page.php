@@ -222,4 +222,7 @@
 </div>
 </div>
 
-<?php get_footer(); ?>
+<?php
+    include('menu.php');
+    get_footer();
+?>
