@@ -6,16 +6,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h3 class="bold">Connect with us</h3>
+				<h3 class="bold"><?php the_field('footer_connect_with_us', 'option'); ?></h3>
 				<p class="font-size-sm margin-xs-bottom">
-					4525 Grand Ave.<br />Billings, MT 59106</p>
+					<?php the_field('global_address', 'option'); ?>
 
 				<p class="font-size-sm margin-xs-bottom">
-					<a class="btn-link light" href="tel:+14066564407">(406) 656-4407</a>
+					<a class="btn-link light"
+						href="tel:<?php the_field('global_phone_number_unformatted', 'option'); ?>">
+						<?php the_field('global_phone_number_formatted', 'option'); ?>
+					</a>
 				</p>
 
 				<p class="font-size-sm margin-xs-bottom">
-					<a class="btn-link light" href="about/contact/">office@cornerstonebillings.org</a>
+					<a class="btn-link light" href="about/contact/">
+						<?php the_field('global_email', 'option'); ?>
+					</a>
 				</p>
 				</p>
 			</div>

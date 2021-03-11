@@ -1,0 +1,31 @@
+#page-live {
+	#video-area {
+		background-color: $color-darkest-gray;
+		color: $ccc-white;
+		height: calc(100vh - 113px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.title {
+			font-size: calc(1em + 4vw);
+		}
+		.subtitle {
+			font-size: calc(1em + 1vw);
+		}
+	}
+
+	#sidebar {
+		padding: 40px 60px 40px 45px;
+	}
+
+	@media screen and (max-width: $device-md) {
+		#video-area {
+			height: calc(80vh - 113px);
+		}
+
+		#sidebar {
+			padding: 40px 50px 40px 50px;
+		}
+	}
+}

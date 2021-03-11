@@ -19,6 +19,22 @@ add_filter('wpcf7_load_js', '__return_false');
 // Register Custom Navigation Walker
 require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 
+// Advanced Custom Field create global settings page
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+        'page_title' 	=> 'Theme General Settings',
+        'menu_title'	=> 'Theme Settings',
+        'menu_slug' 	=> 'theme-general-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Theme Footer Settings',
+        'menu_title'	=> 'Footer',
+        'parent_slug'	=> 'theme-general-settings',
+    ));
+}
 
 // Register latest sermon
 $latest_sermon = new WP_Query(array(
