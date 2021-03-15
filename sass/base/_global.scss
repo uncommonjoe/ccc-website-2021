@@ -66,6 +66,11 @@ a {
 	}
 }
 
+hr {
+	border-width: 0 i !important;
+	@include line(5px, $color-darkest-gray, $radius-xs);
+}
+
 @media (max-width: $device-sm) {
 	.window-mobile {
 		float: none;

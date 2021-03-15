@@ -1,0 +1,5 @@
+.dropdown-menu {
+	border-radius: $radius-sm;
+	@include dropshadow($glow-lg);
+	@extend .margin-sm-top;
+}

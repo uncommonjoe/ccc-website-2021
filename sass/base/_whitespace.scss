@@ -1,68 +1,77 @@
 // Sizes defined in _variables.scss
 
 $whitespace-sizes: (
-    "xs": $spacing-xs, // 5px
-    "sm": $spacing-sm, // 10px
-    "md": $spacing-md, // 15px
-    "lg": $spacing-lg, // 50px
-    "xl": $spacing-xl, // 75px
-    "xxl": $spacing-xxl // 100px
+	// 5px
+	"xs": $spacing-xs,
+	// 10px
+	"sm": $spacing-sm,
+	// 15px
+	"md": $spacing-md,
+	// 25px
+	"lg": $spacing-lg,
+	// 50px
+	"xl": $spacing-xl,
+	// 100px
+	"xxl": $spacing-xxl
 );
 
 $grid-breakpoints: (
-    xs: $device-xs, // 576px
-    sm: $device-sm, // 768px
-    md: $device-md, // 992px
-    lg: $device-lg // 1200px
+	xs: $device-xs,
+	// 576px
+	sm: $device-sm,
+	// 768px
+	md: $device-md,
+	// 992px
+	lg: $device-lg // 1200px,
 ) !default;
 
 @each $whitespace-breakpoint, $whitespace-size in $whitespace-sizes {
-    .padding-#{$whitespace-breakpoint} {
-        padding: $whitespace-size !important;
-    }
+	.padding-#{$whitespace-breakpoint} {
+		padding: $whitespace-size !important;
+	}
 
-    .padding-#{$whitespace-breakpoint}-top {
-        padding-top: $whitespace-size !important;
-    }
+	.padding-#{$whitespace-breakpoint}-top {
+		padding-top: $whitespace-size !important;
+	}
 
-    .padding-#{$whitespace-breakpoint}-right {
-        padding-right: $whitespace-size !important;
-    }
+	.padding-#{$whitespace-breakpoint}-right {
+		padding-right: $whitespace-size !important;
+	}
 
-    .padding-#{$whitespace-breakpoint}-bottom {
-        padding-bottom: $whitespace-size !important;
-    }
+	.padding-#{$whitespace-breakpoint}-bottom {
+		padding-bottom: $whitespace-size !important;
+	}
 
-    .padding-#{$whitespace-breakpoint}-left {
-        padding-left: $whitespace-size !important;
-    }
+	.padding-#{$whitespace-breakpoint}-left {
+		padding-left: $whitespace-size !important;
+	}
 
-    .margin-#{$whitespace-breakpoint} {
-        margin: $whitespace-size !important;
-    }
+	.margin-#{$whitespace-breakpoint} {
+		margin: $whitespace-size !important;
+	}
 
-    .margin-#{$whitespace-breakpoint}-top {
-        margin-top: $whitespace-size !important;
-    }
+	.margin-#{$whitespace-breakpoint}-top {
+		margin-top: $whitespace-size !important;
+	}
 
-    .margin-#{$whitespace-breakpoint}-right {
-        margin-right: $whitespace-size !important;
-    }
+	.margin-#{$whitespace-breakpoint}-right {
+		margin-right: $whitespace-size !important;
+	}
 
-    .margin-#{$whitespace-breakpoint}-bottom {
-        margin-bottom: $whitespace-size !important;
-    }
+	.margin-#{$whitespace-breakpoint}-bottom {
+		margin-bottom: $whitespace-size !important;
+	}
 
-    .margin-#{$whitespace-breakpoint}-left {
-        margin-left: $whitespace-size !important;
-    }
+	.margin-#{$whitespace-breakpoint}-left {
+		margin-left: $whitespace-size !important;
+	}
 }
 
 @each $breakpoint, $breakpoint-width in $grid-breakpoints {
 	@media screen and (max-width: $breakpoint-width) {
-
 		.r-#{$breakpoint} {
-			@each $whitespace-breakpoint, $whitespace-size in $whitespace-sizes {
+			@each $whitespace-breakpoint, $whitespace-size in $whitespace-sizes
+			{
 				&.r-margin-#{$whitespace-breakpoint}-top {
 					margin-top: $whitespace-size !important;
 				}
@@ -143,45 +152,44 @@ $grid-breakpoints: (
 	}
 }
 
-
 /**** NONE ****/
 
 .no-padding {
-    padding: 0 !important;
+	padding: 0 !important;
 }
 
 .no-margin {
-    margin: 0 !important;
+	margin: 0 !important;
 }
 
 .no-margin-top {
-    margin-top: 0 !important;
+	margin-top: 0 !important;
 }
 
 .no-margin-bottom {
-    margin-bottom: 0 !important;
+	margin-bottom: 0 !important;
 }
 
 .no-margin-left {
-    margin-left: 0 !important;
+	margin-left: 0 !important;
 }
 
 .no-margin-right {
-    margin-right: 0 !important;
+	margin-right: 0 !important;
 }
 
 .no-padding-top {
-    padding-top: 0 !important;
+	padding-top: 0 !important;
 }
 
 .no-padding-bottom {
-    padding-bottom: 0 !important;
+	padding-bottom: 0 !important;
 }
 
 .no-padding-left {
-    padding-left: 0 !important;
+	padding-left: 0 !important;
 }
 
 .no-padding-right {
-    padding-right: 0 !important;
+	padding-right: 0 !important;
 }

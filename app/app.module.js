@@ -1,1 +1,1 @@
-angular.module('ccc', []);
+angular.module("ccc", ["fitVids"]);

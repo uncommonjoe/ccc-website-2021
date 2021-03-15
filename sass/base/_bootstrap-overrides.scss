@@ -1,6 +1,12 @@
+a:not(.btn) {
+	text-decoration: underline;
+}
 
-    a:not(.btn) {
-        text-decoration: underline;
-    }
+.bg-dark {
+	background-color: $color-darkest-gray;
+	color: $ccc-white;
+}
 
-
+.height-unset {
+	height: unset !important;
+}

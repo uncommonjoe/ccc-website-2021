@@ -2,32 +2,56 @@
     /* Template Name: Page - Live */
 
     get_header();
+    include("template-parts/components/sunday-date.php");
 ?>
 
 <div class="page-content" id="page-live">
 	<div class="row">
-		<div class="col-12 col-lg-7 col-xl-8" id="video-area">
-			<div class="text-center">
-				<div class="title bold">Currently offline</div>
-				<div class="subtitle bold font-color-gold">We'll see you on Sunday!</div>
+		<div class="col-12 col-xl-8" id="video-area">
+			<div class="text-wrapper" ng-if="!isServiceLive">
+				<div class="title bold"><?php the_field('offline_title'); ?></div>
+				<div class="subtitle bold font-color-gold"><?php the_field('offline_subtitle'); ?></div>
+			</div>
+
+			<div class="video-wrapper ng-cloak" ng-if="isServiceLive" responsive-video>
+				<iframe width="560" height="315" src="<?php the_field('live_video_url'); ?>" frameborder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
 			</div>
 		</div>
 
-		<div class="col-12 col-lg-5 col-xl-4 margin-md-top" id="sidebar">
-			<h3 class="semibold">Services</h3>
+		<div class="col-12 col-xl-4" id="sidebar">
+			<div ng-if="!isServiceLive">
+				<h3 class="semibold">Services</h3>
 
-			<div class="text-group margin-md-top">
-				<div class="text-group-title font-color-gold">Sunday, February 21</div>
-				<div class="text-group-value bold">
-					<?php the_field('global_first_service_time', 'option'); ?>
+				<div class="text-group margin-md-top">
+					<div class="text-group-title font-color-gold ng-cloak">
+						<?php echo $nextSunday;?>
+					</div>
+
+					<div class="text-group-value bold">
+						<?php the_field('global_first_service_time', 'option'); ?>
+						<?php the_field('global_first_service_ampm', 'option'); ?>
+					</div>
+				</div>
+
+				<div class="text-group">
+					<div class="text-group-title font-color-gold ng-cloak">
+						<?php echo $nextSunday;?>
+					</div>
+
+					<div class="text-group-value bold">
+						<?php the_field('global_second_service_time', 'option'); ?>
+						<?php the_field('global_second_service_ampm', 'option'); ?>
+					</div>
 				</div>
 			</div>
 
-			<div class="text-group">
-				<div class="text-group-title font-color-gold">Sunday, February 21</div>
-				<div class="text-group-value bold">
-					<?php the_field('global_second_service_time', 'option'); ?>
-				</div>
+			<div ng-if="isServiceLive">
+				<h3 class="semibold"><?php the_field('order_of_worship_title'); ?></h3>
+				<div class="font-color-gold"><?php the_field('service_date'); ?></div>
+
+				<div><?php the_field('order_of_worship'); ?></div>
 			</div>
 		</div>
 	</div>

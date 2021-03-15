@@ -1,27 +1,77 @@
 #page-live {
+	overflow: hidden;
 	#video-area {
 		background-color: $color-darkest-gray;
 		color: $ccc-white;
 		height: calc(100vh - 113px);
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		position: relative;
 
-		.title {
-			font-size: calc(1em + 4vw);
+		.text-wrapper {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			text-align: center;
+			width: 100%;
+
+			.title {
+				font-size: calc(1em + 4vw);
+			}
+			.subtitle {
+				font-size: calc(1em + 1vw);
+			}
 		}
-		.subtitle {
-			font-size: calc(1em + 1vw);
+
+		.video-wrapper {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+			padding: $spacing-lg;
 		}
 	}
 
 	#sidebar {
-		padding: 40px 60px 40px 45px;
+		padding: 40px 60px 0 45px;
+		overflow-y: auto;
+		height: calc(100vh - 128px);
 	}
+}
 
-	@media screen and (max-width: $device-md) {
+.video-embed {
+	width: 100%;
+	position: relative;
+	padding: 0;
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@media screen and (min-width: 0) and (max-width: $device-sm) {
+	#page-live {
+		.video-wrapper {
+			padding: 0 !important;
+		}
+
+		#sidebar {
+			padding: 25px !important;
+		}
+	}
+}
+
+@media screen and (min-width: $device-md) and (max-width: $device-lg) {
+	.video-wrapper {
+		padding: $spacing-xxl !important;
+	}
+}
+
+@media screen and (max-width: $device-lg) {
+	#page-live {
+		overflow-y: hidden;
 		#video-area {
-			height: calc(80vh - 113px);
+			height: 70vmin;
 		}
 
 		#sidebar {

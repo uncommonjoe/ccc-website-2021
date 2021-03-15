@@ -4,7 +4,27 @@
 	position: relative;
 	border-radius: $radius-lg;
 	padding: 25px;
+	transition: all 0.2s ease;
 	@include dropshadow($glow-lg);
+
+	&.clickable {
+		&:hover {
+			transform: scale(1.01);
+		}
+	}
+	.stretched-link {
+		&::after {
+			border: 4px solid transparent;
+			border-radius: $radius-lg;
+			transition: all 0.2s ease;
+		}
+		&:hover {
+			&::after {
+				@include dropshadow($glow-xl);
+				border-color: $ccc-white;
+			}
+		}
+	}
 
 	.card-img {
 		object-fit: cover;

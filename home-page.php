@@ -111,7 +111,7 @@
                                 global $post;
                     ?>
 
-					<div class="card">
+					<div class="card clickable">
 						<div class="card-img">
 							<img class="wpfc-sermon-single-image-img" alt="<?php the_title(); ?>"
 								src="<?php echo get_sermon_image_url(); ?>" />
@@ -127,9 +127,9 @@
 							<div class="card-text"><?php the_terms($post->ID, 'wpfc_preacher'); ?></div>
 
 							<?php endif; ?>
-
-							<a href="<?php the_permalink(); ?>" class="btn btn-primary stretched-link">Go somewhere</a>
 						</div>
+
+						<a class="stretched-link" href="<?php the_permalink(); ?>"></a>
 					</div>
 
 					<?php

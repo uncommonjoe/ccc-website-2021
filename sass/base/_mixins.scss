@@ -2,3 +2,9 @@
 	box-shadow: 0 0 $size $ccc-dropshadow;
 	border: 0;
 }
+
+@mixin line($height, $color, $radius) {
+	height: $height;
+	background-color: $color;
+	border-radius: $radius;
+}

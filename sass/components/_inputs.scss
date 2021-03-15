@@ -1,0 +1,22 @@
+.form-control {
+	border: 2px solid $color-darkest-gray;
+	border-radius: $radius-xs;
+	@extend .font-color-darkest;
+}
+
+label {
+	@extend .font-size-md;
+	@extend .bold;
+}
+
+select {
+	&.form-control {
+		background-image: url("img/carrot.svg");
+		background-repeat: no-repeat;
+		background-size: 11px 13px;
+		background-position: calc(100% - 10px) 11px, 100% 0;
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	}
+}
