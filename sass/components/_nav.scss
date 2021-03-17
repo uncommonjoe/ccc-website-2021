@@ -5,7 +5,7 @@
 	letter-spacing: 1px;
 }
 
-nav {
+nav.navbar {
 	background-color: $ccc-white;
 	@include dropshadow($glow-lg);
 
@@ -120,8 +120,37 @@ nav {
 	}
 }
 
+// Pagination
+.pagination {
+	justify-content: center;
+
+	.page-numbers {
+		display: inline-block;
+		margin: 0 2px 0 0;
+		text-decoration: none;
+		border-color: transparent !important;
+		@extend .btn;
+		@extend .btn-dark;
+
+		&.next,
+		&.prev {
+			border-color: $color-darkest-gray !important;
+		}
+
+		&.current {
+			background-color: $ccc-primary !important;
+			border-color: $ccc-primary !important;
+			color: white !important;
+		}
+	}
+
+	.screen-reader-text {
+		display: none;
+	}
+}
+
 @media screen and (max-width: $device-md) {
-	nav {
+	nav.navbar {
 		#mobile-toggle {
 			display: flex;
 			flex-flow: row;

@@ -42,7 +42,6 @@ get_header(); ?>
                     ?>
 
 					<div class="card card-horizontal clickable">
-
 						<div class="card-img">
 							<img class="wpfc-sermon-single-image-img" alt="<?php the_title(); ?>"
 								src="<?php echo get_sermon_image_url(); ?>" />
@@ -64,7 +63,7 @@ get_header(); ?>
 							</div>
 
 							<div class="card-text">
-								<?php wpfc_sermon_meta('bible_passage', '<div class="bible_passage">'.__('Bible Text: ', 'sermon-manager'), '</div>'); ?>
+								<?php wpfc_sermon_meta('bible_passage', '<div class="bible_passage">'.__('Passage ', 'sermon-manager'), '</div>'); ?>
 							</div>
 
 						</div>
@@ -112,7 +111,7 @@ get_header(); ?>
 
 		<div class="row margin-md-bottom">
 			<div class="col-12">
-				<h2 class="h1 line margin-lg-bottom">
+				<h2 class="h1 line margin-lg-top margin-lg-bottom">
 					<?php echo $directory == 'sermons' ? 'Past Sermons' : '' ?>
 				</h2>
 			</div>
@@ -135,7 +134,7 @@ get_header(); ?>
 		</div>
 
 
-		<div class="row row-eq-height">
+		<div class="row margin-lg-top">
 			<?php
             if (have_posts()) :
                 while (have_posts()) :
@@ -148,11 +147,11 @@ get_header(); ?>
                 if (SermonManager::getOption('use_prev_next_pagination')) {
                     posts_nav_link();
                 } else {
-                    if (function_exists('wp_pagenavi')) :
-                        wp_pagenavi(); elseif (function_exists('oceanwp_pagination')) :
-                        oceanwp_pagination(); else :
-                        the_posts_pagination();
-                    endif;
+                    the_posts_pagination(array(
+                        'mid_size' => 2,
+                        'prev_text' => __('&lsaquo;	Prev', 'textdomain'),
+                        'next_text' => __('Next &rsaquo;', 'textdomain')
+                    ));
                 }
                 echo '</div>';
                 echo '</div>';
