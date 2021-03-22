@@ -1,5 +1,4 @@
 .wpfc_sermon {
-	margin: $spacing-lg 0;
 	> .wpfc-sermon-inner {
 		border: 1px solid $color-light-gray !important;
 		padding: $spacing-lg !important;
@@ -31,11 +30,11 @@ ul#wpfc_images_grid {
 		border-radius: $radius-lg !important;
 		padding: 25px !important;
 		transition: all 0.2s ease;
-		@include dropshadow($glow-lg);
+		@include dropshadow($glow-lg, $ccc-dropshadow);
 
 		&:hover {
 			transform: scale(1.01);
-			@include dropshadow($glow-xl);
+			@include dropshadow($glow-xl, $ccc-dropshadow);
 		}
 
 		> a {
@@ -87,6 +86,78 @@ ul#wpfc_images_grid {
 	}
 }
 
+.wpfc-sermon-single-main {
+	padding: $spacing-lg;
+}
+
+#page-single-sermon {
+	overflow: hidden;
+	#video-area {
+		.wpfc-sermon-single-media {
+			background-color: $color-darkest;
+			padding: 25px;
+			min-height: 50vh;
+			position: relative;
+			color: $ccc-white;
+
+			.text-wrapper,
+			.wpfc-sermon-single-audio {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-100%);
+				text-align: center;
+				width: 93%;
+
+				.title {
+					font-size: calc(1em + 3vw);
+				}
+				.subtitle {
+					font-size: calc(1em + 1vw);
+				}
+			}
+		}
+	}
+
+	#sidebar {
+		padding: 40px 60px 40px 45px;
+		overflow-y: auto;
+	}
+}
+
+#list-sermons {
+	list-style: none;
+	padding: 0;
+
+	li {
+		@extend .margin-md-bottom;
+
+		a {
+			text-decoration: none;
+			padding: $spacing-md $spacing-xl $spacing-md $spacing-lg;
+			border-radius: $radius-md;
+			@extend .font-color-darkest;
+			@extend .bold;
+			@extend .font-size-lg;
+			@extend .clickable;
+			@extend .card-horizontal;
+			@extend .card;
+			@extend .card-body;
+
+			&:hover {
+				@include dropshadow($glow-xl, $ccc-dropshadow-darker);
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 0) and (max-width: $device-sm) {
+	#page-single-sermon {
+		#sidebar {
+			padding: 25px !important;
+		}
+	}
+}
+
 @media screen and (max-width: $device-md) {
 	ul#wpfc_images_grid {
 		grid-template-columns: repeat(1, 1fr) !important;
@@ -99,8 +170,10 @@ ul#wpfc_images_grid {
 	}
 }
 
-@media screen and (max-width: $mobile) {
-	.wpfc_sermon {
-		margin: $spacing-md 0;
+@media screen and (max-width: $device-lg) {
+	#page-single-sermon {
+		#sidebar {
+			padding: 40px 50px 40px 50px;
+		}
 	}
 }

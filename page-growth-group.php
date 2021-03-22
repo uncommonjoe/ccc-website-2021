@@ -252,6 +252,6 @@ get_header();
 	</div>
 
 	<?php
-      include('menu.php');
+          include('menu.php');
         get_footer();
     ?>

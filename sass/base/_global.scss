@@ -49,6 +49,10 @@ a {
 	}
 }
 
+a:not(.btn):not(.no-underline) {
+	text-decoration: underline;
+}
+
 .window-mobile {
 	float: left;
 }

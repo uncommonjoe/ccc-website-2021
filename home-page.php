@@ -84,34 +84,31 @@
     ?>
 
 	<div class="latest-sermon">
-		<div class="container">
-			<div class="row margin-lg-bottom">
-				<div class="col-12">
-					<h1 class="text-uppercase">Latest Sermon</h1>
-				</div>
-			</div>
+		<div class="container  margin-xl-bottom">
 
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-7">
-					<?php
-                        $latest_sermon = new WP_Query(array(
-                            'orderby' => get_field('recent_sermon_order_by'),
-                            'order' => get_field('recent_sermon_order'),
-                            'posts_per_page' => 1,
-                            'post_type' => 'wpfc_sermon',
-                            'post_status' => get_field('recent_sermon_post_status'),
-                            'no_found_rows' => true,
-                            'update_post_term_cache' => false,
-                            'update_post_meta_cache' => false
-                        ));
-                        
-                        if ($latest_sermon->have_posts()) :
-                            while ($latest_sermon->have_posts()) :
-                                $latest_sermon->the_post();
-                                global $post;
-                    ?>
+					<h2 class="bold margin-lg-bottom">Latest Sermon</h2>
 
-					<div class="card clickable">
+					<?php
+                            $latest_sermon = new WP_Query(array(
+                                'orderby' => get_field('recent_sermon_order_by'),
+                                'order' => get_field('recent_sermon_order'),
+                                'posts_per_page' => 1,
+                                'post_type' => 'wpfc_sermon',
+                                'post_status' => get_field('recent_sermon_post_status'),
+                                'no_found_rows' => true,
+                                'update_post_term_cache' => false,
+                                'update_post_meta_cache' => false
+                            ));
+                            
+                            if ($latest_sermon->have_posts()) :
+                                while ($latest_sermon->have_posts()) :
+                                    $latest_sermon->the_post();
+                                    global $post;
+                        ?>
+
+					<div class="card card-horizontal clickable" style="height: auto;">
 						<div class="card-img">
 							<img class="wpfc-sermon-single-image-img" alt="<?php the_title(); ?>"
 								src="<?php echo get_sermon_image_url(); ?>" />
@@ -120,13 +117,19 @@
 						<div class="card-body">
 							<div class="card-title"><?php echo esc_attr(get_the_title()); ?></div>
 
-							<div class="card-subtitle"><?php sm_the_date(get_option('date_format')); ?></div>
+							<div class="card-subtitle">
+								<?php if (has_term('', 'wpfc_preacher', $post->ID)) : ?>
 
-							<?php if (has_term('', 'wpfc_preacher', $post->ID)) : ?>
+								<span><?php the_terms($post->ID, 'wpfc_preacher'); ?></span>
+								<span> | </span>
 
-							<div class="card-text"><?php the_terms($post->ID, 'wpfc_preacher'); ?></div>
+								<?php
+                                    endif;
+                                    sm_the_date(get_option('date_format'));
+                                ?>
+							</div>
 
-							<?php endif; ?>
+
 						</div>
 
 						<a class="stretched-link" href="<?php the_permalink(); ?>"></a>
@@ -140,7 +143,16 @@
 				</div>
 
 				<div class="col-12 col-md-6 col-lg-5">
-					<?php echo do_shortcode('[latest_series]'); ?>
+					<h2 class="bold margin-lg-bottom">Latest Series</h2>
+
+					<?php
+                        $filter = get_field('sermon_filter_by');
+                        $order = get_field('sermon_order');
+                        $orderBy = get_field('sermon_order_by');
+                        $sermon_list = "[list_sermons tax='$filter' order='$order' orderBy='$orderBy']";
+
+                        echo do_shortcode($sermon_list);
+                    ?>
 				</div>
 			</div>
 		</div>

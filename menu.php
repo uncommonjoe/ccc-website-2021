@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-6">
-				<h3 class="bold"><?php the_field('footer_connect_with_us', 'option'); ?></h3>
+				<h3 class="font-color-gold bold"><?php the_field('footer_connect_with_us', 'option'); ?></h3>
 				<p class="font-size-sm margin-xs-bottom">
 					<?php the_field('global_address', 'option'); ?>
 

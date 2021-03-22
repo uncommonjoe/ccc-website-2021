@@ -144,6 +144,20 @@ h6 {
 	color: $ccc-gold;
 }
 
+a .font-color-gold,
+a .font-color-accent,
+.font-color-gold a,
+.font-color-accent a {
+	color: $ccc-gold;
+	&:hover {
+		color: $ccc-gold-darker;
+	}
+	&:active,
+	&:focus {
+		color: $ccc-gold-lighter;
+	}
+}
+
 .font-color-blue,
 .font-color-primary {
 	color: $ccc-primary;
@@ -152,27 +166,27 @@ h6 {
 /*** FONT SIZE ***/
 
 .font-size-xs {
-	font-size: $font-xs;
+	font-size: $font-xs; // 12px
 }
 
 .font-size-sm {
-	font-size: $font-sm;
+	font-size: $font-sm; // 16px
 }
 
 .font-size-md {
-	font-size: $font-md;
+	font-size: $font-md; // 18px default
 }
 
 .font-size-lg {
-	font-size: $font-lg;
+	font-size: $font-lg; // 22px
 }
 
 .font-size-xl {
-	font-size: $font-xl;
+	font-size: $font-xl; // 34px
 }
 
 .font-size-xxl {
-	font-size: $font-xxl;
+	font-size: $font-xxl; // 40px
 }
 
 @media (max-width: $device-sm) {

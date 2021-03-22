@@ -5,11 +5,16 @@
 	border-radius: $radius-lg;
 	padding: 25px;
 	transition: all 0.2s ease;
-	@include dropshadow($glow-lg);
+	@include dropshadow($glow-lg, $ccc-dropshadow);
 
 	&.clickable {
 		&:hover {
 			transform: scale(1.01);
+		}
+
+		a {
+			text-decoration: none !important;
+			color: $color-darker-gray;
 		}
 	}
 	.stretched-link {
@@ -20,7 +25,7 @@
 		}
 		&:hover {
 			&::after {
-				@include dropshadow($glow-xl);
+				@include dropshadow($glow-xl, $ccc-dropshadow);
 				border-color: $ccc-white;
 			}
 		}
@@ -29,6 +34,7 @@
 	.card-img {
 		object-fit: cover;
 		overflow: hidden;
+		max-height: 450px;
 
 		img {
 			width: 100%;
@@ -60,6 +66,47 @@
 			color: $color-darkest;
 		}
 	}
+
+	&.card-sm {
+		padding: $spacing-md;
+
+		.card-title,
+		.card-body {
+			font-size: $font-sm;
+			padding-right: $spacing-lg;
+		}
+
+		.card-subtitle {
+			font-size: $font-xs;
+		}
+
+		.card-img {
+			min-width: 75px !important;
+			height: 75px !important;
+			width: 75px !important;
+			img {
+				min-height: unset !important;
+			}
+		}
+
+		&.card-horizontal {
+			&.clickable {
+				&::before {
+					background-size: 70%;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $device-md) {
+	.card {
+		&.clickable {
+			&::before {
+				display: none;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: $device-md) {
@@ -69,9 +116,24 @@
 		}
 
 		&.card-horizontal {
-			display: flex;
-			flex-flow: row;
-			align-items: center;
+			&.clickable {
+				display: flex;
+				flex-flow: row;
+				align-items: center;
+
+				&::before {
+					content: "";
+					background-image: url("img/icons/icon-arrow-right.svg");
+					background-position: center right;
+					background-size: 100%;
+					background-repeat: no-repeat;
+					position: absolute;
+					right: 30px;
+					height: 20px;
+					width: 12px;
+					transition: all 0.4s ease;
+				}
+			}
 
 			.card-img {
 				min-width: 200px;
@@ -88,6 +150,16 @@
 					min-height: 200px;
 					object-fit: cover;
 					border-radius: $radius-md;
+				}
+			}
+		}
+
+		&:hover {
+			&.card-horizontal {
+				&.clickable {
+					&::before {
+						right: 20px;
+					}
 				}
 			}
 		}

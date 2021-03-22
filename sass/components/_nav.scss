@@ -7,7 +7,7 @@
 
 nav.navbar {
 	background-color: $ccc-white;
-	@include dropshadow($glow-lg);
+	@include dropshadow($glow-lg, $ccc-dropshadow);
 
 	a {
 		text-decoration: none !important;
@@ -41,7 +41,7 @@ nav.navbar {
 	}
 
 	.dropdown-menu {
-		@include dropshadow($glow-lg);
+		@include dropshadow($glow-lg, $ccc-dropshadow);
 		@extend .padding-sm;
 		border-radius: $radius-sm;
 		a {

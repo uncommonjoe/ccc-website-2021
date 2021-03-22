@@ -49,18 +49,21 @@ get_header(); ?>
 
 						<div class="card-body">
 							<div class="card-title"><?php the_title(); ?></div>
+
+							<?php
+                                if (has_term('', 'wpfc_preacher', $post->ID)) :
+                            ?>
 							<div class="card-subtitle">
-								<?php
-                                    if (has_term('', 'wpfc_preacher', $post->ID)) :
-                                ?>
+
 								<span><?php the_terms($post->ID, 'wpfc_preacher'); ?></span>
 								<span> | </span>
 								<span><?php wpfc_sermon_date(get_option('date_format')); ?></span>
-
-								<?php
-                                    endif;
-                                ?>
 							</div>
+
+							<?php
+                                endif;
+                            ?>
+
 
 							<div class="card-text">
 								<?php wpfc_sermon_meta('bible_passage', '<div class="bible_passage">'.__('Passage ', 'sermon-manager'), '</div>'); ?>
@@ -79,13 +82,10 @@ get_header(); ?>
 			</div>
 		</div>
 
-		<?php
-            endif;
-        ?>
-
 		<div class="row margin-xl-top margin-lg-bottom">
 			<div class="col-4 offset-md-2 col-md-3">
-				<a href="https://podcasts.apple.com/us/podcast/sermons-cornerstone-community-church/id1483110050"
+				<a class="no-underline"
+					href="https://podcasts.apple.com/us/podcast/sermons-cornerstone-community-church/id1483110050"
 					target="_blank">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/apple-podcast-badge.png" height="40"
 						width="165" alt="Listen on Apple Podcast" style="width: 165px;" class="podcast" />
@@ -93,21 +93,21 @@ get_header(); ?>
 			</div>
 
 			<div class="col-4 col-md-3">
-				<a href="https://open.spotify.com/show/6IvTBM4gFulFycIXmjYaRJ" target="_blank">
+				<a class="no-underline" href="https://open.spotify.com/show/6IvTBM4gFulFycIXmjYaRJ" target="_blank">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/spotify-podcast-badge.png" height="40"
 						width="165" alt="Listen on Spotify" style="width: 165px;" class="podcast" />
 				</a>
 			</div>
 
 			<div class="col-4 col-md-3">
-				<a href="https://play.google.com/music/m/I6ngl4epuifmg4ujpx665qijjba?t=Sermons__Cornerstone_Community_Church"
+				<a class="no-underline"
+					href="https://play.google.com/music/m/I6ngl4epuifmg4ujpx665qijjba?t=Sermons__Cornerstone_Community_Church"
 					target="_blank">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/google-play-badge.png" height="40"
 						width="134" alt="Listen on Google Play" style="width: 134px;" class="podcast" />
 				</a>
 			</div>
 		</div>
-
 
 		<div class="row margin-md-bottom">
 			<div class="col-12">
@@ -116,6 +116,11 @@ get_header(); ?>
 				</h2>
 			</div>
 		</div>
+
+		<?php
+            endif;
+        ?>
+
 
 		<div class="row">
 			<div class="col-12">
@@ -163,7 +168,6 @@ get_header(); ?>
             ?>
 		</div>
 	</div>
-</div>
 </div>
 
 <?php
