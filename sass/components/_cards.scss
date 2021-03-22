@@ -105,6 +105,15 @@
 			&::before {
 				display: none;
 			}
+
+			&.card-horizontal {
+				&.card-sm {
+					flex-flow: row;
+					.card-img {
+						margin-right: 20px;
+					}
+				}
+			}
 		}
 	}
 }

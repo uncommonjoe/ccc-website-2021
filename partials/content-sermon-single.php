@@ -126,7 +126,7 @@ $args = $GLOBALS['wpfc_partial_args'];
                     ?>
 
 					<div class="margin-lg-top">
-						<span>
+						<span class="d-block d-sm-inline">
 							<a class="no-underline"
 								href="https://podcasts.apple.com/us/podcast/sermons-cornerstone-community-church/id1483110050"
 								target="_blank">
@@ -136,7 +136,8 @@ $args = $GLOBALS['wpfc_partial_args'];
 							</a>
 						</span>
 
-						<span class="margin-md-left margin-md-right">
+						<span
+							class="d-block d-sm-inline margin-md-left margin-md-right r-no-margin-left r-no-margin-right r-padding-md-top r-padding-md-bottom r-xs">
 							<a class="no-underline" href="https://open.spotify.com/show/6IvTBM4gFulFycIXmjYaRJ"
 								target="_blank">
 								<img src="<?php echo get_template_directory_uri(); ?>/img/spotify-podcast-badge.png"
@@ -145,7 +146,7 @@ $args = $GLOBALS['wpfc_partial_args'];
 							</a>
 						</span>
 
-						<span>
+						<span class="d-block d-sm-inline">
 							<a class="no-underline"
 								href="https://play.google.com/music/m/I6ngl4epuifmg4ujpx665qijjba?t=Sermons__Cornerstone_Community_Church"
 								target="_blank">

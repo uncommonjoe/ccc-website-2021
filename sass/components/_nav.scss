@@ -33,7 +33,6 @@ nav.navbar {
 
 			&:hover {
 				&::after {
-					//margin-left: 10px;
 					animation: carrot-bounce 1s 1;
 				}
 			}
@@ -48,15 +47,15 @@ nav.navbar {
 			@include nav-link();
 			border-radius: $radius-sm;
 			transition: all 0.2s ease-in-out;
-
+			border: 2px solid transparent;
 			&:hover {
 				background-color: $color-lightest-gray;
 			}
 
 			&.active,
 			&:active {
-				color: $ccc-white !important;
-				background-color: $ccc-primary !important;
+				background-color: $ccc-white !important;
+				border: 2px solid $color-lightest-gray;
 			}
 		}
 	}

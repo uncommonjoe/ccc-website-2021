@@ -12,7 +12,7 @@
 	</div>
 </div>
 
-<div class="page-content" id="front-page">
+<div class="page-content r-no-padding-left r-no-padding-right r-xs" id="front-page">
 
 	<?php
        if (have_posts()) :
@@ -142,7 +142,7 @@
                     ?>
 				</div>
 
-				<div class="col-12 col-md-6 col-lg-5">
+				<div class="col-12 col-md-6 col-lg-5 r-margin-xl-top r-xs">
 					<h2 class="bold margin-lg-bottom">Latest Series</h2>
 
 					<?php

@@ -155,6 +155,12 @@ ul#wpfc_images_grid {
 		#sidebar {
 			padding: 25px !important;
 		}
+
+		#video-area {
+			.wpfc-sermon-single-media {
+				min-height: 30vh;
+			}
+		}
 	}
 }
 
