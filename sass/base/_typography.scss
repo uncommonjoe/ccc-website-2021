@@ -75,6 +75,16 @@ h6 {
 	border-bottom: 1px solid $color-light-gray;
 	margin-bottom: 10px;
 	padding-bottom: 10px;
+
+	.text-group-value {
+		a {
+			color: $color-darkest-gray;
+		}
+		p {
+			@extend .no-margin-top;
+			@extend .no-margin-bottom;
+		}
+	}
 }
 
 .font-100 {

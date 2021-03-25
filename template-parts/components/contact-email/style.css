@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap");
+
+body {
+	color: #1a1b1d;
+	background-color: #e4e5e8;
+	font-family: Montserrat, -apple-system, "Segoe UI", "Open Sans",
+		"Helvetica Neue", sans-serif;
+}
+
+table {
+	table-layout: fixed;
+	width: 100%;
+	max-width: 650px;
+	background-color: white;
+	border-radius: 30px;
+	font-size: 1.5rem;
+	letter-spacing: 1px;
+}
+
+table#parent {
+	margin: 90px auto;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+th {
+	text-align: left;
+}
+
+td,
+th {
+	width: 100%;
+}
+
+table#footer {
+	font-size: 0.75rem;
+	color: #90958b;
+	letter-spacing: 0.05rem;
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.spacer-90 {
+	height: 90px;
+}
+
+.spacer-50 {
+	height: 50px;
+}
+
+.spacer-25 {
+	height: 25px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.font-sm {
+	font-size: 1rem !important;
+}
+
+h2 {
+	margin: 0;
+}

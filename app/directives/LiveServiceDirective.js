@@ -16,8 +16,8 @@
 				var today = d.getDay();
 				var hour = new Date().getHours();
 
-				console.log("today " + today);
-				console.log("this hour " + hour + "\n");
+				// console.log("today " + today);
+				// console.log("this hour " + hour + "\n");
 
 				if (today == 7) {
 					$rootScope.today = "Checking for live";
