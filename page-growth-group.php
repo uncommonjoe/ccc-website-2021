@@ -6,16 +6,22 @@ get_header();
 
 <div class="page-header">
 	<div class="section-content">
-		<h2>
+		<h1>
 			<?php the_title(); ?>
-		</h2>
+		</h1>
 	</div>
 </div>
 
-<div class="page-content">
+<div class="page-content margin-xxl-top margin-xxl-bottom">
 	<div class="container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 offset-0 offset-lg-2 col-lg-8">
+				<h2 class="h1 line margin-lg-bottom"><?php the_field('section_title'); ?></h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12 offset-0 offset-lg-2 col-lg-8">
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<?php the_content(); ?>
 
@@ -25,233 +31,176 @@ get_header();
 			</div>
 		</div>
 
-		<div class="row row-eq-height margin-lg-top">
+		<?php
+            if (have_rows('growth_groups')):
+                while (have_rows('growth_groups')) : the_row();
+               
+        ?>
 
-			<div class="col-12 margin-lg-bottom margin-xl-top">
-				<h1>Sunday Growth Group</h1>
-			</div>
-
-			<div class="col-12 col-md-6">
-				<div class="gg-container">
-					<div class="row">
-						<div class="col-12">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Leader</h6>
-							<h2 class="text-uppercase font-700 no-margin-bottom">David Kelly</h2>
+		<div class="row margin-lg-top">
+			<div class="col-12 offset-0 offset-lg-2 col-lg-8">
+				<div class="row">
+					<div class="col-5 col-md-4 col-xl-3 r-margin-md-bottom r-xs r-sm">
+						<div class="card card-body height-unset bg-dark text-center">
+							<div class="h1 bold no-margin">
+								<?php the_sub_field('day_of_the_week'); ?>
+							</div>
+							<div class=""><?php the_sub_field('type'); ?></div>
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">When</h6>
-							<h5 class="sans-serif font-color-darker font-sm">Sundays, 3:30&nbsp;PM - 5:00&nbsp;PM</h5>
+
+					<div class="col-12 col-md-8 col-xl-9">
+						<?php
+                            if (have_rows('ministry')):
+                                while (have_rows('ministry')) : the_row();
+                        ?>
+
+						<div class="card card-body height-unset margin-lg-bottom">
+							<h5 class="bold margin-lg-bottom">
+								<?php
+                                    $prefix = get_field('leader_prefix');
+                                    
+                                    if ($prefix) {
+                                        echo $prefix . ' ';
+                                    }
+                                    
+                                    the_sub_field('leader_name'); ?>
+							</h5>
+
+							<?php if (get_sub_field('when')) : ?>
+							<div class="text-group">
+								<div class="text-group-title font-color-gold">
+									<?php the_field('when_title'); ?>
+								</div>
+
+								<div class="text-group-value">
+									<?php the_sub_field('when'); ?>
+								</div>
+							</div>
+							<?php endif; ?>
+
+							<?php if (get_sub_field('where')) : ?>
+							<div class="text-group">
+								<div class="text-group-title font-color-gold">
+									<?php the_field('where_title'); ?>
+								</div>
+
+								<div class="text-group-value">
+									<?php the_sub_field('where'); ?>
+								</div>
+							</div>
+							<?php endif; ?>
+
+							<?php if (get_sub_field('notes')) : ?>
+							<div class="text-group">
+								<div class="text-group-title font-color-gold">
+									<?php the_field('notes_title'); ?>
+								</div>
+
+								<div class="text-group-value">
+									<?php the_sub_field('notes'); ?>
+								</div>
+							</div>
+							<?php endif; ?>
+
 						</div>
 
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Location</h6>
-							<h5 class="sans-serif font-color-darker font-sm">5708 Danford Road</h5>
+
+						<!-- Sub-Ministry -->
+						<?php
+                            endwhile;
+
+                            $subMinistryTitle = get_sub_field('sub_ministry_title');
+
+                            if ($subMinistryTitle):
+                        ?>
+
+
+						<h5 class="font-color-gold bold margin-lg-top">
+							<?php echo $subMinistryTitle ?>
+						</h5>
+
+						<?php
+                            if (have_rows('sub_ministry')):
+                                while (have_rows('sub_ministry')) : the_row();
+                        ?>
+
+						<div class="card card-body height-unset margin-md-bottom margin-md-top">
+							<h5 class="bold margin-lg-bottom">
+								<?php
+                                    $prefix = get_field('leader_prefix');
+                                    
+                                    if ($prefix) {
+                                        echo $prefix . ' ';
+                                    }
+                                    
+                                    the_sub_field('sub_leader_name'); ?>
+							</h5>
+
+							<?php if (get_sub_field('sub_when')) : ?>
+							<div class="text-group">
+								<div class="text-group-title font-color-gold">
+									<?php the_field('when_title'); ?>
+								</div>
+
+								<div class="text-group-value">
+									<?php the_sub_field('sub_when'); ?>
+								</div>
+							</div>
+							<?php endif; ?>
+
+							<?php if (get_sub_field('sub_where')) : ?>
+							<div class="text-group">
+								<div class="text-group-title font-color-gold">
+									<?php the_field('where_title'); ?>
+								</div>
+
+								<div class="text-group-value">
+									<?php the_sub_field('sub_where'); ?>
+								</div>
+							</div>
+							<?php endif; ?>
+
+							<?php if (get_sub_field('sub_notes')) : ?>
+							<div class="text-group">
+								<div class="text-group-title font-color-gold">
+									<?php the_field('notes_title'); ?>
+								</div>
+
+								<div class="text-group-value">
+									<?php the_sub_field('sub_notes'); ?>
+								</div>
+							</div>
+							<?php endif; ?>
+
 						</div>
 
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Notes</h6>
-							<h5 class="sans-serif font-color-darker font-sm">Kid friendly</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<a href="https://cornerstonebillings.org/contact/"
-								class="btn btn-primary btn-block margin-md-top">Contact</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-12 margin-lg-bottom margin-xl-top">
-				<h1>Monday Growth Group</h1>
-			</div>
-
-			<div class="col-12 col-md-6">
-				<div class="gg-container">
-					<div class="row">
-						<div class="col-12">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Leader</h6>
-							<h2 class="text-uppercase font-700 no-margin-bottom">Pastor Rick</h2>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">When</h6>
-							<h5 class="sans-serif font-color-darker font-sm">Mondays 6:30&nbsp;PM - 8:00&nbsp;PM</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Place</h6>
-							<h5 class="sans-serif font-color-darker font-sm">3604 Corbin Drive</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Notes</h6>
-							<h5 class="sans-serif font-color-darker font-sm">Kid friendly</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<a href="https://cornerstonebillings.org/contact/"
-								class="btn btn-primary btn-block margin-md-top">Contact</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-12 margin-lg-bottom margin-xl-top">
-				<h1>Tuesday Growth Groups</h1>
-			</div>
-
-			<div class="col-12 col-md-6">
-				<div class="gg-container">
-					<div class="row">
-						<div class="col-12">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Leader</h6>
-							<h2 class="text-uppercase font-700 no-margin-bottom">Andy Metroka</h2>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">When</h6>
-							<h5 class="sans-serif font-color-darker font-sm">Tuesdays, 6:30&nbsp;PM - 8:00&nbsp;PM</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Place</h6>
-							<h5 class="sans-serif font-color-darker font-sm">5507 Billy Casper Drive</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Notes</h6>
-							<h5 class="sans-serif font-color-darker font-sm">Kid Friendly</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<a href="https://cornerstonebillings.org/contact/"
-								class="btn btn-primary btn-block margin-md-top">Contact</a>
-						</div>
-					</div>
-				</div>
-			</div>
+						<?php
+                                endwhile;
+                            endif;
+                        ?>
 
 
-			<div class="col-12 col-md-6">
-				<div class="gg-container">
-					<div class="row">
-						<div class="col-12">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Leader</h6>
-							<h2 class="text-uppercase font-700 no-margin-bottom">Ken Sande</h2>
-						</div>
-					</div>
+						<?php
+                                endif;
+                            endif;
+                        ?>
 
-					<div class="row">
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">When</h6>
-							<h5 class="sans-serif font-color-darker font-sm">Tuesdays, 6:30&nbsp;PM - 8:00 PM</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Place</h6>
-							<h5 class="sans-serif font-color-darker font-sm">4460 Laredo Place</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Notes</h6>
-							<h5 class="sans-serif font-color-darker font-sm">No childcare</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<a href="https://cornerstonebillings.org/contact/"
-								class="btn btn-primary btn-block margin-md-top">Contact</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-12 margin-lg-bottom margin-xl-top">
-				<h1>Wednesday Growth Group</h1>
-			</div>
-
-			<div class="col-12 col-md-6">
-				<div class="gg-container">
-					<div class="row">
-						<div class="col-12">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Leader</h6>
-							<h2 class="text-uppercase font-700 no-margin-bottom">Pastor Jeff</h2>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">When</h6>
-							<h5 class="sans-serif font-color-darker font-sm">Wednesdays, 6:30&nbsp;PM - 8:00 PM</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Place</h6>
-							<h5 class="sans-serif font-color-darker font-sm">7905 Cheetah Avenue</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Notes</h6>
-							<h5 class="sans-serif font-color-darker font-sm">No childcare</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<a href="https://cornerstonebillings.org/contact/"
-								class="btn btn-primary btn-block margin-md-top">Contact</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
-			<div class="col-12 margin-lg-bottom margin-xl-top">
-				<h1>Men's Discipleship</h1>
-			</div>
-
-			<div class="col-12 col-md-6">
-				<div class="gg-container">
-					<div class="row">
-						<div class="col-12">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Leader</h6>
-							<h2 class="text-uppercase font-700 no-margin-bottom">Steve Glancey</h2>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">When</h6>
-							<h5 class="sans-serif font-color-darker font-sm">Tuesdays, 6:30&nbsp;AM - 7:30 AM</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Place</h6>
-							<h5 class="sans-serif font-color-darker font-sm">Cornerstone Community Church</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<h6 class="serif font-spaced font-size-sm text-uppercase font-color-darker">Notes</h6>
-							<h5 class="sans-serif font-color-darker font-sm">Going through the book "Knowing God" by
-								J.I. Packer</h5>
-						</div>
-
-						<div class="col-12 margin-md-top">
-							<a href="https://cornerstonebillings.org/contact/"
-								class="btn btn-primary btn-block margin-md-top">Contact</a>
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<?php
-          include('menu.php');
-        get_footer();
-    ?>
+		<?php
+                endwhile;
+            endif;
+        ?>
+
+	</div>
+</div>
+
+<?php
+    include('menu.php');
+    get_footer();
+?>
