@@ -45,6 +45,7 @@ nav.navbar {
 		border-radius: $radius-sm;
 		a {
 			@include nav-link();
+			@extend .padding-lg-right;
 			border-radius: $radius-sm;
 			transition: all 0.2s ease-in-out;
 			border: 2px solid transparent;
@@ -58,8 +59,53 @@ nav.navbar {
 				border: 2px solid $color-lightest-gray;
 			}
 		}
+
+		.active {
+			a {
+				background-color: $color-lightest-gray;
+				margin-bottom: 2px;
+			}
+		}
+
+		.menu-item-type-custom {
+			a {
+				position: relative;
+				&::after {
+					content: "";
+					position: absolute;
+					right: 10px;
+					top: 11px;
+					height: 11px;
+					width: 14px;
+					background-image: url(img/icons/icon-external-link.svg);
+					background-position: center right;
+					background-size: 100%;
+					background-repeat: no-repeat;
+				}
+			}
+		}
 	}
 
+	#menu-nav-primary {
+		li {
+			position: relative;
+
+			&.dropdown {
+				&.active {
+					&::after {
+						content: "";
+						position: absolute;
+						height: 4px;
+						left: 12px;
+						right: 12px;
+						bottom: 0;
+						background-color: $color-darkest;
+						border-radius: $radius-sm;
+					}
+				}
+			}
+		}
+	}
 	#menu-nav-secondary {
 		li {
 			a {
