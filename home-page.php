@@ -48,10 +48,14 @@
                         )
                     
                     );
+
                     $the_query = new WP_Query($args);
 
-                    while ($the_query -> have_posts()) :
-                         $the_query -> the_post();
+                   
+
+                    if ($the_query -> have_posts()) :
+                        while ($the_query -> have_posts()) :
+                            $the_query -> the_post();
                 ?>
 
 				<div class="col-12 col-lg-4 margin-md-top margin-md-bottom" <?php post_class(); ?>
@@ -70,11 +74,18 @@
 					</div>
 				</div>
 
+
+
 				<?php
                    // Repeat the process and reset once it hits the limit
                     endwhile;
                     wp_reset_postdata();
                 ?>
+				<?php else: ?>
+
+				No results found
+
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
