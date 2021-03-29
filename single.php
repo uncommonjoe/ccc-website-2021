@@ -1,10 +1,7 @@
-<?php get_header(); ?>
-
-<div class="page-header">
-	<div class="section-content">
-		<h1><?php the_title(); ?></h1>
-	</div>
-</div>
+<?php
+    get_header();
+    get_template_part('template-parts/header/page-header');
+?>
 
 
 <div class="page-content">

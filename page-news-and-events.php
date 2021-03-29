@@ -5,7 +5,6 @@
 
     get_header();
     get_template_part('template-parts/header/page-header');
-
 ?>
 
 <div class="page-content">

@@ -59,7 +59,7 @@
 		<div class="row margin-lg-top">
 			<div class="col-12 offset-0 offset-lg-2 col-lg-8">
 				<div class="row">
-					<div class="col-5 col-md-4 col-xl-3 r-margin-md-bottom r-xs r-sm">
+					<div class="col-6 col-md-4 col-xl-3 r-margin-md-bottom r-xs r-sm">
 						<div class="card card-body height-unset bg-dark text-center">
 							<div class="h1 bold no-margin">
 								<?php
@@ -106,6 +106,9 @@
 		<?php
                 endwhile;
             endif;
+
+            $location = get_field('location_title');
+            if ($location):
         ?>
 
 		<div class="row margin-lg-top">
@@ -119,8 +122,8 @@
 				<div class="row">
 					<div class="col-12 col-lg-6">
 						<?php
-                            $location = get_field('location');
-                            if ($location):
+                            $map = get_field('location');
+                            if ($map):
                         ?>
 						<map-directive></map-directive>
 						<?php endif; ?>
@@ -133,6 +136,9 @@
 
 			</div>
 		</div>
+		<?php endif; ?>
+
+
 	</div>
 </div>
 

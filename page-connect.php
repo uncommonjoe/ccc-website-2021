@@ -1,16 +1,10 @@
 <?php
-/* Template Name: Page - Connect */
+    /* Template Name: Page - Connect */
 
-get_header();
+    get_header();
+    get_template_part('template-parts/header/page-header');
 ?>
 
-<div class="page-header 1">
-	<div class="section-content">
-		<h1>
-			<?php the_title(); ?>
-		</h1>
-	</div>
-</div>
 
 <div class="page-content">
 

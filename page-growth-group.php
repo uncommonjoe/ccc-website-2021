@@ -1,16 +1,10 @@
 <?php
-/* Template Name: Page - Growth Group */
+    /* Template Name: Page - Growth Group */
 
-get_header();
+    get_header();
+    get_template_part('template-parts/header/page-header');
 ?>
 
-<div class="page-header">
-	<div class="section-content">
-		<h1>
-			<?php the_title(); ?>
-		</h1>
-	</div>
-</div>
 
 <div class="page-content margin-xxl-top margin-xxl-bottom">
 	<div class="container">

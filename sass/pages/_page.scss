@@ -53,3 +53,9 @@
 		margin-top: 0px;
 	}
 }
+
+@media screen and (max-width: $device-sm) {
+	.page-header {
+		height: 250px;
+	}
+}

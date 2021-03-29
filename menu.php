@@ -62,7 +62,7 @@
 				<h3 class="blue-underline bold">About</h3>
 				<?php
                     wp_nav_menu(array(
-                        'menu' => 'menu-about',
+                        'menu' => 'about',
                         'depth' => 1,
                         'container' => false,
                     ));
@@ -73,7 +73,7 @@
 				<h3 class="blue-underline bold">Connect</h3>
 				<?php
                     wp_nav_menu(array(
-                        'menu' => 'menu-connect',
+                        'menu' => 'connect',
                         'depth' => 1,
                         'container' => false,
                     ));
@@ -84,7 +84,7 @@
 				<h3 class="blue-underline bold">Sermons</h3>
 				<?php
                     wp_nav_menu(array(
-                        'menu' => 'menu-sermons',
+                        'menu' => 'sermons',
                         'depth' => 1,
                         'container' => false,
                     ));
@@ -92,10 +92,10 @@
 			</div>
 
 			<div class="col-6 col-sm-3 col-lg-2">
-				<h3 class="blue-underline bold">Contact</h3>
+				<h3 class="blue-underline bold">Cornerstone</h3>
 				<?php
                     wp_nav_menu(array(
-                        'menu' => 'menu-contact',
+                        'menu' => 'cornerstone',
                         'depth' => 1,
                         'container' => false,
                     ));

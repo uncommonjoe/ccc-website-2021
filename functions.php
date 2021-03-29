@@ -50,11 +50,10 @@ function ccc_theme_scripts()
 // Register Menu
 register_nav_menus(array(
 'nav-primary' => 'Nav Primary',
-'nav-secondary' => 'Nav Secondary',
 'menu_about' => 'Menu About',
 'menu_connect' => 'Menu Connect',
-'menu_resources' => 'Menu Resources',
-'menu_contact' => 'Menu Contact'
+'menu_sermons' => 'Menu Sermons',
+'menu_cornerstone' => 'Menu Cornerstone',
 ));
 
 // Registers Google Maps API for Advanced Custom Fields
@@ -119,7 +118,7 @@ function sk_body_class_for_pages($classes)
 }
 
 $defaults = array(
-    'default-image' => get_template_directory_uri() . '/img/img2.jpg',
+    'default-image' => get_template_directory_uri() . '/img/header-photos/blue/church-building.jpg',
     'flex-width' => true,
     'width' => 980,
     'flex-height' => true,

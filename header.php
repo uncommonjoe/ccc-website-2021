@@ -18,12 +18,12 @@
 			href="<?php echo get_template_directory_uri(); ?>/img/apple-icon.png">
 
 		<style type="text/css">
-		:not(.home).page-header::before {
+		:not(#home).page-header::before {
 			background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
 				url('<?php header_image(); ?>') center center / cover no-repeat;
 		}
 
-		.home .page-header::before {
+		#home .page-header::before {
 			background: transparent url('<?php header_image(); ?>') center center / cover no-repeat;
 		}
 
@@ -39,8 +39,9 @@
 
 		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light padding-md-top padding-md-bottom">
 			<div class="container">
-				<a class="navbar-brand margin-lg-right r-no-margin-right r-xs" href="<?php echo get_home_url(); ?>"
-					title="Cornerstone Community Church" alt="Cornerstone Community Church">
+				<a class="navbar-brand margin-lg-right r-no-padding-right r-no-padding-left r-no-margin-right r-xs"
+					href="<?php echo get_home_url(); ?>" title="Cornerstone Community Church"
+					alt="Cornerstone Community Church">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/logo-header.svg"
 						alt="<?php echo bloginfo('name'); ?>" />
 				</a>
@@ -70,19 +71,18 @@
 
 					<ul id="menu-nav-secondary" class="navbar-nav">
 						<li class="menu-item nav-item">
-							<a title="Live" href="http://localhost:8888/cornerstone/live/" class="nav-link"
-								ng-class="{'active' : isServiceLive}">
+							<a title="Live" href="/live/" class="nav-link" ng-class="{'active' : isServiceLive}">
 								Live <span class="ng-cloak" ng-if="isServiceLive">now!</span>
 							</a>
 						</li>
 
 						<li class="menu-item nav-item">
-							<a title="Giving" href="http://localhost:8888/cornerstone/giving/" class="nav-link">
+							<a title="Giving" href="/giving/" class="nav-link">
 								Giving
 							</a>
 						</li>
 						<li class="menu-item nav-item">
-							<a title="Visit" href="http://localhost:8888/cornerstone/visit/" class="nav-link">
+							<a title="Visit" href="/visit/" class="nav-link">
 								Visit
 							</a>
 						</li>
