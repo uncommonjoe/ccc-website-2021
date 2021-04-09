@@ -3,6 +3,17 @@
 
     get_header();
     include("template-parts/components/sunday-date.php");
+
+    function orderOfService()
+    {
+        ?>
+
+<h3 class="semibold"><?php the_field("order_of_worship_title") ?></h3>
+<div class="font-color-gold"><?php the_field('service_date') ?></div>
+<div class="margin-md-top"><?php the_field('order_of_worship') ?></div>
+
+<?php
+    }
 ?>
 
 <div class="page-content" id="page-live">
@@ -21,6 +32,11 @@
 		</div>
 
 		<div class="col-12 col-xl-4" id="sidebar">
+			<?php
+            if (current_user_can('edit_posts')):
+                orderOfService();
+            else:
+        ?>
 			<div ng-if="!isServiceLive">
 				<h3 class="semibold">Services</h3>
 
@@ -48,11 +64,9 @@
 			</div>
 
 			<div ng-if="isServiceLive">
-				<h3 class="semibold"><?php the_field('order_of_worship_title'); ?></h3>
-				<div class="font-color-gold"><?php the_field('service_date'); ?></div>
-
-				<div><?php the_field('order_of_worship'); ?></div>
+				<?php orderOfService(); ?>
 			</div>
+			<?php endif; ?>
 		</div>
 	</div>
 </div>
