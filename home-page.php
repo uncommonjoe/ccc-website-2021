@@ -6,9 +6,13 @@
 <div id="home">
 	<div class="page-header">
 		<div class="container">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/header-photos/worship-with-us.svg"
-				title="Worship with us Sunday mornings at 8:30 AM and 10:30 AM"
-				alt="Worship with us Sunday mornings at 8:30 AM and 10:30 AM" />
+			<div class="row">
+				<div class="col-12 col-lg-9">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/header-photos/worship-with-us.svg"
+						title="Worship with us Sunday mornings at 8:30 AM and 10:30 AM"
+						alt="Worship with us Sunday mornings at 8:30 AM and 10:30 AM" />
+				</div>
+			</div>
 		</div>
 	</div>
 
