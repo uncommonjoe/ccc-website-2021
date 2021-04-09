@@ -3,7 +3,7 @@
 	#video-area {
 		background-color: $color-darkest-gray;
 		color: $ccc-white;
-		height: calc(100vh - 113px);
+		height: calc(100vh - 81px);
 		position: relative;
 
 		.text-wrapper {
@@ -36,6 +36,14 @@
 	}
 }
 
+.admin-bar {
+	#page-live {
+		#video-area {
+			height: calc(100vh - 113px);
+		}
+	}
+}
+
 .video-embed {
 	width: 100%;
 	position: relative;
@@ -54,7 +62,11 @@
 		.video-wrapper {
 			padding: 0 !important;
 		}
-
+		#video-area {
+			.text-wrapper {
+				width: 94%;
+			}
+		}
 		#sidebar {
 			padding: 25px !important;
 		}
@@ -71,11 +83,13 @@
 	#page-live {
 		overflow-y: hidden;
 		#video-area {
-			height: 70vmin;
+			height: 70vmin !important;
 		}
 
 		#sidebar {
-			padding: 40px 50px 40px 50px;
+			padding: 40px 50px 80px 50px;
+			overflow-y: initial;
+			height: unset;
 		}
 	}
 }
