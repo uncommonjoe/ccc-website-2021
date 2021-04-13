@@ -164,8 +164,7 @@
                         $filter = get_field('sermon_filter_by');
                         $order = get_field('sermon_order');
                         $orderBy = get_field('sermon_order_by');
-                        //$sermon_list = "[list_sermons tax='$filter' order='$order' orderBy='$orderBy'  per_page='2']";
-                        $sermon_list = "[sermons filter_by='wpfc_sermon_series' hide_pagination='1' per_page='2']";
+                        $sermon_list = "[list_sermons tax='$filter' order='$order' orderBy='$orderBy'  per_page='2']";
 
                         echo do_shortcode($sermon_list);
                     ?>

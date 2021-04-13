@@ -125,6 +125,19 @@ $args = $GLOBALS['wpfc_partial_args'];
                         endif;
                     ?>
 
+					<div class="wpfc-sermon-single-description margin-md-top margin-md-bottom">
+						<?php wpfc_sermon_description(); ?>
+					</div>
+
+					<?php
+                        if (get_wpfc_sermon_meta('sermon_notes') || get_wpfc_sermon_meta('sermon_bulletin')) :
+                    ?>
+
+					<div class="wpfc-sermon-single-attachments">
+						<?php echo wpfc_sermon_attachments(); ?>
+					</div>
+					<?php endif; ?>
+
 					<div class="margin-lg-top">
 						<span class="d-block d-sm-inline">
 							<a class="no-underline"
@@ -158,12 +171,6 @@ $args = $GLOBALS['wpfc_partial_args'];
 					</div>
 				</div>
 			</div>
-
-			<div class="wpfc-sermon-single-description"><?php wpfc_sermon_description(); ?></div>
-			<?php if (get_wpfc_sermon_meta('sermon_notes') || get_wpfc_sermon_meta('sermon_bulletin')) : ?>
-			<div class="wpfc-sermon-single-attachments"><?php echo wpfc_sermon_attachments(); ?></div>
-			<?php endif; ?>
-
 		</div>
 
 
