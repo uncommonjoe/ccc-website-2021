@@ -8,9 +8,28 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-lg-9">
+					<?php
+                        $firstServiceTime = get_field('global_first_service_time', 'option');
+                        $firstServiceAmpm = get_field('global_first_service_ampm', 'option');
+                        $secondServiceTime = get_field('global_second_service_time', 'option');
+                        $secondServiceAmpm = get_field('global_second_service_ampm', 'option');
+
+                        if ($secondServiceTime):
+                    ?>
 					<img src="<?php echo get_template_directory_uri(); ?>/img/header-photos/worship-with-us.svg"
-						title="Worship with us Sunday mornings at 8:30 AM and 10:30 AM"
-						alt="Worship with us Sunday mornings at 8:30 AM and 10:30 AM" />
+						title="Worship with us Sunday mornings at <?php echo $firstServiceTime;?> <?php echo $firstServiceAmpm;?> and <?php echo $secondServiceTime;?> <?php echo $secondServiceAmpm;?>"
+						alt="Worship with us Sunday mornings at <?php echo $firstServiceTime;?> <?php echo $firstServiceAmpm;?> and <?php echo $secondServiceTime;?> <?php echo $secondServiceAmpm;?>" />
+
+					<?php
+                            elseif (!$secondServiceTime):
+                        ?>
+					<img src="<?php echo get_template_directory_uri(); ?>/img/header-photos/worship-with-us-8-30.svg"
+						title="Worship with us Sunday mornings at <?php echo $firstServiceTime;?> <?php echo $firstServiceAmpm;?>"
+						alt="Worship with us Sunday mornings at <?php echo $firstServiceTime;?> <?php echo $firstServiceAmpm;?>" />
+
+					<?php
+                            endif;
+                        ?>
 				</div>
 			</div>
 		</div>

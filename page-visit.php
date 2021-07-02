@@ -50,23 +50,32 @@
 			</div>
 		</div>
 
-
 		<?php
+            $firstServiceTime = get_field('global_first_service_time', 'option');
+            $firstServiceAmpm = get_field('global_first_service_ampm', 'option');
+            $secondServiceTime = get_field('global_second_service_time', 'option');
+            $secondServiceAmpm = get_field('global_second_service_ampm', 'option');
+
+            $noSecondService = !$secondServiceTime;
+
             if (have_rows('services')):
                 while (have_rows('services')) : the_row();
+                    
         ?>
 
-		<div class="row margin-lg-top">
+		<div class="row margin-lg-top <?php echo get_row_index(); ?> <?php echo $noSecondService;?>"
+			ng-class="{'d-none' : <?php echo $noSecondService;?> == 1 && <?php echo get_row_index(); ?> != 1}">
 			<div class="col-12 offset-0 offset-lg-2 col-lg-8">
 				<div class="row">
 					<div class="col-6 col-md-4 col-xl-3 r-margin-md-bottom r-xs r-sm">
 						<div class="card card-body height-unset bg-dark text-center">
 							<div class="h1 bold no-margin">
 								<?php
+                                    
                                     if (get_row_index() == 1) {
-                                        the_field('global_first_service_time', 'option');
+                                        echo $firstServiceTime;
                                     } else {
-                                        the_field('global_second_service_time', 'option');
+                                        echo $secondServiceTime;
                                     }
                                  ?>
 							</div>

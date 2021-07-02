@@ -173,11 +173,19 @@
 					</div>
 
 					<div class="text-group-value">
-						<?php the_field('global_first_service_time', 'option'); ?>
-						<?php the_field('global_first_service_ampm', 'option'); ?>
-						and
-						<?php the_field('global_second_service_time', 'option'); ?>
-						<?php the_field('global_second_service_ampm', 'option'); ?>
+						<?php
+                            $firstServiceTime = get_field('global_first_service_time', 'option');
+                            $firstServiceAmpm = get_field('global_first_service_ampm', 'option');
+                            $secondServiceTime = get_field('global_second_service_time', 'option');
+                            $secondServiceAmpm = get_field('global_second_service_ampm', 'option');
+                                
+                            echo $firstServiceTime .' ' . $firstServiceAmpm;
+                        
+                            if ($secondServiceTime) {
+                                echo ' and ';
+                                echo $secondServiceTime .' ' . $secondServiceAmpm;
+                            }
+                        ?>
 					</div>
 				</div>
 

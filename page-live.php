@@ -33,6 +33,11 @@
 
 		<div class="col-12 col-xl-4" id="sidebar">
 			<?php
+                $firstServiceTime = get_field('global_first_service_time', 'option');
+                $firstServiceAmpm = get_field('global_first_service_ampm', 'option');
+                $secondServiceTime = get_field('global_second_service_time', 'option');
+                $secondServiceAmpm = get_field('global_second_service_ampm', 'option');
+                
             if (current_user_can('edit_posts')):
                 orderOfService();
             else:
@@ -46,21 +51,26 @@
 					</div>
 
 					<div class="text-group-value bold">
-						<?php the_field('global_first_service_time', 'option'); ?>
-						<?php the_field('global_first_service_ampm', 'option'); ?>
+						<?php echo $firstServiceTime .' ' . $firstServiceAmpm; ?>
 					</div>
 				</div>
 
+				<?php
+                    if ($secondServiceTime):
+                ?>
 				<div class="text-group">
 					<div class="text-group-title font-color-gold ng-cloak">
 						<?php echo $nextSunday;?>
 					</div>
 
 					<div class="text-group-value bold">
-						<?php the_field('global_second_service_time', 'option'); ?>
-						<?php the_field('global_second_service_ampm', 'option'); ?>
+						<?php echo $secondServiceTime .' ' . $secondServiceAmpm; ?>
 					</div>
 				</div>
+
+				<?php
+                    endif;
+                ?>
 			</div>
 
 			<div ng-if="isServiceLive">
