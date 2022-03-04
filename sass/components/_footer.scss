@@ -70,9 +70,7 @@
         color: $ccc-white;
         text-align: center;
         line-height: 0;
-        @extend .serif;
         font-style: italic;
-        margin: $spacing-lg 0;
 
         p {
             display: inline-block;
@@ -136,12 +134,19 @@
     }
 }
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: $device-xs) {
     #menu {
-        //margin-bottom: $spacing-md;
+        .copyright p {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: $device-md) {
+    #menu {
         .slogan {
-            margin: $spacing-xl 0;
             line-height: 1;
+
             p {
                 width: 50vw;
                 &:before,
@@ -150,16 +155,11 @@
                 }
             }
         }
+
         .logo {
             margin-bottom: $spacing-lg;
             text-align: center;
             display: block;
-        }
-        .copyright {
-            margin-top: $spacing-md;
-            p {
-                text-align: left;
-            }
         }
     }
 }

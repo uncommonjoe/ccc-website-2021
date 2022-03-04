@@ -111,10 +111,10 @@
     ?>
 
         <div class="latest-sermon">
-            <div class="container  margin-xl-bottom">
+            <div class="container margin-xl-bottom">
 
                 <div class="row">
-                    <div class="col-12 col-md-6 col-lg-7">
+                    <div class="col-12 col-md-6 col-lg-7 mb-5">
                         <h2 class="bold margin-lg-bottom">Latest Sermon</h2>
 
                         <?php
@@ -163,10 +163,10 @@
                         </div>
 
                         <?php
-                        endwhile;
-                        wp_reset_postdata();
-                        endif;
-                    ?>
+                                endwhile;
+                                wp_reset_postdata();
+                            endif;
+                        ?>
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-5 r-margin-xl-top r-xs">

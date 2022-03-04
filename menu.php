@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
-                <h3 class="bold"><?php the_field('footer_connect_with_us', 'option'); ?></h3>
+                <h3 class="fw-600"><?php the_field('footer_connect_with_us', 'option'); ?></h3>
                 <p class="font-size-sm margin-xs-bottom">
                     <?php the_field('global_address', 'option'); ?>
 
@@ -57,8 +57,8 @@
 <div id="menu">
     <div class="container">
         <div class="row footer-links">
-            <div class="col-6 col-sm-3 offset-lg-2 col-lg-2">
-                <h3 class="blue-underline bold">About</h3>
+            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                <h4 class="blue-underline">About</h4>
                 <?php
                     wp_nav_menu(array(
                         'menu' => 'about',
@@ -68,8 +68,8 @@
                 ?>
             </div>
 
-            <div class="col-6 col-sm-3 col-lg-2">
-                <h3 class="blue-underline bold">Connect</h3>
+            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                <h4 class="blue-underline">Connect</h4>
                 <?php
                     wp_nav_menu(array(
                         'menu' => 'connect',
@@ -79,8 +79,8 @@
                 ?>
             </div>
 
-            <div class="col-6 col-sm-3 col-lg-2">
-                <h3 class="blue-underline bold">Sermons</h3>
+            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                <h4 class="blue-underline">Sermons</h4>
                 <?php
                     wp_nav_menu(array(
                         'menu' => 'sermons',
@@ -90,8 +90,8 @@
                 ?>
             </div>
 
-            <div class="col-6 col-sm-3 col-lg-2">
-                <h3 class="blue-underline bold">Cornerstone</h3>
+            <div class="col-6 col-md-3 mb-4 mb-md-0">
+                <h4 class="blue-underline">Cornerstone</h4>
                 <?php
                     wp_nav_menu(array(
                         'menu' => 'cornerstone',
@@ -102,7 +102,7 @@
             </div>
         </div>
 
-        <div class="row slogan">
+        <div class="row slogan my-5">
             <div class="col-12">
                 <p><?php echo get_bloginfo('description', 'display'); ?></p>
             </div>

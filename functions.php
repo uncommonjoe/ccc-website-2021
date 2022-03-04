@@ -11,7 +11,7 @@ add_action('wp_enqueue_scripts', 'ccc_theme_scripts');
 
 function ccc_theme_styles()
 {
-    wp_enqueue_style('stylesheet', get_template_directory_uri() . '/style.min.css', false, '3.1.4', 'all');
+    wp_enqueue_style('stylesheet', get_template_directory_uri() . '/style.min.css', false, '3.1.6', 'all');
 }
 
 function ccc_theme_scripts()
