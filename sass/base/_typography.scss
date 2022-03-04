@@ -1,36 +1,36 @@
 $serif: Montserrat, -apple-system, "Segoe UI", "Open Sans", "Helvetica Neue",
-	sans-serif;
+    sans-serif;
 
 body {
-	font-size: $font-md;
-	font-family: $serif !important;
-	color: $color-darkest-gray;
+    font-size: $font-md;
+    font-family: $serif !important;
+    color: $color-darkest-gray;
 }
 
 .serif {
-	font-family: $serif;
+    font-family: $serif;
 }
 
 .sans-serif {
-	font-family: $serif;
+    font-family: $serif;
 }
 
 .italic {
-	font-style: italic;
+    font-style: italic;
 }
 
 .font-spaced {
-	letter-spacing: 1px;
+    letter-spacing: 1px;
 }
 
 .break-word {
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-	-ms-word-break: break-all;
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 h1,
@@ -39,190 +39,206 @@ h3,
 h4,
 h5,
 h6 {
-	&.blue-underline {
-		position: relative;
-		&::after {
-			content: "";
-			position: absolute;
-			height: 3px;
-			width: 100px;
-			background-color: $ccc-lighter;
-			bottom: -10px;
-			left: 0;
-		}
-	}
+    &.blue-underline {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            height: 3px;
+            width: 100px;
+            background-color: $ccc-lighter;
+            bottom: -10px;
+            left: 0;
+        }
+    }
 
-	&.line {
-		display: flex;
-		width: 100%;
-		align-items: center;
-		font-weight: 800;
-		letter-spacing: 1px;
+    &.line {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        font-weight: 800;
+        letter-spacing: 1px;
 
-		&:after {
-			content: "";
-			margin: 0 0 0 25px;
-			flex: 1 0 20px;
-			@include line(5px, $color-darkest-gray, $radius-xs);
-		}
-	}
+        &:after {
+            content: "";
+            margin: 0 0 0 25px;
+            flex: 1 0 20px;
+            @include line(5px, $color-darkest-gray, $radius-none);
+        }
+    }
 }
 
 .text-group {
-	display: flex;
-	flex-flow: row;
-	justify-content: space-between;
-	border-bottom: 1px solid $color-light-gray;
-	margin-bottom: 10px;
-	padding-bottom: 10px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-light-gray;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 
-	.text-group-value {
-		max-width: 65%;
-		text-align: right;
-		a {
-			color: $color-darkest-gray;
-		}
-		p {
-			@extend .no-margin-top;
-			@extend .no-margin-bottom;
-		}
-	}
+    .text-group-value {
+        max-width: 65%;
+        text-align: right;
+        a {
+            color: $color-darkest-gray;
+        }
+        p {
+            @extend .no-margin-top;
+            @extend .no-margin-bottom;
+        }
+    }
 }
 
 .font-100 {
-	font-weight: 100 !important;
+    font-weight: 100 !important;
 }
 
 .font-200 {
-	font-weight: 200 !important;
+    font-weight: 200 !important;
 }
 
 .font-300 {
-	font-weight: 300 !important;
+    font-weight: 300 !important;
 }
 
 .font-400 {
-	font-weight: 400 !important;
+    font-weight: 400 !important;
 }
 
 .font-500 {
-	font-weight: 500 !important;
+    font-weight: 500 !important;
 }
 
 .font-600,
 .semibold {
-	font-weight: 600 !important;
+    font-weight: 600 !important;
 }
 
 .font-700,
 .bold {
-	font-weight: 700 !important;
+    font-weight: 700 !important;
 }
 
 .font-800 {
-	font-weight: 800 !important;
+    font-weight: 800 !important;
 }
 
 .font-900 {
-	font-weight: 900 !important;
+    font-weight: 900 !important;
 }
 
 .font-color-darkest {
-	color: $color-darkest-gray;
+    color: $color-darkest-gray;
 }
 
 .font-color-dark {
-	color: $color-dark-gray;
+    color: $color-dark-gray;
 }
 
 .font-color-darker {
-	color: $color-darker-gray;
+    color: $color-darker-gray;
 }
 
 .font-color-gray {
-	color: $color-gray;
+    color: $color-gray;
 }
 
 .font-color-light {
-	color: $color-light-gray;
+    color: $color-light-gray;
 }
 
 .font-color-lightest {
-	color: $color-lightest-gray;
+    color: $color-lightest-gray;
 }
 
 .font-color-gold,
 .font-color-accent {
-	color: $ccc-gold;
+    color: $ccc-secondary-darker;
 }
 
 a .font-color-gold,
 a .font-color-accent,
 .font-color-gold a,
 .font-color-accent a {
-	color: $ccc-gold;
-	&:hover {
-		color: $ccc-gold-darker;
-	}
-	&:active,
-	&:focus {
-		color: $ccc-gold-lighter;
-	}
+    color: $ccc-secondary;
+    &:hover {
+        color: $ccc-secondary-darker;
+    }
+    &:active,
+    &:focus {
+        color: $ccc-secondary-lighter;
+    }
+}
+
+.font-color-green {
+    color: $ccc-green;
+}
+
+a .font-color-green,
+.font-color-green a {
+    color: $ccc-green;
+    &:hover {
+        color: $ccc-green-darker;
+    }
+    &:active,
+    &:focus {
+        color: $ccc-green-lighter;
+    }
 }
 
 .font-color-blue,
 .font-color-primary {
-	color: $ccc-primary;
+    color: $ccc-primary;
 }
 
 /*** FONT SIZE ***/
 
 .font-size-xs {
-	font-size: $font-xs; // 12px
+    font-size: $font-xs; // 12px
 }
 
 .font-size-sm {
-	font-size: $font-sm; // 16px
+    font-size: $font-sm; // 16px
 }
 
 .font-size-md {
-	font-size: $font-md; // 18px default
+    font-size: $font-md; // 18px default
 }
 
 .font-size-lg {
-	font-size: $font-lg; // 22px
+    font-size: $font-lg; // 22px
 }
 
 .font-size-xl {
-	font-size: $font-xl; // 34px
+    font-size: $font-xl; // 34px
 }
 
 .font-size-xxl {
-	font-size: $font-xxl; // 40px
+    font-size: $font-xxl; // 40px
 }
 
 @media (max-width: $device-sm) {
-	h1.text-uppercase.font-700 {
-		font-size: 2rem !important;
-		overflow-wrap: break-word;
-		word-wrap: break-word;
-		-ms-word-break: break-all;
-		-ms-hyphens: auto;
-		-moz-hyphens: auto;
-		-webkit-hyphens: auto;
-		hyphens: auto;
-	}
+    h1.text-uppercase.font-700 {
+        font-size: 2rem !important;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -ms-word-break: break-all;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		&.line {
-			&:after {
-				@include line(0px, transparent, $radius-xs);
-			}
-		}
-	}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        &.line {
+            &:after {
+                @include line(0px, transparent, $radius-xs);
+            }
+        }
+    }
 }

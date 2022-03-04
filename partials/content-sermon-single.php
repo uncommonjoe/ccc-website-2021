@@ -59,7 +59,7 @@ $args = $GLOBALS['wpfc_partial_args'];
 
 			<div class="text-wrapper">
 				<div class="title bold">We're Sorry!</div>
-				<div class="subtitle bold font-color-gold">Sermon media not found.</div>
+				<div class="subtitle bold font-color-accent">Sermon media not found.</div>
 			</div>
 
 			<?php endif; ?>
@@ -80,7 +80,7 @@ $args = $GLOBALS['wpfc_partial_args'];
 					<?php
                         if (has_term('', 'wpfc_preacher', $post->ID)) :
                     ?>
-					<div class="sermon-sub-title font-color-gold font-size-md">
+					<div class="sermon-sub-title font-color-accent font-size-md">
 						<span><?php the_terms($post->ID, 'wpfc_preacher'); ?></span>
 						<span> | </span>
 						<span><?php wpfc_sermon_date(get_option('date_format')); ?></span>

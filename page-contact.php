@@ -64,7 +64,7 @@
                     if ($contact_phone):
                 ?>
 				<div class="text-group">
-					<div class="text-group-title font-color-gold ng-cloak">
+					<div class="text-group-title font-color-accent ng-cloak">
 						<?php echo $contact_phone ;?>
 					</div>
 
@@ -81,7 +81,7 @@
                     if ($contact_email):
                 ?>
 				<div class="text-group">
-					<div class="text-group-title font-color-gold ng-cloak">
+					<div class="text-group-title font-color-accent ng-cloak">
 						<?php echo $contact_email;?>
 					</div>
 
@@ -111,7 +111,7 @@
 				</h3>
 
 				<div class=" text-group">
-					<div class="text-group-title font-color-gold ng-cloak">
+					<div class="text-group-title font-color-accent ng-cloak">
 						<?php echo $location_address;?>
 					</div>
 
@@ -138,7 +138,7 @@
 				</h3>
 
 				<div class=" text-group">
-					<div class="text-group-title font-color-gold ng-cloak">
+					<div class="text-group-title font-color-accent ng-cloak">
 						<?php echo $office_hours_label;?>
 					</div>
 
@@ -168,7 +168,7 @@
 				</h3>
 
 				<div class="text-group">
-					<div class="text-group-title font-color-gold ng-cloak">
+					<div class="text-group-title font-color-accent ng-cloak">
 						<?php echo $services_label; ?>
 					</div>
 

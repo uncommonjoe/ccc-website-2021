@@ -1,277 +1,293 @@
 @mixin nav-link() {
-	color: $color-darkest-gray !important;
-	font-size: 18px;
-	font-weight: bold;
-	letter-spacing: 1px;
+    color: $color-darkest-gray !important;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 nav.navbar {
-	background-color: $ccc-white;
-	@include dropshadow($glow-lg, $ccc-dropshadow);
+    background-color: $ccc-white;
+    @include dropshadow($glow-lg, $ccc-dropshadow);
 
-	a {
-		text-decoration: none !important;
-		@include nav-link();
-		@extend .padding-md-left;
-		@extend .padding-md-right;
-	}
+    .navbar-brand {
+        img {
+            height: 60px;
+        }
+    }
 
-	.dropdown {
-		a.dropdown-toggle {
-			&::after {
-				content: "";
-				display: inline-block;
-				margin-left: 6px;
-				margin-bottom: -2px;
-				border: 0;
-				background-image: url("img/carrot.svg");
-				background-repeat: no-repeat;
-				background-size: 9px 13px;
-				height: 9px;
-				width: 9px;
-			}
+    a {
+        text-decoration: none !important;
+        @include nav-link();
+        @extend .padding-md-left;
+        @extend .padding-md-right;
+    }
 
-			&:hover {
-				&::after {
-					animation: carrot-bounce 1s 1;
-				}
-			}
-		}
-	}
+    .dropdown {
+        a.dropdown-toggle {
+            &::after {
+                content: "";
+                display: inline-block;
+                margin-left: 6px;
+                margin-bottom: -2px;
+                border: 0;
+                background-image: url("img/carrot.svg");
+                background-repeat: no-repeat;
+                background-size: 9px 13px;
+                height: 9px;
+                width: 9px;
+            }
 
-	.dropdown-menu {
-		@include dropshadow($glow-lg, $ccc-dropshadow);
-		@extend .padding-sm;
-		border-radius: $radius-sm;
-		a {
-			@include nav-link();
-			@extend .padding-lg-right;
-			border-radius: $radius-sm;
-			transition: all 0.2s ease-in-out;
-			border: 2px solid transparent;
-			&:hover {
-				background-color: $color-lightest-gray;
-			}
+            &:hover {
+                &::after {
+                    animation: carrot-bounce 1s 1;
+                }
+            }
+        }
+    }
 
-			&.active,
-			&:active {
-				background-color: $ccc-white !important;
-				border: 2px solid $color-lightest-gray;
-			}
-		}
+    .dropdown-menu {
+        @include dropshadow($glow-lg, $ccc-dropshadow);
+        @extend .padding-sm;
+        border-radius: $radius-none;
+        a {
+            @include nav-link();
+            @extend .padding-lg-right;
+            border-radius: $radius-none;
+            transition: all 0.2s ease-in-out;
+            border: 2px solid transparent;
+            &:hover {
+                background-color: $color-lightest-gray;
+            }
 
-		.active {
-			a {
-				background-color: $color-lightest-gray;
-				margin-bottom: 2px;
-			}
-		}
+            &.active,
+            &:active {
+                background-color: $ccc-white !important;
+                border: 2px solid $color-lightest-gray;
+            }
+        }
 
-		.menu-item-type-custom {
-			a {
-				position: relative;
-				&::after {
-					content: "";
-					position: absolute;
-					right: 10px;
-					top: 11px;
-					height: 11px;
-					width: 14px;
-					background-image: url(img/icons/icon-external-link.svg);
-					background-position: center right;
-					background-size: 100%;
-					background-repeat: no-repeat;
-				}
-			}
-		}
-	}
+        .active {
+            a {
+                background-color: $color-lightest-gray;
+                margin-bottom: 2px;
+            }
+        }
 
-	#menu-nav-primary {
-		li {
-			position: relative;
+        .menu-item-type-custom {
+            a {
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: 10px;
+                    top: 11px;
+                    height: 11px;
+                    width: 14px;
+                    background-image: url(img/icons/icon-external-link.svg);
+                    background-position: center right;
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
 
-			&.dropdown {
-				&.active {
-					&::after {
-						content: "";
-						position: absolute;
-						height: 4px;
-						left: 12px;
-						right: 12px;
-						bottom: 0;
-						background-color: $color-darkest;
-						border-radius: $radius-sm;
-					}
-				}
-			}
-		}
-	}
-	#menu-nav-secondary {
-		li {
-			a {
-				font-size: 18px;
-				font-weight: bold;
-				padding: 5px 15px;
-				@extend .btn;
-				@extend .btn-dark;
-				@extend .margin-md-left;
+    #menu-nav-primary {
+        li {
+            position: relative;
 
-				// Live button
-				&[title="Live"] {
-					position: relative;
-					padding-left: 35px !important;
+            &.dropdown {
+                &.active {
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        height: 3px;
+                        left: 12px;
+                        right: 12px;
+                        bottom: 0;
+                        background-color: $ccc-secondary;
+                    }
+                }
+            }
+        }
+    }
+    #menu-nav-secondary {
+        li {
+            a {
+                font-size: 18px;
+                font-weight: bold;
+                padding: 5px 15px;
+                @extend .btn;
+                @extend .btn-dark;
+                @extend .margin-md-left;
 
-					&.active {
-						color: $ccc-white !important;
-						background-color: $ccc-red !important;
-						border-color: $ccc-red !important;
+                // Live button
+                &[title="Live"] {
+                    position: relative;
+                    padding-left: 35px !important;
 
-						&::before {
-							background-color: $ccc-white;
-						}
+                    &.active {
+                        color: $ccc-white !important;
+                        background-color: $ccc-red !important;
+                        border-color: $ccc-red !important;
 
-						&:hover {
-							@include hoverOutline(2px, $ccc-red);
-						}
-					}
+                        &::before {
+                            background-color: $ccc-white;
+                        }
 
-					&::before {
-						content: "";
-						height: 10px;
-						width: 10px;
-						border-radius: $radius-xs;
-						position: absolute;
-						left: 15px;
-						top: 14px;
-						background-color: $color-darkest;
-						transition: all 0.2s ease-in-out;
-					}
+                        &:hover {
+                            @include hoverOutline(2px, $ccc-red);
+                        }
+                    }
 
-					&:hover {
-						&::before {
-							left: 18px;
-						}
-					}
-				}
-			}
+                    &::before {
+                        content: "";
+                        height: 10px;
+                        width: 10px;
+                        border-radius: $radius-sm;
+                        position: absolute;
+                        left: 15px;
+                        top: 14px;
+                        background-color: $color-darkest;
+                        transition: all 0.2s ease-in-out;
+                    }
 
-			&:last-child {
-				a {
-					@extend .btn-dark;
-					@extend .btn-inverse;
-				}
-			}
-		}
-	}
+                    &:hover {
+                        &::before {
+                            left: 18px;
+                        }
+                    }
+                }
+            }
+
+            &:last-child {
+                a {
+                    @extend .btn-dark;
+                    @extend .btn-inverse;
+                }
+            }
+        }
+    }
 }
 
 // Pagination
 .pagination {
-	justify-content: center;
+    justify-content: center;
 
-	.page-numbers {
-		display: inline-block;
-		margin: 0 2px 0 0;
-		text-decoration: none;
-		border-color: transparent !important;
-		@extend .btn;
-		@extend .btn-dark;
+    .page-numbers {
+        display: inline-block;
+        margin: 0 2px 0 0;
+        text-decoration: none;
+        border-color: transparent !important;
+        @extend .btn;
+        @extend .btn-dark;
 
-		&.next,
-		&.prev {
-			border-color: $color-darkest-gray !important;
-		}
+        &.next,
+        &.prev {
+            border-color: $color-darkest-gray !important;
+        }
 
-		&.current {
-			background-color: $ccc-primary !important;
-			border-color: $ccc-primary !important;
-			color: white !important;
-		}
-	}
+        &.current {
+            background-color: $ccc-primary !important;
+            border-color: $ccc-primary !important;
+            color: white !important;
+        }
+    }
 
-	.screen-reader-text {
-		display: none;
-	}
+    .screen-reader-text {
+        display: none;
+    }
+}
+
+@media screen and (min-width: $device-md) and (max-width: $device-lg) {
+    nav.navbar {
+        justify-content: center;
+        .container {
+            margin-left: 0;
+            margin-right: 0;
+            max-width: 100%;
+        }
+    }
 }
 
 @media screen and (max-width: $device-md) {
-	nav.navbar {
-		#mobile-toggle {
-			display: flex;
-			flex-flow: row;
-			position: relative;
-			justify-content: center;
-			padding: 10px 20px;
+    nav.navbar {
+        #mobile-toggle {
+            display: flex;
+            flex-flow: row;
+            position: relative;
+            justify-content: center;
+            padding: 10px 20px;
 
-			&[aria-expanded="false"],
-			&:not(.collapsed) {
-				.icon {
-					position: relative;
-					height: 20px;
-					width: 25px;
-					margin-left: $spacing-sm;
+            &[aria-expanded="false"],
+            &:not(.collapsed) {
+                .icon {
+                    position: relative;
+                    height: 20px;
+                    width: 25px;
+                    margin-left: $spacing-sm;
 
-					span {
-						position: absolute;
-						display: block;
-						height: 4px;
-						background-color: $color-darkest-gray;
-						width: 25px;
-						border-radius: 2px;
-						transition: all 0.2s linear;
+                    span {
+                        position: absolute;
+                        display: block;
+                        height: 4px;
+                        background-color: $color-darkest-gray;
+                        width: 25px;
+                        border-radius: 2px;
+                        transition: all 0.2s linear;
 
-						&:first-child {
-							top: 0;
-							transform: rotate(0deg);
-						}
+                        &:first-child {
+                            top: 0;
+                            transform: rotate(0deg);
+                        }
 
-						&:nth-child(2) {
-							top: 7px;
-						}
+                        &:nth-child(2) {
+                            top: 7px;
+                        }
 
-						&:last-child {
-							top: 14px;
-							transform: rotate(0deg);
-						}
-					}
-				}
-			}
+                        &:last-child {
+                            top: 14px;
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
+            }
 
-			&[aria-expanded="true"] {
-				.icon {
-					margin-left: $spacing-sm;
+            &[aria-expanded="true"] {
+                .icon {
+                    margin-left: $spacing-sm;
 
-					span {
-						&:first-child {
-							transform: rotate(45deg);
-							top: 7px;
-						}
+                    span {
+                        &:first-child {
+                            transform: rotate(45deg);
+                            top: 7px;
+                        }
 
-						&:nth-child(2) {
-							opacity: 0;
-						}
+                        &:nth-child(2) {
+                            opacity: 0;
+                        }
 
-						&:last-child {
-							transform: rotate(-45deg);
-							top: 7px;
-						}
-					}
-				}
-			}
-		}
+                        &:last-child {
+                            transform: rotate(-45deg);
+                            top: 7px;
+                        }
+                    }
+                }
+            }
+        }
 
-		#menu-nav-primary {
-			margin: 25px 0;
-		}
+        #menu-nav-primary {
+            margin: 25px 0;
+        }
 
-		#menu-nav-secondary {
-			li {
-				margin-bottom: 10px;
-				a {
-					display: block;
-					text-align: left;
-				}
-			}
-		}
-	}
+        #menu-nav-secondary {
+            li {
+                margin-bottom: 10px;
+                a {
+                    display: block;
+                    text-align: left;
+                }
+            }
+        }
+    }
 }

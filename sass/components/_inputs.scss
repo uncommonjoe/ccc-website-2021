@@ -1,28 +1,28 @@
 .form-control {
-	border: 2px solid $color-darkest-gray;
-	border-radius: $radius-xs;
-	@extend .font-color-darkest;
+    border: 2px solid $color-darkest-gray;
+    border-radius: $radius-none;
+    @extend .font-color-darkest;
 
-	&:focus {
-		border-color: $color-darkest-gray;
-		outline: 0;
-		box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
-	}
+    &:focus {
+        border-color: $color-darkest-gray;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+    }
 }
 
 label {
-	@extend .font-size-md;
-	@extend .bold;
+    @extend .font-size-md;
+    @extend .bold;
 }
 
 select {
-	&.form-control {
-		background-image: url("img/carrot.svg");
-		background-repeat: no-repeat;
-		background-size: 11px 13px;
-		background-position: calc(100% - 10px) 11px, 100% 0;
+    &.form-control {
+        background-image: url("img/carrot.svg");
+        background-repeat: no-repeat;
+        background-size: 11px 13px;
+        background-position: calc(100% - 10px) 11px, 100% 0;
 
-		-webkit-appearance: none;
-		-moz-appearance: none;
-	}
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
 }

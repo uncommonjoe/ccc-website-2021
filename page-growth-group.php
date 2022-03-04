@@ -64,7 +64,7 @@
 
 							<?php if (get_sub_field('when')) : ?>
 							<div class="text-group">
-								<div class="text-group-title font-color-gold">
+								<div class="text-group-title font-color-accent">
 									<?php the_field('when_title'); ?>
 								</div>
 
@@ -76,7 +76,7 @@
 
 							<?php if (get_sub_field('where')) : ?>
 							<div class="text-group">
-								<div class="text-group-title font-color-gold">
+								<div class="text-group-title font-color-accent">
 									<?php the_field('where_title'); ?>
 								</div>
 
@@ -88,7 +88,7 @@
 
 							<?php if (get_sub_field('notes')) : ?>
 							<div class="text-group">
-								<div class="text-group-title font-color-gold">
+								<div class="text-group-title font-color-accent">
 									<?php the_field('notes_title'); ?>
 								</div>
 
@@ -111,7 +111,7 @@
                         ?>
 
 
-						<h5 class="font-color-gold bold margin-lg-top">
+						<h5 class="font-color-accent bold margin-lg-top">
 							<?php echo $subMinistryTitle ?>
 						</h5>
 
@@ -134,7 +134,7 @@
 
 							<?php if (get_sub_field('sub_when')) : ?>
 							<div class="text-group">
-								<div class="text-group-title font-color-gold">
+								<div class="text-group-title font-color-accent">
 									<?php the_field('when_title'); ?>
 								</div>
 
@@ -146,7 +146,7 @@
 
 							<?php if (get_sub_field('sub_where')) : ?>
 							<div class="text-group">
-								<div class="text-group-title font-color-gold">
+								<div class="text-group-title font-color-accent">
 									<?php the_field('where_title'); ?>
 								</div>
 
@@ -158,7 +158,7 @@
 
 							<?php if (get_sub_field('sub_notes')) : ?>
 							<div class="text-group">
-								<div class="text-group-title font-color-gold">
+								<div class="text-group-title font-color-accent">
 									<?php the_field('notes_title'); ?>
 								</div>
 

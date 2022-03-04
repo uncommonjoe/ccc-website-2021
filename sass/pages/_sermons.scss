@@ -1,185 +1,185 @@
 .wpfc_sermon {
-	> .wpfc-sermon-inner {
-		border: 1px solid $color-light-gray !important;
-		padding: $spacing-lg !important;
-		.wpfc-sermon-image-img {
-			min-height: 200px;
-			height: 100%;
-			width: 100%;
-			background-size: cover;
-			background-position: center;
-		}
-	}
+    > .wpfc-sermon-inner {
+        border: 1px solid $color-light-gray !important;
+        padding: $spacing-lg !important;
+        .wpfc-sermon-image-img {
+            min-height: 200px;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+    }
 }
 
 #latest_sermon {
-	img {
-		width: 100%;
-		object-fit: cover;
-	}
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
 }
 
 ul#wpfc_images_grid {
-	list-style: none !important;
-	padding: 0 !important;
-	grid-gap: $spacing-lg !important;
-	display: grid;
+    list-style: none !important;
+    padding: 0 !important;
+    grid-gap: $spacing-lg !important;
+    display: grid;
 
-	li.wpfc_grid_image {
-		border: 0 !important;
-		border-radius: $radius-lg !important;
-		padding: 25px !important;
-		transition: all 0.2s ease;
-		@include dropshadow($glow-lg, $ccc-dropshadow);
+    li.wpfc_grid_image {
+        border: 0 !important;
+        border-radius: $radius-none;
+        padding: 25px !important;
+        transition: all 0.2s ease;
+        @include dropshadow($glow-lg, $ccc-dropshadow);
 
-		&:hover {
-			transform: scale(1.01);
-			@include dropshadow($glow-xl, $ccc-dropshadow);
-		}
+        &:hover {
+            transform: scale(1.01);
+            @include dropshadow($glow-xl, $ccc-dropshadow);
+        }
 
-		> a {
-			display: block;
-			object-fit: cover;
-			overflow: hidden;
-			img {
-				width: 100%;
-				height: 100%;
-				min-height: 200px;
-				object-fit: cover;
-				border-radius: $radius-md;
-			}
-		}
+        > a {
+            display: block;
+            object-fit: cover;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                min-height: 200px;
+                object-fit: cover;
+                border-radius: $radius-none;
+            }
+        }
 
-		h3.wpfc_grid_title a {
-			color: $color-darkest !important;
-			font-size: $font-lg !important;
-			line-height: 1 !important;
-			text-decoration: none !important;
-			@extend .bold;
-			@extend .margin-md-top;
-			@extend .margin-sm-bottom;
-		}
-	}
+        h3.wpfc_grid_title a {
+            color: $color-darkest !important;
+            font-size: $font-lg !important;
+            line-height: 1 !important;
+            text-decoration: none !important;
+            @extend .bold;
+            @extend .margin-md-top;
+            @extend .margin-sm-bottom;
+        }
+    }
 }
 
 .wpfc-sermon-single-navigation {
-	background-color: white;
-	padding-top: $spacing-md;
-	border-top: 1px solid $color-light-gray;
-	@extend .clearfix;
-	a {
-		padding: $spacing-xs $spacing-lg;
-		background-color: transparent;
-		text-decoration: none;
-		border-radius: 30px;
-		transition: all 0.2s ease;
-		&:hover {
-			background-color: $ccc-primary;
-			color: white;
-		}
-		&:first-child {
-			float: left;
-		}
-		&:nth-child(2) {
-			float: right;
-		}
-	}
+    background-color: white;
+    padding-top: $spacing-md;
+    border-top: 1px solid $color-light-gray;
+    @extend .clearfix;
+    a {
+        padding: $spacing-xs $spacing-lg;
+        background-color: transparent;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: all 0.2s ease;
+        &:hover {
+            background-color: $ccc-primary;
+            color: white;
+        }
+        &:first-child {
+            float: left;
+        }
+        &:nth-child(2) {
+            float: right;
+        }
+    }
 }
 
 .wpfc-sermon-single-main {
-	padding: $spacing-lg;
+    padding: $spacing-lg;
 }
 
 #page-single-sermon {
-	overflow: hidden;
-	#video-area {
-		.wpfc-sermon-single-media {
-			background-color: $color-darkest;
-			padding: 25px;
-			min-height: 50vh;
-			position: relative;
-			color: $ccc-white;
+    overflow: hidden;
+    #video-area {
+        .wpfc-sermon-single-media {
+            background-color: $color-darkest;
+            padding: 25px;
+            min-height: 50vh;
+            position: relative;
+            color: $ccc-white;
 
-			.text-wrapper,
-			.wpfc-sermon-single-audio {
-				position: absolute;
-				top: 50%;
-				transform: translateY(-100%);
-				text-align: center;
-				width: 93%;
+            .text-wrapper,
+            .wpfc-sermon-single-audio {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-100%);
+                text-align: center;
+                width: 93%;
 
-				.title {
-					font-size: calc(1em + 3vw);
-				}
-				.subtitle {
-					font-size: calc(1em + 1vw);
-				}
-			}
-		}
-	}
+                .title {
+                    font-size: calc(1em + 3vw);
+                }
+                .subtitle {
+                    font-size: calc(1em + 1vw);
+                }
+            }
+        }
+    }
 
-	#sidebar {
-		padding: 40px 60px 40px 45px;
-		overflow-y: auto;
-	}
+    #sidebar {
+        padding: 40px 60px 40px 45px;
+        overflow-y: auto;
+    }
 }
 
 #list-sermons {
-	list-style: none;
-	padding: 0;
+    list-style: none;
+    padding: 0;
 
-	li {
-		@extend .margin-md-bottom;
+    li {
+        @extend .margin-md-bottom;
 
-		a {
-			text-decoration: none;
-			padding: $spacing-md $spacing-xl $spacing-md $spacing-lg;
-			border-radius: $radius-md;
-			@extend .font-color-darkest;
-			@extend .bold;
-			@extend .font-size-lg;
-			@extend .clickable;
-			@extend .card-horizontal;
-			@extend .card;
-			@extend .card-body;
+        a {
+            text-decoration: none;
+            padding: $spacing-md $spacing-xl $spacing-md $spacing-lg;
+            border-radius: $radius-none;
+            @extend .font-color-darkest;
+            @extend .bold;
+            @extend .font-size-lg;
+            @extend .clickable;
+            @extend .card-horizontal;
+            @extend .card;
+            @extend .card-body;
 
-			&:hover {
-				@include dropshadow($glow-xl, $ccc-dropshadow-darker);
-			}
-		}
-	}
+            &:hover {
+                @include dropshadow($glow-xl, $ccc-dropshadow-darker);
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 0) and (max-width: $device-sm) {
-	#page-single-sermon {
-		#sidebar {
-			padding: 25px !important;
-		}
+    #page-single-sermon {
+        #sidebar {
+            padding: 25px !important;
+        }
 
-		#video-area {
-			.wpfc-sermon-single-media {
-				min-height: 30vh;
-			}
-		}
-	}
+        #video-area {
+            .wpfc-sermon-single-media {
+                min-height: 30vh;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: $device-md) {
-	ul#wpfc_images_grid {
-		grid-template-columns: repeat(1, 1fr) !important;
-	}
+    ul#wpfc_images_grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
 }
 
 @media screen and (min-width: $device-md) {
-	ul#wpfc_images_grid {
-		grid-template-columns: repeat(3, 1fr) !important;
-	}
+    ul#wpfc_images_grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
 }
 
 @media screen and (max-width: $device-lg) {
-	#page-single-sermon {
-		#sidebar {
-			padding: 40px 50px 40px 50px;
-		}
-	}
+    #page-single-sermon {
+        #sidebar {
+            padding: 40px 50px 40px 50px;
+        }
+    }
 }

@@ -1,73 +1,73 @@
 @mixin hoverOutline($size, $color) {
-	box-shadow: 0 0 0 $size $color;
+    box-shadow: 0 0 0 $size $color;
 }
 
 .btn {
-	border-radius: $radius-xs;
+    border-radius: $radius-none;
 }
 
 .btn-dark {
-	background-color: transparent !important;
-	border: 2px solid $color-darkest !important;
-	color: $color-darkest !important;
-	font-weight: bold;
+    background-color: transparent !important;
+    border: 2px solid $color-darkest !important;
+    color: $color-darkest !important;
+    font-weight: bold;
 
-	&.btn-inverse {
-		background-color: $color-darkest !important;
-		color: $ccc-white !important;
-	}
+    &.btn-inverse {
+        background-color: $color-darkest !important;
+        color: $ccc-white !important;
+    }
 
-	&:hover {
-		transition: all 0.2s ease-in-out;
-		@include hoverOutline(2px, $color-darkest);
-	}
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        @include hoverOutline(2px, $color-darkest);
+    }
 }
 
 .btn-glow {
-	border: 0;
-	background-color: $ccc-white;
-	color: $color-darkest-gray;
-	border-radius: $radius-md;
-	padding: 15px 25px;
-	margin-bottom: 15px;
-	@include dropshadow($glow-md, $ccc-dropshadow);
+    border: 0;
+    background-color: $ccc-white;
+    color: $color-darkest-gray;
+    border-radius: $radius-none;
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    @include dropshadow($glow-md, $ccc-dropshadow);
 }
 
 .btn-yellow {
-	background-color: $ccc-gold;
-	border-color: $ccc-gold;
-	color: $ccc-white;
+    background-color: $ccc-secondary;
+    border-color: $ccc-secondary;
+    color: $ccc-white;
 
-	&:hover {
-		color: $ccc-white;
-		opacity: 0.8;
-	}
+    &:hover {
+        color: $ccc-white;
+        opacity: 0.8;
+    }
 
-	&:active,
-	&:focus {
-		color: $ccc-white;
-		box-shadow: 0 0 0 0.2rem $ccc-gold-darker;
-	}
+    &:active,
+    &:focus {
+        color: $ccc-white;
+        box-shadow: 0 0 0 0.2rem $ccc-secondary-darker;
+    }
 }
 
 .btn-link {
-	&.light {
-		color: $ccc-white;
-	}
+    &.light {
+        color: $ccc-white;
+    }
 
-	&.dark {
-		color: $color-darkest-gray;
-	}
+    &.dark {
+        color: $color-darkest-gray;
+    }
 }
 
 .stretched-link::after {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 1;
-	pointer-events: auto;
-	content: "";
-	background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: "";
+    background-color: rgba(0, 0, 0, 0);
 }

@@ -89,7 +89,7 @@
 							<div class="font-color-gray"><?php the_sub_field('worship_service_description'); ?></div>
 						</div>
 
-						<h5 class="font-color-gold bold margin-lg-top"><?php the_sub_field('bible_fellowship_title'); ?>
+						<h5 class="font-color-accent bold margin-lg-top"><?php the_sub_field('bible_fellowship_title'); ?>
 						</h5>
 
 						<?php
