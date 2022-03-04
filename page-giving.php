@@ -24,7 +24,7 @@
 
 		<div class="row">
 			<div class="col-12">
-				<h2 class="h1 bold text-center margin-lg-bottom">
+				<h2 class="h1 fw-600 text-center margin-lg-bottom">
 					<?php echo the_field('page_title'); ?>
 				</h2>
 			</div>
@@ -42,7 +42,7 @@
 						<img class="" src="<?php echo get_sub_field('bucket_icon'); ?>"
 							alt="<?php echo get_sub_field('bucket_title') . " - " . get_sub_field('bucket_description'); ?>" />
 
-						<h4 class="bold margin-lg-top margin-lg-bottom">
+						<h4 class="fw-600 margin-lg-top margin-lg-bottom">
 							<?php echo get_sub_field('bucket_title'); ?>
 						</h4>
 

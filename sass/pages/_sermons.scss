@@ -55,7 +55,7 @@ ul#wpfc_images_grid {
             font-size: $font-lg !important;
             line-height: 1 !important;
             text-decoration: none !important;
-            @extend .bold;
+            @extend .fw-600;
             @extend .margin-md-top;
             @extend .margin-sm-bottom;
         }
@@ -136,7 +136,7 @@ ul#wpfc_images_grid {
             padding: $spacing-md $spacing-xl $spacing-md $spacing-lg;
             border-radius: $radius-none;
             @extend .font-color-darkest;
-            @extend .bold;
+            @extend .fw-600;
             @extend .font-size-lg;
             @extend .clickable;
             @extend .card-horizontal;

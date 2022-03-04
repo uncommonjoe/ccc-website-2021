@@ -56,8 +56,8 @@ h6 {
         display: flex;
         width: 100%;
         align-items: center;
-        font-weight: 800;
         letter-spacing: 1px;
+        @extend .fw-600;
 
         &:after {
             content: "";
@@ -89,42 +89,13 @@ h6 {
     }
 }
 
-.font-100 {
-    font-weight: 100 !important;
+.fw-unset {
+    font-weight: unset !important;
 }
 
-.font-200 {
-    font-weight: 200 !important;
-}
-
-.font-300 {
-    font-weight: 300 !important;
-}
-
-.font-400 {
-    font-weight: 400 !important;
-}
-
-.font-500 {
-    font-weight: 500 !important;
-}
-
-.font-600,
+.fw-600,
 .semibold {
     font-weight: 600 !important;
-}
-
-.font-700,
-.bold {
-    font-weight: 700 !important;
-}
-
-.font-800 {
-    font-weight: 800 !important;
-}
-
-.font-900 {
-    font-weight: 900 !important;
 }
 
 .font-color-darkest {
@@ -218,7 +189,7 @@ a .font-color-green,
 }
 
 @media (max-width: $device-sm) {
-    h1.text-uppercase.font-700 {
+    h1.text-uppercase.fw-600 {
         font-size: 2rem !important;
         overflow-wrap: break-word;
         word-wrap: break-word;

@@ -51,10 +51,10 @@
         .card-title {
             color: $ccc-secondary-darker;
             font-size: 30px;
-            font-weight: 700;
             line-height: 1;
             @extend .margin-md-top;
             @extend .margin-sm-bottom;
+            @extend .fw-600;
         }
 
         .card-subtitle {

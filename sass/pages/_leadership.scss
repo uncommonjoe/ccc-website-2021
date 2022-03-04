@@ -9,8 +9,8 @@
             h1 {
                 color: $color-darkest-gray;
                 font-size: $font-xxl;
-                font-weight: bold;
                 margin: 0 0 15px 0;
+                @extend .fw-600;
             }
             h6 {
                 color: $color-darker-gray;

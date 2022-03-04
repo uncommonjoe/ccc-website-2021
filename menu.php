@@ -22,11 +22,10 @@
                         <?php the_field('global_email', 'option'); ?>
                     </a>
                 </p>
-                </p>
             </div>
 
             <div class="col-12 offset-md-2 col-md-4 offset-lg-3 col-lg-3 text-right margin-md-top">
-                <a class="btn btn-yellow d-block text-left font-500 padding-md-left margin-sm-bottom" href=""
+                <a class="btn btn-yellow d-block text-left fw-600 padding-md-left margin-sm-bottom" href=""
                     alt="Download our mobile app on Apple Store and Google Play"
                     title="Download our mobile app on Apple Store and Google Play">
                     <img class="padding-md-right"
@@ -35,7 +34,7 @@
                     Get the app
                 </a>
 
-                <a class="btn btn-light d-block text-left font-500 padding-md-left margin-sm-bottom"
+                <a class="btn btn-light d-block text-left fw-600 padding-md-left margin-sm-bottom"
                     href="https://www.facebook.com/cornerstonebillings/" target="_blank"
                     alt="Cornerstone Community Church Facebook Page" title="Cornerstone Community Church Facebook Page">
                     <img class="padding-md-right"
@@ -43,7 +42,7 @@
                     Facebook
                 </a>
 
-                <a class="btn btn-light d-block text-left font-500 padding-md-left margin-sm-bottom"
+                <a class="btn btn-light d-block text-left fw-600 padding-md-left margin-sm-bottom"
                     href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg" target="_blank"
                     alt="Cornerstone Community Church YouTube Page" title="Cornerstone Community Church YouTube Page">
                     <img class="padding-md-right"

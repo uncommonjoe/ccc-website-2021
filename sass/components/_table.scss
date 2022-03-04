@@ -1,6 +1,7 @@
 @media (max-width: 768px) {
     .responsive-table {
-        thead, tfoot {
+        thead,
+        tfoot {
             display: none;
         }
         tr {
@@ -16,8 +17,8 @@
             padding: 0;
             text-align: left !important;
             a {
-                font-weight: bold;
                 margin-bottom: $spacing-sm;
+                font-weight: 600;
             }
             div {
                 display: flex;

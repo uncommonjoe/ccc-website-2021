@@ -1,8 +1,8 @@
 @mixin nav-link() {
     color: $color-darkest-gray !important;
     font-size: 18px;
-    font-weight: bold;
     letter-spacing: 1px;
+    @extend .fw-600;
 }
 
 nav.navbar {
@@ -11,11 +11,11 @@ nav.navbar {
 
     .navbar-brand {
         img {
-            height: 60px;
+            height: 50px;
         }
     }
 
-    a {
+    a:not(.navbar-brand) {
         text-decoration: none !important;
         @include nav-link();
         @extend .padding-md-left;
@@ -115,11 +115,11 @@ nav.navbar {
         li {
             a {
                 font-size: 18px;
-                font-weight: bold;
                 padding: 5px 15px;
                 @extend .btn;
                 @extend .btn-dark;
                 @extend .margin-md-left;
+                @extend .fw-600;
 
                 // Live button
                 &[title="Live"] {
@@ -202,6 +202,11 @@ nav.navbar {
 @media screen and (min-width: $device-md) and (max-width: $device-lg) {
     nav.navbar {
         justify-content: center;
+        .navbar-brand {
+            img {
+                height: 60px;
+            }
+        }
         .container {
             margin-left: 0;
             margin-right: 0;
@@ -225,7 +230,6 @@ nav.navbar {
                     position: relative;
                     height: 20px;
                     width: 25px;
-                    margin-left: $spacing-sm;
 
                     span {
                         position: absolute;
@@ -255,8 +259,6 @@ nav.navbar {
 
             &[aria-expanded="true"] {
                 .icon {
-                    margin-left: $spacing-sm;
-
                     span {
                         &:first-child {
                             transform: rotate(45deg);

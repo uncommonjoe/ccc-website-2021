@@ -10,7 +10,7 @@
 		<div class="row">
 			<div
 				class="col-12 col-lg-6 offset-xl-1 col-xl-6 padding-xl-right padding-xl-bottom r-padding-sm-right r-sm r-md">
-				<h1 class="bold">We look forward to hearing from you!</h1>
+				<h1 class="fw-600">We look forward to hearing from you!</h1>
 
 				<form class="margin-xl-top" name="form" data-ng-submit="vm.submitForm(vm.contactForm)"
 					data-ng-if="!vm.wasMessageSent">
@@ -56,7 +56,7 @@
                    if ($contact_section && $contact_title && ($contact_phone || $contact_email)) :
                 ?>
 
-				<h3 class="semibold margin-md-bottom">
+				<h3 class="fw-600 margin-md-bottom">
 					<?php echo $contact_title;?>
 				</h3>
 
@@ -106,7 +106,7 @@
                    if ($location_section && $location_title && $location_address) :
                 ?>
 
-				<h3 class="semibold margin-md-bottom margin-lg-top">
+				<h3 class="fw-600 margin-md-bottom margin-lg-top">
 					<?php echo $location_title;?>
 				</h3>
 
@@ -133,7 +133,7 @@
                    if ($office_hours_section && $office_hours_title && $office_hours_label) :
                 ?>
 
-				<h3 class="semibold margin-md-bottom margin-lg-top">
+				<h3 class="fw-600 margin-md-bottom margin-lg-top">
 					<?php echo $office_hours_title;?>
 				</h3>
 
@@ -163,7 +163,7 @@
                    if ($services_section && $services_title && $services_label) :
                 ?>
 
-				<h3 class="semibold margin-md-bottom margin-lg-top">
+				<h3 class="fw-600 margin-md-bottom margin-lg-top">
 					<?php echo $services_title; ?>
 				</h3>
 

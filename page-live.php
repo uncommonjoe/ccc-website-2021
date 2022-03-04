@@ -8,7 +8,7 @@
     {
         ?>
 
-<h3 class="semibold"><?php the_field("order_of_worship_title") ?></h3>
+<h3 class="fw-600"><?php the_field("order_of_worship_title") ?></h3>
 <div class="font-color-accent"><?php the_field('service_date') ?></div>
 <div class="margin-md-top"><?php the_field('order_of_worship') ?></div>
 
@@ -20,8 +20,8 @@
     <div class="row">
         <div class="col-12 col-xl-8" id="video-area">
             <div class="text-wrapper" ng-if="!isServiceLive">
-                <div class="title bold"><?php the_field('offline_title'); ?></div>
-                <div class="subtitle bold font-color-accent"><?php the_field('offline_subtitle'); ?></div>
+                <div class="title fw-600"><?php the_field('offline_title'); ?></div>
+                <div class="subtitle fw-600 font-color-accent"><?php the_field('offline_subtitle'); ?></div>
             </div>
 
             <div class="video-wrapper ng-cloak" ng-if="isServiceLive" responsive-video>
@@ -43,14 +43,14 @@
             else:
         ?>
             <div ng-if="!isServiceLive">
-                <h3 class="semibold">Services</h3>
+                <h3 class="fw-600">Services</h3>
 
                 <div class="text-group margin-md-top">
                     <div class="text-group-title font-color-accent ng-cloak">
                         <?php echo $nextSunday;?>
                     </div>
 
-                    <div class="text-group-value bold">
+                    <div class="text-group-value fw-600">
                         <?php echo $firstServiceTime .' ' . $firstServiceAmpm; ?>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                         <?php echo $nextSunday;?>
                     </div>
 
-                    <div class="text-group-value bold">
+                    <div class="text-group-value fw-600">
                         <?php echo $secondServiceTime .' ' . $secondServiceAmpm; ?>
                     </div>
                 </div>

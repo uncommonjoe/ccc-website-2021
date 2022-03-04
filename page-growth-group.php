@@ -36,7 +36,7 @@
 				<div class="row">
 					<div class="col-5 col-md-4 col-xl-3 r-margin-md-bottom r-xs r-sm">
 						<div class="card card-body height-unset bg-dark text-center">
-							<div class="h1 bold no-margin">
+							<div class="h1 fw-600 no-margin">
 								<?php the_sub_field('day_of_the_week'); ?>
 							</div>
 							<div class=""><?php the_sub_field('type'); ?></div>
@@ -51,7 +51,7 @@
                         ?>
 
 						<div class="card card-body height-unset margin-lg-bottom">
-							<h5 class="bold margin-lg-bottom">
+							<h5 class="fw-600 margin-lg-bottom">
 								<?php
                                     $prefix = get_field('leader_prefix');
                                     
@@ -111,7 +111,7 @@
                         ?>
 
 
-						<h5 class="font-color-accent bold margin-lg-top">
+						<h5 class="font-color-accent fw-600 margin-lg-top">
 							<?php echo $subMinistryTitle ?>
 						</h5>
 
@@ -121,7 +121,7 @@
                         ?>
 
 						<div class="card card-body height-unset margin-md-bottom margin-md-top">
-							<h5 class="bold margin-lg-bottom">
+							<h5 class="fw-600 margin-lg-bottom">
 								<?php
                                     $prefix = get_field('leader_prefix');
                                     

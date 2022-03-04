@@ -35,10 +35,10 @@
         z-index: 1;
 
         h1 {
-            font-weight: 700;
             letter-spacing: 2px;
             font-size: calc(1em + 4vw);
             @extend .no-margin;
+            @extend .fw-600;
         }
     }
     &:before {

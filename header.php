@@ -45,7 +45,7 @@
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light padding-md-top padding-md-bottom">
         <div class="container">
-            <a class="navbar-brand px-0 r-xs" href="<?php echo get_home_url(); ?>" title="Cornerstone Community Church"
+            <a class="navbar-brand p-0" href="<?php echo get_home_url(); ?>" title="Cornerstone Community Church"
                 alt="Cornerstone Community Church">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/logo-header.svg"
                     alt="<?php echo bloginfo('name'); ?>" />
@@ -54,7 +54,7 @@
             <button class="navbar-toggler btn btn-dark inverse" id="mobile-toggle" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" ria-expanded="false"
                 aria-label="Toggle navigation">
-                <div class="label">Menu</div>
+                <div class="label d-none d-sm-block mr-2">Menu</div>
 
                 <div class="icon">
                     <span></span>

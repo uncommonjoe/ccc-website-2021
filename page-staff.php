@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="col-12 col-md-8 col-xl-9 padding-lg-left">
-                        <h3 class="h1 font-700 no-margin-bottom">
+                        <h3 class="h1 fw-600 no-margin-bottom">
                             <?php echo get_sub_field('staff_name'); ?>
                         </h3>
 

@@ -10,7 +10,7 @@
     background-color: transparent !important;
     border: 2px solid $color-darkest !important;
     color: $color-darkest !important;
-    font-weight: bold;
+    @extend .fw-600;
 
     &.btn-inverse {
         background-color: $color-darkest !important;

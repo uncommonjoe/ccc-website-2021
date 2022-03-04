@@ -1,5 +1,6 @@
 #home {
     .page-header {
+        margin-bottom: 0 !important;
         .section-content {
             width: 80%;
             border: 4px solid white;
@@ -8,12 +9,12 @@
             text-transform: uppercase;
 
             h1 {
-                font-weight: 600;
                 font-size: calc(1em + 4vw);
+                @extend .fw-600;
             }
             h2 {
-                font-weight: 600;
                 font-size: calc(1em + 0.7vw);
+                @extend .fw-600;
             }
         }
 
@@ -44,7 +45,7 @@
             color: white;
             padding: 20px;
             h2 {
-                font-weight: bold;
+                @extend .fw-600;
             }
         }
         #latest_sermon {

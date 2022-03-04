@@ -69,7 +69,7 @@
 				<div class="row">
 					<div class="col-6 col-md-4 col-xl-3 r-margin-md-bottom r-xs r-sm">
 						<div class="card card-body height-unset bg-dark text-center">
-							<div class="h1 bold no-margin">
+							<div class="h1 fw-600 no-margin">
 								<?php
                                     
                                     if (get_row_index() == 1) {
@@ -85,11 +85,11 @@
 
 					<div class="col-12 col-md-8 col-xl-9">
 						<div class="card card-body height-unset">
-							<h5 class="bold"><?php the_sub_field('worship_service_title'); ?></h5>
+							<h5 class="fw-600"><?php the_sub_field('worship_service_title'); ?></h5>
 							<div class="font-color-gray"><?php the_sub_field('worship_service_description'); ?></div>
 						</div>
 
-						<h5 class="font-color-accent bold margin-lg-top"><?php the_sub_field('bible_fellowship_title'); ?>
+						<h5 class="font-color-accent fw-600 margin-lg-top"><?php the_sub_field('bible_fellowship_title'); ?>
 						</h5>
 
 						<?php
@@ -98,7 +98,7 @@
                         ?>
 
 						<div class="card card-body height-unset margin-md-bottom margin-md-top">
-							<h5 class="bold"><?php the_sub_field('bible_fellowship_title'); ?></h5>
+							<h5 class="fw-600"><?php the_sub_field('bible_fellowship_title'); ?></h5>
 							<div class="font-color-gray"><?php the_sub_field('bible_fellowship_description'); ?></div>
 						</div>
 

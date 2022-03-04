@@ -29,7 +29,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<h2 class="d-inline font-700">News and Events</h2>
+						<h2 class="d-inline fw-600">News and Events</h2>
 						<a class="btn btn-dark inverse btn-sm margin-sm-bottom margin-md-left" href="news-and-events"
 							title="See all">See all</a>
 					</div>
