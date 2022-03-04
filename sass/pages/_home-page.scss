@@ -1,115 +1,122 @@
 #home {
-	.page-header {
-		&::before {
-			display: unset;
-		}
+    .page-header {
+        .section-content {
+            width: 80%;
+            border: 4px solid white;
+            padding: 30px;
 
-		.container {
-			top: 50%;
-			position: relative;
-			transform: translatey(-50%);
+            text-transform: uppercase;
 
-			img {
-				max-width: 100%;
-			}
-		}
-	}
+            h1 {
+                font-weight: 600;
+                font-size: calc(1em + 4vw);
+            }
+            h2 {
+                font-weight: 600;
+                font-size: calc(1em + 0.7vw);
+            }
+        }
 
-	.section {
-		height: calc(100vh - 80px);
-		margin-bottom: 40px;
-		position: relative;
-		color: white;
-		overflow: hidden;
-	}
+        .container {
+            top: 50%;
+            position: relative;
+            transform: translatey(-50%);
 
-	.latest-sermon {
-		margin: $spacing-lg 0;
-		max-height: none;
-		.latest-sermon-title {
-			background-color: $color-darkest-gray;
-			color: white;
-			padding: 20px;
-			h2 {
-				font-weight: bold;
-			}
-		}
-		#latest_sermon {
-			a img {
-				object-fit: cover;
-				height: 100% !important;
-				width: 100% !important;
-				max-height: 300px;
-				position: relative;
-			}
-			&:after {
-				content: "";
-				position: absolute;
-				bottom: 0;
-				left: 15px;
-				right: 0;
-				height: 4px; // border height
-				width: calc(100% - 30px);
-				background-color: $ccc-primary;
-				transform: scaleX(0);
-				transform-origin: center;
-				transition: transform 0.2s ease-in-out;
-			}
-			&:hover {
-				&:after {
-					transform: scaleX(1);
-				}
-			}
-		}
-	}
+            img {
+                max-width: 100%;
+            }
+        }
+    }
 
-	*[id^="readlink"] {
-		background: transparent !important;
-	}
+    .section {
+        height: calc(100vh - 80px);
+        margin-bottom: 40px;
+        position: relative;
+        color: white;
+        overflow: hidden;
+    }
 
-	.page-header.fixed-bg:before,
-	.fixed-bg {
-		background-attachment: fixed !important;
-		background-size: cover !important;
-	}
+    .latest-sermon {
+        margin: $spacing-lg 0;
+        max-height: none;
+        .latest-sermon-title {
+            background-color: $color-darkest-gray;
+            color: white;
+            padding: 20px;
+            h2 {
+                font-weight: bold;
+            }
+        }
+        #latest_sermon {
+            a img {
+                object-fit: cover;
+                height: 100% !important;
+                width: 100% !important;
+                max-height: 300px;
+                position: relative;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 15px;
+                right: 0;
+                height: 4px; // border height
+                width: calc(100% - 30px);
+                background-color: $ccc-primary;
+                transform: scaleX(0);
+                transform-origin: center;
+                transition: transform 0.2s ease-in-out;
+            }
+            &:hover {
+                &:after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
 
-	@media (min-width: $device-sm) {
-		.card-holder {
-			padding: $spacing-lg 0;
-		}
-		.latest-sermon {
-			margin: $spacing-xxl 0;
-		}
-	}
+    *[id^="readlink"] {
+        background: transparent !important;
+    }
 
-	@media (max-width: $device-sm) {
-		.page-header {
-			height: 20vh;
-		}
-		.page-header.fixed-bg:before,
-		.fixed-bg {
-			background-attachment: scroll !important;
-		}
-		.section-content {
-			top: 70%;
-			width: 95% !important;
-		}
-	}
+    .page-header.fixed-bg:before,
+    .fixed-bg {
+        background-attachment: fixed !important;
+        background-size: cover !important;
+    }
 
-	@media screen and (max-width: $device-sm) and (max-height: 737px) {
-		#alert-bar-active.page-template-daily-pastoral-checkin {
-			.section-content {
-				top: 50%;
-			}
-		}
-		.section-content {
-			top: 70%;
-		}
-	}
+    @media (min-width: $device-sm) {
+        .card-holder {
+            padding: $spacing-lg 0;
+        }
+        .latest-sermon {
+            margin: $spacing-xxl 0;
+        }
+    }
 
-	@media (max-width: $device-md) {
-		.section-content {
-			width: 70%;
-		}
-	}
+    @media (max-width: $device-sm) {
+        .page-header.fixed-bg:before,
+        .fixed-bg {
+            background-attachment: scroll !important;
+        }
+    }
+
+    @media screen and (max-width: $device-sm) and (max-height: 737px) {
+        #alert-bar-active.page-template-daily-pastoral-checkin {
+            .section-content {
+                top: 50%;
+            }
+        }
+    }
+
+    @media (max-width: $device-md) {
+        .page-header {
+            .section-content {
+                h1 {
+                    font-size: calc(1em + 5vw);
+                }
+            }
+        }
+    }
 }

@@ -11,19 +11,15 @@
     <meta property="og:url" content="<?php echo get_page_link(); ?>" />
 
 
-
     <link rel="icon" type="image/png" sizes="512x512"
         href="<?php echo get_template_directory_uri(); ?>/img/favicon_teal.png">
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/apple-icon.png">
 
     <style type="text/css">
-    :not(#home).page-header::before {
-        background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-            url('<?php header_image(); ?>') center center / cover no-repeat;
-    }
+    .page-header::before {
 
-    #home .page-header::before {
-        background: transparent url('<?php header_image(); ?>') center center / cover no-repeat;
+        background: linear-gradient(to right, rgba(69, 76, 87, 0.6), rgba(69, 76, 87, 0.6)),
+            url('<?php header_image(); ?>') center center / cover no-repeat;
     }
     </style>
 
