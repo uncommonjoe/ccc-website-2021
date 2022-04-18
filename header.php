@@ -47,7 +47,7 @@
         <div class="container">
             <a class="navbar-brand p-0" href="<?php echo get_home_url(); ?>" title="Cornerstone Community Church"
                 alt="Cornerstone Community Church">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/logo-header.svg"
+                <img src="<?php echo get_template_directory_uri(); ?>/img/logo-header.svg?v=2.3"
                     alt="<?php echo bloginfo('name'); ?>" />
             </a>
 
