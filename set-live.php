@@ -5,55 +5,39 @@
 
 	// http://localhost:8888/cornerstone/set-live/?live=true
 
-	/*
+	$checkLive = $wpdb->get_var( "SELECT isLive FROM wp_live" );
+    
+    if (!empty($_GET)) {
+        $getLive = $_GET['live'];
+		$isLive = $getLive === 'true'? 1 : 0;
 
-		CREATE TABLE wp_live (
-			id int(1),
-			live varchar(20)
-		);
-
-		INSERT INTO `wp_live`(`id`) VALUES (1)
-	*/
-
-	if (!empty($_GET)) {
-		$isLive = $_GET['live'];
 		global $wpdb;
-
-        $table = "wp_live";
 		
-		$data = array(
-            'live' => $isLive
-		);
-		
-		//$success = $wpdb->insert( $table, $data );
-		//$success = $wpdb->query("UPDATE $table SET live = '$isLive' WHERE id = 1"));
-		
-		$success = $wpdb->update(
+		$setLive = $wpdb->update(
 			'wp_live', 
-			array('live' => $isLive),
-			array('id'=>1)
+			array('isLive' => $isLive),
+			array('id' => 1)
 		);
-
-		$title = null;
-		$hasTitle = null;
 		
-		if(!$success){
+        if ($checkLive == $isLive) {
+            $title = '<span style="color: red;">Already set to '. $getLive .'</span>';
+        }
+		else if(!$setLive){
 			$wpdb->print_error();
+
+            $query = $wpdb->last_query;
 		}
-		else {
-			
-			if($isLive === "true"){
+		else {	
+			if($isLive === 1){
 				$title = 'Now live!';
-				$hasTitle = true;
 			}
 
-			else if($isLive === "false") {
+			else if($isLive === 0) {
 				$title = 'Live is off';
-				$hasTitle = true;
 			}
 			
 		}
-	}  
+	} 
 ?>
 <html>
 
@@ -62,7 +46,10 @@
         <div>
             <img src="../wp-content/themes/ccc-website-2021/img/logo-header.svg" />
             <h1><?php echo $title; ?></h1>
-            <h1><?php if(!$hasTitle && !$isLive) { echo "Enter parameter in URL"; } ?></h1>
+            <form method="get">
+                <input type="hidden" name="live" value="<?php echo $isLive === 1 ? 'false' : 'true'; ?>">
+                <button type="submit">Turn live <?php echo $isLive === 1 ? 'off' : 'on'; ?></button>
+            </form>
         </div>
     </section>
 </body>

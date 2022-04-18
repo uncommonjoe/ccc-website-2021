@@ -6,12 +6,7 @@
 	global $wpdb;
 
 	$table = "wp_live";
-	
-	$data = array(
-		'live' => $isLive
-	);
-	
-	$results = $wpdb->get_var( "SELECT live FROM wp_live" );
+	$results = $wpdb->get_var( "SELECT isLive FROM wp_live" );
 	
 	if(!$results){
 		$wpdb->print_error();

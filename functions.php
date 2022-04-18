@@ -38,7 +38,7 @@ function ccc_theme_scripts()
     wp_enqueue_script('contact-controller', get_template_directory_uri() . '/app/controllers/ContactController.js', false, '3.0.0', 'all');
     
     // Load Directives
-    wp_enqueue_script('live-service-directive', get_template_directory_uri() . '/app/directives/LiveServiceDirective.js', false, '3.0.0', 'all');
+    wp_enqueue_script('live-service-directive', get_template_directory_uri() . '/app/directives/LiveServiceDirective.js', false, '3.1.0', 'all');
     wp_enqueue_script('responsive-video-directive', get_template_directory_uri() . '/app/directives/ResponsiveVideoDirective.js', false, '3.0.0', 'all');
     //wp_enqueue_script('map-directive', get_template_directory_uri() . '/app/directives/MapDirective/MapDirective.js', false, '3.0.0', 'all');
 
