@@ -4,49 +4,53 @@
     get_header();
 ?>
 <div id="home">
-    <div class="page-header">
-        <div class="section-content">
+	<div class="page-header">
+		<div class="section-content">
 
-            <?php
-				$firstServiceTime = get_field('global_first_service_time', 'option') . "&nbsp;" . get_field('global_first_service_ampm', 'option');
-				$secondServiceTime = get_field('global_second_service_time', 'option') . "&nbsp;" . get_field('global_second_service_ampm', 'option');
+			<?php
+				$firstServiceTime = get_field('global_first_service_time', 'option');
+				$secondServiceTime = get_field('global_second_service_time', 'option');
 			?>
-            <h1><?php echo get_field('title'); ?></h1>
-            <h2>
-                <?php 
+			<h1><?php echo get_field('title'); ?></h1>
+			<h2>
+				<?php 
 					echo get_field('subtitle'); 
 					echo " "; // Extra space for formatting
 
 					if ($secondServiceTime) {
-						echo $firstServiceTime . "&nbsp;or&nbsp;". $secondServiceTime;
+						echo $firstServiceTime . "&nbsp;" . get_field('global_first_service_ampm', 'option') . "&nbsp;or&nbsp;". $secondServiceTime;
 					}
 					elseif (!$secondServiceTime){
-						echo $firstServiceTime;
+						echo $firstServiceTime . "&nbsp;" . get_field('global_second_service_ampm', 'option');
 					}
 				?>
-            </h2>
-        </div>
-    </div>
+			</h2>
 
-    <div class="page-content r-no-padding-left r-no-padding-right r-xs" id="front-page">
+			<?php if(get_field('dates')): ?>
+			<h5><?php echo get_field('dates'); ?></h5>
+			<?php endif; ?>
+		</div>
+	</div>
 
-        <?php
-       if (have_posts()) :
-    ?>
+	<div class="page-content r-no-padding-left r-no-padding-right r-xs" id="front-page">
 
-        <div class="gray-area card-holder padding-xxl-top padding-xxl-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="d-inline fw-600">News and Events</h2>
-                        <a class="btn btn-dark inverse btn-sm margin-sm-bottom margin-md-left" href="news-and-events"
-                            title="See all">See all</a>
-                    </div>
-                </div>
+		<?php
+            if (have_posts()) :
+        ?>
 
-                <div class="row row-eq-height">
+		<div class="gray-area card-holder padding-xxl-top padding-xxl-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="d-inline fw-600">News and Events</h2>
+						<a class="btn btn-dark inverse btn-sm margin-sm-bottom margin-md-left" href="news-and-events"
+							title="See all">See all</a>
+					</div>
+				</div>
 
-                    <?php
+				<div class="row row-eq-height">
+
+					<?php
                     $args = array(
                         'orderby' => get_field('event_order_by'),
                         'order' => get_field('event_order'),
@@ -74,50 +78,50 @@
                             $the_query -> the_post();
                 ?>
 
-                    <div class="col-12 col-lg-4 margin-md-top margin-md-bottom" <?php post_class(); ?>
-                        id="post-<?php the_ID(); ?>">
+					<div class="col-12 col-lg-4 margin-md-top margin-md-bottom" <?php post_class(); ?>
+						id="post-<?php the_ID(); ?>">
 
-                        <div class="card">
-                            <div class="card-img">
-                                <img src="<?php the_field('event_photo', $post->ID); ?>" alt="<?php the_title(); ?>" />
-                            </div>
+						<div class="card">
+							<div class="card-img">
+								<img src="<?php the_field('event_photo', $post->ID); ?>" alt="<?php the_title(); ?>" />
+							</div>
 
-                            <div class="card-body">
-                                <div class="card-title"><?php the_title(); ?></div>
-                                <div class="card-subtitle"><?php the_field('event_date', $post->ID); ?></div>
-                                <div class="card-text"><?php the_content(get_the_title()); ?></div>
-                            </div>
-                        </div>
-                    </div>
+							<div class="card-body">
+								<div class="card-title"><?php the_title(); ?></div>
+								<div class="card-subtitle"><?php the_field('event_date', $post->ID); ?></div>
+								<div class="card-text"><?php the_content(get_the_title()); ?></div>
+							</div>
+						</div>
+					</div>
 
 
 
-                    <?php
+					<?php
                    // Repeat the process and reset once it hits the limit
                     endwhile;
                     wp_reset_postdata();
                 ?>
-                    <?php else: ?>
+					<?php else: ?>
 
-                    No results found
+					No results found
 
-                    <?php endif; ?>
-                </div>
-            </div>
-        </div>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
 
-        <?php
+		<?php
        endif;
     ?>
 
-        <div class="latest-sermon">
-            <div class="container margin-xl-bottom">
+		<div class="latest-sermon">
+			<div class="container margin-xl-bottom">
 
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-7 mb-5">
-                        <h2 class="bold margin-lg-bottom">Latest Sermon</h2>
+				<div class="row">
+					<div class="col-12 col-md-6 col-lg-7 mb-5">
+						<h2 class="bold margin-lg-bottom">Latest Sermon</h2>
 
-                        <?php
+						<?php
                             $latest_sermon = new WP_Query(array(
                                 'orderby' => get_field('recent_sermon_order_by'),
                                 'order' => get_field('recent_sermon_order'),
@@ -135,44 +139,44 @@
                                     global $post;
                         ?>
 
-                        <div class="card card-horizontal clickable" style="height: auto;">
-                            <div class="card-img">
-                                <img class="wpfc-sermon-single-image-img" alt="<?php the_title(); ?>"
-                                    src="<?php echo get_sermon_image_url(); ?>" />
-                            </div>
+						<div class="card card-horizontal clickable" style="height: auto;">
+							<div class="card-img">
+								<img class="wpfc-sermon-single-image-img" alt="<?php the_title(); ?>"
+									src="<?php echo get_sermon_image_url(); ?>" />
+							</div>
 
-                            <div class="card-body">
-                                <div class="card-title"><?php echo esc_attr(get_the_title()); ?></div>
+							<div class="card-body">
+								<div class="card-title"><?php echo esc_attr(get_the_title()); ?></div>
 
-                                <div class="card-subtitle">
-                                    <?php if (has_term('', 'wpfc_preacher', $post->ID)) : ?>
+								<div class="card-subtitle">
+									<?php if (has_term('', 'wpfc_preacher', $post->ID)) : ?>
 
-                                    <span><?php the_terms($post->ID, 'wpfc_preacher'); ?></span>
-                                    <span> | </span>
+									<span><?php the_terms($post->ID, 'wpfc_preacher'); ?></span>
+									<span> | </span>
 
-                                    <?php
+									<?php
                                     endif;
                                     sm_the_date(get_option('date_format'));
                                 ?>
-                                </div>
+								</div>
 
 
-                            </div>
+							</div>
 
-                            <a class="stretched-link" href="<?php the_permalink(); ?>"></a>
-                        </div>
+							<a class="stretched-link" href="<?php the_permalink(); ?>"></a>
+						</div>
 
-                        <?php
+						<?php
                                 endwhile;
                                 wp_reset_postdata();
                             endif;
                         ?>
-                    </div>
+					</div>
 
-                    <div class="col-12 col-md-6 col-lg-5 r-margin-xl-top r-xs">
-                        <h2 class="bold margin-lg-bottom">Discover Series</h2>
+					<div class="col-12 col-md-6 col-lg-5 r-margin-xl-top r-xs">
+						<h2 class="bold margin-lg-bottom">Discover Series</h2>
 
-                        <?php
+						<?php
 							$filter = get_field('sermon_filter_by');
 							$order = get_field('sermon_order');
 							$orderBy = get_field('sermon_order_by');
@@ -180,20 +184,20 @@
 
 							echo do_shortcode($sermon_list);
 						?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <div class="container margin-xl-top margin-xl-bottom">
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <?php the_content(); ?>
+	<div class="container margin-xl-top margin-xl-bottom">
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<?php the_content(); ?>
 
-        <?php endwhile; else : ?>
-        <?php esc_html_e('Sorry, no posts matched your criteria.'); ?>
-        <?php endif;?>
-    </div>
+		<?php endwhile; else : ?>
+		<?php esc_html_e('Sorry, no posts matched your criteria.'); ?>
+		<?php endif;?>
+	</div>
 </div>
 
 <?php
