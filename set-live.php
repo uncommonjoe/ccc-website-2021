@@ -20,7 +20,7 @@
 		);
 		
         if ($checkLive == $isLive) {
-            $title = '<span style="color: red;">Already set to '. $getLive .'</span>';
+            $title = '<span style="color: red;">Live is already '. ($isLive == 1 ? 'on' : 'off') .'</span>';
         }
 		else if(!$setLive){
 			$wpdb->print_error();
@@ -47,8 +47,8 @@
             <img src="../wp-content/themes/ccc-website-2021/img/logo-header.svg" />
             <h1><?php echo $title; ?></h1>
             <form method="get">
-                <input type="hidden" name="live" value="<?php echo $isLive === 1 ? 'false' : 'true'; ?>">
-                <button type="submit">Turn live <?php echo $isLive === 1 ? 'off' : 'on'; ?></button>
+                <input type="hidden" name="live" value="<?php echo $isLive == 1 ? 'false' : 'true'; ?>">
+                <button type="submit">Turn live <?php echo $isLive == 1 ? 'off' : 'on'; ?></button>
             </form>
         </div>
     </section>
