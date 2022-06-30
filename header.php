@@ -25,6 +25,8 @@
 
     <?php wp_head(); ?>
 
+    <script src="https://js.churchcenter.com/modal/v1"></script>
+
     <!-- Global site tag (gtag.js) - Google Ads: 10805613755 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10805613755"></script>
     <script>
