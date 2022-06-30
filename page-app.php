@@ -49,9 +49,9 @@
 
                     <div class="margin-lg-top">
                         <?php
-                                if (have_rows('action_buttons')):
-                                    while (have_rows('action_buttons')) : the_row();
-                            ?>
+                            if (have_rows('action_buttons')):
+                                while (have_rows('action_buttons')) : the_row();
+                        ?>
 
                         <a class="btn <?php echo get_sub_field('button_color'); ?> margin-md-right"
                             href="<?php echo get_sub_field('button_url'); ?>" target="_blank">
@@ -59,9 +59,9 @@
                         </a>
 
                         <?php
-                                    endwhile; // action_buttons
-                                endif; // action_buttons
-                            ?>
+                                endwhile; // action_buttons
+                            endif; // action_buttons
+                        ?>
                     </div>
                 </div>
             </div>

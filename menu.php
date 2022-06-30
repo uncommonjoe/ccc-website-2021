@@ -25,7 +25,8 @@
             </div>
 
             <div class="col-12 offset-md-2 col-md-4 offset-lg-3 col-lg-3 text-right margin-md-top">
-                <a class="btn btn-yellow d-block text-left fw-600 padding-md-left margin-sm-bottom" href=""
+                <a class="btn btn-yellow d-block text-left fw-600 padding-md-left margin-sm-bottom"
+                    href="https://cornerstonebillings.org/get-our-app/"
                     alt="Download our mobile app on Apple Store and Google Play"
                     title="Download our mobile app on Apple Store and Google Play">
                     <img class="padding-md-right"
