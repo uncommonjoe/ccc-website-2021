@@ -1,0 +1,14 @@
+.cta {
+    .section-content {
+        border: 4px solid $ccc-white;
+        padding: 30px;
+        text-transform: uppercase;
+        color: $ccc-white;
+
+        h3 {
+            font-size: calc(1em + 2vw);
+            @extend .fw-600;
+        }
+        
+    }
+}

@@ -1,5 +1,5 @@
 <?php
-    /* Template Name: Page - Get Our App */
+    /* Template Name: Template - Sections */
 
     get_header();
     get_template_part('template-parts/header/page-header');
@@ -20,8 +20,8 @@
         </div>
 
         <?php
-            if (have_rows('apps')):
-                while (have_rows('apps')) : the_row();
+            if (have_rows('section')):
+                while (have_rows('section')) : the_row();
         ?>
 
         <div class="margin-lg-top margin-xxl-bottom">
@@ -34,17 +34,26 @@
             </div>
 
             <div class="row">
-                <div class="col-12 col-md-6 col-xl-4">
-                    <?php
-                            $image = get_sub_field('image', $post->ID);
-                            if($image):
-                        ?>
-                    <img class="img-glow" src="<?php echo esc_url($image['url']); ?>"
-                        alt="<?php echo esc_attr($image['alt']); ?>" style="width: 100%;" />
-                    <?php endif; // image ?>
-                </div>
+                <?php
+                    $image = get_sub_field('image');
+                    $imgAlign = get_sub_field('image_alignment');
+                    if($image):
+                ?>
+                <div class="col-12 col-md-6 col-xl-4 
+                    <?php echo ($imgAlign == 'right') ? ('order-sm-12') : (''); ?>">
 
-                <div class="col-12 col-md-6 col-xl-8">
+                    <img class="img-glow margin-lg-bottom" src="<?php echo esc_url($image['url']); ?>"
+                        alt="<?php echo esc_attr($image['alt']); ?>" style="width: 100%;" />
+                </div>
+                <?php endif; // image ?>
+
+
+                <div class="
+                        <?php 
+                            echo ($image) ? ('col-12 col-md-6 col-xl-8 ') : ('col-12');
+                            echo ($imgAlign == 'right') ? ('order-12 order-md-1') : (''); 
+                        ?>
+                    ">
                     <?php echo get_sub_field('description'); ?>
 
                     <div class="margin-lg-top">
@@ -69,13 +78,14 @@
         </div>
 
         <?php
-                endwhile; // app
-            endif; // app
+                endwhile; // section
+            endif; // section
         ?>
     </div>
 </div>
 
 <?php
+    include('template-parts/components/call-to-action.php'); // Be sure to include ACF 
     include('menu.php');
     get_footer();
 ?>

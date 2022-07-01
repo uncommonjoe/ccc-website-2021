@@ -35,7 +35,7 @@
                     Get the app
                 </a>
 
-                <a class="btn btn-light d-block text-left fw-600 padding-md-left margin-sm-bottom"
+                <a class="btn btn-light btn-inverse d-block text-left fw-600 padding-md-left margin-sm-bottom"
                     href="https://www.facebook.com/cornerstonebillings/" target="_blank"
                     alt="Cornerstone Community Church Facebook Page" title="Cornerstone Community Church Facebook Page">
                     <img class="padding-md-right"
@@ -43,7 +43,7 @@
                     Facebook
                 </a>
 
-                <a class="btn btn-light d-block text-left fw-600 padding-md-left margin-sm-bottom"
+                <a class="btn btn-light btn-inverse d-block text-left fw-600 padding-md-left margin-sm-bottom"
                     href="https://www.youtube.com/channel/UC1Ynk4qAMEVc92G-t-RXmeg" target="_blank"
                     alt="Cornerstone Community Church YouTube Page" title="Cornerstone Community Church YouTube Page">
                     <img class="padding-md-right"
