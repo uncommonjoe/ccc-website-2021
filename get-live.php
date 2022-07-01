@@ -5,8 +5,7 @@
 
 	global $wpdb;
 
-	$table = "wp_live";
-	$results = $wpdb->get_var( "SELECT isLive FROM wp_live" );
+	$results = $wpdb->get_var( "SELECT isLive FROM wp_live where id = 1" );
 	
 	if(!$results){
 		$wpdb->print_error();

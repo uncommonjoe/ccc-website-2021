@@ -5,10 +5,15 @@
 
 	// http://localhost:8888/cornerstone/set-live/?live=true
 
-	$checkLive = $wpdb->get_var( "SELECT isLive FROM wp_live" );
+	$checkLive = $wpdb->get_var( "SELECT isLive FROM wp_live WHERE id = 1");
     
+    // if there is a GET parameter
     if (!empty($_GET)) {
+
+        // get live value from GET parameter
         $getLive = $_GET['live'];
+        
+        // set isLive to 1 if true, else 0
 		$isLive = $getLive === 'true'? 1 : 0;
 
 		global $wpdb;
