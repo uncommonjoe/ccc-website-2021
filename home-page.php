@@ -36,8 +36,47 @@
 
         <?php
             if(get_field('show_feature')):
+                $bgOption = get_field('feature_background_style');
         ?>
-        <div class="<?php echo get_field('feature_background_color'); ?> padding-xxl-top padding-xxl-bottom">
+
+        <div class="page-content <?php echo get_field('feature_vertical_margins'); ?>">
+            <?php echo $bgColor; ?>
+            <div class="container-fluid <?php echo get_field('feature_vertical_padding'); echo ($bgOption != 'white') ? (' font-color-white') : (''); ?>"
+                style=" 
+                    background: 
+                    <?php if($bgOption == 'image'): ?>
+                        linear-gradient(to right, rgba(69, 76, 87, 0.6), rgba(69, 76, 87, 0.6)),
+                        url('<?php echo get_field('feature_background_image'); ?>') center center / cover no-repeat;
+                    <?php 
+                    elseif ($bgOption != 'image'):
+                            echo $bgOption;
+                    endif;
+                    ?>
+                    ;
+                ">
+                <div class="container">
+                    <div class="section-content">
+
+                        <?php if(get_field('feature_title')): ?>
+                        <h2 class="d-inline fw-600 margin-lg-bottom">
+                            <?php echo get_field('feature_title'); ?>
+                        </h2>
+                        <?php endif; // feature_title ?>
+
+                        <?php echo get_field('feature_description'); ?>
+
+                        <a class="btn btn-lg <?php echo get_field('feature_button_color'); ?> margin-lg-top"
+                            href=" <?php echo get_field('feature_button_url'); ?>">
+                            <?php echo get_field('feature_button_title'); ?>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- <div class="<?php echo get_field('feature_background_color'); ?> padding-xxl-top padding-xxl-bottom">
             <div class="<?php echo get_field('feature_width'); ?>">
 
                 <?php if(get_field('feature_title')): ?>
@@ -56,7 +95,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <?php
             endif; // show_feature
         ?>
@@ -118,6 +157,16 @@
                                 <div class="card-subtitle"><?php the_field('event_date', $post->ID); ?></div>
                                 <div class="card-text"><?php the_content(get_the_title()); ?></div>
                             </div>
+
+                            <?php if(get_field('event_cta_button_title', $post->ID)): ?>
+                            <div class="card-footer margin-md-top">
+                                <a class="btn <?php echo get_field('event_cta_button_style', $post->ID); ?>"
+                                    href=" <?php echo get_field('event_cta_button_url', $post->ID); ?>">
+                                    <?php echo get_field('event_cta_button_title', $post->ID); ?>
+                                </a>
+                            </div>
+                            <?php endif; // event_cta_button_title ?>
+
                         </div>
                     </div>
 
