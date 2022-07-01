@@ -8,9 +8,9 @@
 ?>
 
 <div class="page-content">
-	<div class="container margin-xl-top margin-xl-bottom">
-		<div class="row">
-			<?php
+    <div class="container margin-xl-top margin-xl-bottom">
+        <div class="row">
+            <?php
             $args = array(
                 'orderby' => get_field('order_by'),
                 'order' => get_field('order'),
@@ -36,29 +36,38 @@
                 
             ?>
 
-			<div class="col-12 col-sm-6 col-lg-12 margin-md-top margin-md-bottom" <?php post_class(); ?>
-				id="post-<?php the_ID(); ?>">
+            <div class="col-12 col-sm-6 col-lg-12 margin-md-top margin-md-bottom" <?php post_class(); ?>
+                id="post-<?php the_ID(); ?>">
 
-				<div class="card card-horizontal">
-					<div class="card-img">
-						<img src="<?php the_field('event_photo', $post->ID); ?>" alt="<?php the_title(); ?>" />
-					</div>
+                <div class="card card-horizontal">
+                    <div class="card-img">
+                        <img src="<?php the_field('event_photo', $post->ID); ?>" alt="<?php the_title(); ?>" />
+                    </div>
 
-					<div class="card-body">
-						<div class="card-title"><?php the_title(); ?></div>
-						<div class="card-subtitle"><?php the_field('event_date', $post->ID); ?></div>
-						<div class="card-text"><?php the_content(get_the_title()); ?></div>
-					</div>
-				</div>
-			</div>
+                    <div class="card-body">
+                        <div class="card-title"><?php the_title(); ?></div>
+                        <div class="card-subtitle"><?php the_field('event_date', $post->ID); ?></div>
+                        <div class="card-text"><?php the_content(get_the_title()); ?></div>
 
-			<?php
+                        <?php if(get_field('event_cta_button_title', $post->ID)): ?>
+                        <div class="margin-md-top">
+                            <a class="btn <?php echo get_field('event_cta_button_style', $post->ID); ?>"
+                                href=" <?php echo get_field('event_cta_button_url', $post->ID); ?>">
+                                <?php echo get_field('event_cta_button_title', $post->ID); ?>
+                            </a>
+                        </div>
+                        <?php endif; // event_cta_button_title ?>
+                    </div>
+                </div>
+            </div>
+
+            <?php
                 endwhile;
                 wp_reset_postdata();
                 endif;
           ?>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 
 <?php
