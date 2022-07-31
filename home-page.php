@@ -18,10 +18,10 @@
 					echo " "; // Extra space for formatting
 
 					if ($secondServiceTime) {
-						echo $firstServiceTime . "&nbsp;" . get_field('global_first_service_ampm', 'option') . "&nbsp;or&nbsp;". $secondServiceTime;
+						echo $firstServiceTime . "&nbsp;" . get_field('global_first_service_ampm', 'option') . "&nbsp;or&nbsp;". $secondServiceTime . "&nbsp;" . get_field('global_second_service_ampm', 'option');
 					}
 					elseif (!$secondServiceTime){
-						echo $firstServiceTime . "&nbsp;" . get_field('global_second_service_ampm', 'option');
+						echo $firstServiceTime . "&nbsp;" . get_field('global_first_service_ampm', 'option');
 					}
 				?>
             </h2>
