@@ -34,6 +34,11 @@
             <!-- End Loop -->
 
         </ul>
+
+        <h2>List of authors:</h2>
+        <ul>
+            <?php wp_list_authors('exclude_admin=0&hide_empty=0'); ?>
+        </ul>
     </div>
 </div>
 

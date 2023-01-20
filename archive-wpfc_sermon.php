@@ -14,133 +14,154 @@
 get_header(); ?>
 
 <div class="page-header">
-	<div class="section-content">
-		<!-- THIS TITLE DISPLAYS IN SERIES AND SERMON TITLE -->
-		<h1><?php echo $directory == 'sermons' ? 'Sermons' : 'Sermon Series' ?></h1>
-	</div>
+    <div class="section-content">
+        <!-- THIS TITLE DISPLAYS IN SERIES AND SERMON TITLE -->
+        <h1><?php echo $directory == 'sermons' ? 'Sermons' : 'Sermon Series' ?></h1>
+    </div>
 </div>
 
-
 <div class="page-content margin-xxl-top margin-xxl-bottom">
-	<div class="container">
+    <div class="container">
 
-		<?php if ($directory == 'sermons') : ?>
+        <?php if ($directory == 'sermons') : ?>
 
-		<div class="margin-xl-top margin-lg-bottom">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="h1 line margin-lg-bottom">Most Recent Sermon</h2>
-				</div>
-			</div>
+        <div class="margin-xl-top margin-lg-bottom">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="h1 line margin-lg-bottom">Most Recent Sermon</h2>
+                </div>
+            </div>
 
-			<div class="row">
-				<div class="col-12">
-					<?php
+            <div class="row">
+                <div class="col-12">
+                    <?php
+
+                    $latest_sermon = new WP_Query(array(
+                        'orderby' => get_field('global_recent_sermon_order_by', 'option'),
+                        'order' => get_field('global_recent_sermon_order', 'option'),
+                        'posts_per_page' => 1,
+                        'post_type' => 'wpfc_sermon',
+                        'post_status' => 'publish',
+                        'no_found_rows' => true,
+                        'update_post_term_cache' => false,
+                        'update_post_meta_cache' => false,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'wpfc_sermon_series',
+                                'operator' => 'NOT IN',
+                                'field' => 'term_id',
+                                'terms' => 
+                                    get_field('global_recent_sermon_exclude_series', 'option')
+                                ,
+                            )
+                        )
+                    ));
+
                         if ($latest_sermon->have_posts()) :
                             while ($latest_sermon->have_posts()) : $latest_sermon->the_post();
                                 global $post;
                     ?>
 
-					<div class="card card-horizontal clickable">
-						<div class="card-img">
-							<img class="wpfc-sermon-single-image-img" alt="<?php the_title(); ?>"
-								src="<?php echo get_sermon_image_url(); ?>" />
-						</div>
+                    <div class="card card-horizontal clickable">
+                        <div class="card-img">
+                            <img class="wpfc-sermon-single-image-img" alt="<?php the_title(); ?>"
+                                src="<?php echo get_sermon_image_url(); ?>" />
+                        </div>
 
-						<div class="card-body">
-							<div class="card-title"><?php the_title(); ?></div>
+                        <div class="card-body">
+                            <div class="card-title"><?php the_title(); ?></div>
 
-							<?php
+                            <?php
                                 if (has_term('', 'wpfc_preacher', $post->ID)) :
                             ?>
-							<div class="card-subtitle">
+                            <div class="card-subtitle">
 
-								<span><?php the_terms($post->ID, 'wpfc_preacher'); ?></span>
-								<span> | </span>
-								<span><?php wpfc_sermon_date(get_option('date_format')); ?></span>
-							</div>
+                                <span><?php the_terms($post->ID, 'wpfc_preacher'); ?></span>
+                                <span> | </span>
+                                <span><?php wpfc_sermon_date(get_option('date_format')); ?></span>
+                            </div>
 
-							<?php
+                            <?php
                                 endif;
                             ?>
 
 
-							<div class="card-text">
-								<?php wpfc_sermon_meta('bible_passage', '<div class="bible_passage">'.__('Passage ', 'sermon-manager'), '</div>'); ?>
-							</div>
+                            <div class="card-text">
+                                <?php wpfc_sermon_meta('bible_passage', '<div class="bible_passage">'.__('Passage ', 'sermon-manager'), '</div>'); ?>
+                            </div>
 
-						</div>
-						<a class="stretched-link" href="<?php the_permalink(); ?>"></a>
-					</div>
+                        </div>
+                        <a class="stretched-link" href="<?php the_permalink(); ?>"></a>
+                    </div>
 
-					<?php
+                    <?php
                         endwhile;
                         wp_reset_postdata();
                         endif;
                     ?>
-				</div>
-			</div>
-		</div>
+                </div>
+            </div>
+        </div>
 
-		<div class="row margin-xl-top margin-lg-bottom">
-			<div class="col-4 offset-md-2 col-md-3">
-				<a class="no-underline"
-					href="https://podcasts.apple.com/us/podcast/sermons-cornerstone-community-church/id1483110050"
-					target="_blank">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/apple-podcast-badge.png" height="40"
-						width="165" alt="Listen on Apple Podcast" style="width: 165px;" class="podcast" />
-				</a>
-			</div>
+        <div class="row margin-xl-top margin-lg-bottom">
+            <div class="col-4 offset-md-2 col-md-3">
+                <a class="no-underline"
+                    href="https://podcasts.apple.com/us/podcast/sermons-cornerstone-community-church/id1483110050"
+                    target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/apple-podcast-badge.png" height="40"
+                        width="165" alt="Listen on Apple Podcast" style="width: 165px;" class="podcast" />
+                </a>
+            </div>
 
-			<div class="col-4 col-md-3">
-				<a class="no-underline" href="https://open.spotify.com/show/6IvTBM4gFulFycIXmjYaRJ" target="_blank">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/spotify-podcast-badge.png" height="40"
-						width="165" alt="Listen on Spotify" style="width: 165px;" class="podcast" />
-				</a>
-			</div>
+            <div class="col-4 col-md-3">
+                <a class="no-underline" href="https://open.spotify.com/show/6IvTBM4gFulFycIXmjYaRJ" target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/spotify-podcast-badge.png" height="40"
+                        width="165" alt="Listen on Spotify" style="width: 165px;" class="podcast" />
+                </a>
+            </div>
 
-			<div class="col-4 col-md-3">
-				<a class="no-underline"
-					href="https://play.google.com/music/m/I6ngl4epuifmg4ujpx665qijjba?t=Sermons__Cornerstone_Community_Church"
-					target="_blank">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/google-play-badge.png" height="40"
-						width="134" alt="Listen on Google Play" style="width: 134px;" class="podcast" />
-				</a>
-			</div>
-		</div>
+            <div class="col-4 col-md-3">
+                <a class="no-underline"
+                    href="https://play.google.com/music/m/I6ngl4epuifmg4ujpx665qijjba?t=Sermons__Cornerstone_Community_Church"
+                    target="_blank">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/google-play-badge.png" height="40"
+                        width="134" alt="Listen on Google Play" style="width: 134px;" class="podcast" />
+                </a>
+            </div>
+        </div>
 
-		<div class="row margin-md-bottom">
-			<div class="col-12">
-				<h2 class="h1 line margin-lg-top margin-lg-bottom">
-					<?php echo $directory == 'sermons' ? 'Past Sermons' : '' ?>
-				</h2>
-			</div>
-		</div>
+        <div class="row margin-md-bottom">
+            <div class="col-12">
+                <h2 class="h1 line margin-lg-top margin-lg-bottom">
+                    <?php echo $directory == 'sermons' ? 'Past Sermons' : '' ?>
+                </h2>
+            </div>
+        </div>
 
-		<?php
+        <?php
             endif;
         ?>
 
 
-		<div class="row">
-			<div class="col-12">
-				<div class="dropdown">
-					<button class="btn btn-dark btn-inverse" type="button" id="dropdownMenuButton"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Filter <img class="margin-xs-left" style="margin-bottom: 3px"
-							src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-filter.svg" />
-					</button>
+        <div class="row">
+            <div class="col-12">
+                <div class="dropdown">
+                    <button class="btn btn-dark btn-inverse" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Filter <img class="margin-xs-left" style="margin-bottom: 3px"
+                            src="<?php echo get_template_directory_uri(); ?>/img/icons/icon-filter.svg" />
+                    </button>
 
-					<div class="dropdown-menu padding-lg-left padding-lg-right padding-md-top padding-md-bottom"
-						aria-labelledby="dropdownMenuButton">
-						<?php echo render_wpfc_sorting(); ?> </div>
-				</div>
-			</div>
-		</div>
+                    <div class="dropdown-menu padding-lg-left padding-lg-right padding-md-top padding-md-bottom"
+                        aria-labelledby="dropdownMenuButton">
+                        <?php echo render_wpfc_sorting(); ?> </div>
+                </div>
+            </div>
+        </div>
 
 
-		<div class="row margin-lg-top">
-			<?php
+        <div class="row margin-lg-top">
+            <?php
             if (have_posts()) :
                 while (have_posts()) :
                     the_post();
@@ -166,8 +187,8 @@ get_header(); ?>
                 echo '</div>';
             endif;
             ?>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 
 <?php

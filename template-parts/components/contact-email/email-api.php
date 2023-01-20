@@ -13,10 +13,10 @@
 		</p></td></tr></tbody></table></body>
 	';
 
-    $recipient = "uncommonjoe@gmail.com";
+    $recipient = "office@cornerstonebillings.org";
 
-    $headers = "From: CCC Website <noreply@cornerstonebillings.org>\r\n";
-    $headers .= "Reply-To: <noreply@cornerstonebillings.org>\r\n";
+    $headers = "From: CCC Website <office@cornerstonebillings.org>\r\n";
+    $headers .= "Reply-To: <office@cornerstonebillings.org>\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 

@@ -43,7 +43,7 @@ function ccc_theme_scripts()
     //wp_enqueue_script('map-directive', get_template_directory_uri() . '/app/directives/MapDirective/MapDirective.js', false, '3.0.0', 'all');
 
     // Load Services
-    wp_enqueue_script('constant-service', get_template_directory_uri() . '/app/services/ConstantService.js', false, '3.0.0', 'all');
+    wp_enqueue_script('constant-service', get_template_directory_uri() . '/app/services/ConstantService.js', false, '3.2.1', 'all');
 }
 
 
@@ -84,19 +84,14 @@ if (function_exists('acf_add_options_page')) {
         'menu_title' => 'Footer',
         'parent_slug' => 'theme-general-settings',
     ));
+
+    acf_add_options_sub_page(array(
+        'page_title' => 'Sermon Settings',
+        'menu_title' => 'Sermons',
+        'parent_slug' => 'theme-general-settings',
+    ));
 }
 
-// Register latest sermon
-$latest_sermon = new WP_Query(array(
-    'post_type' => 'wpfc_sermon',
-    'posts_per_page' => 1,
-    'post_status' => 'publish',
-    //'wpfc_service_type' => 'sunday-am',
-    // The last three parameters will optimize your query
-    'no_found_rows' => true,
-    'update_post_term_cache' => false,
-    'update_post_meta_cache' => false
-));
 
 add_filter('body_class', 'sk_body_class_for_pages');
 

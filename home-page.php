@@ -2,6 +2,19 @@
     /* Template Name: Home Page */
 
     get_header();
+
+    // Console log outputs php values to chrome console
+    function console_log($output, $with_script_tags = true) {
+        $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) . ');';
+        if ($with_script_tags) {
+            $js_code = '<script>' . $js_code . '</script>';
+        }
+        echo $js_code;
+    }
+
+    // Use it with this:
+    //console_log(get_field('recent_sermon_exclude_series'));
+
 ?>
 <div id="home">
     <div class="page-header">
@@ -137,8 +150,6 @@
 
                     $the_query = new WP_Query($args);
 
-                   
-
                     if ($the_query -> have_posts()) :
                         while ($the_query -> have_posts()) :
                             $the_query -> the_post();
@@ -199,15 +210,27 @@
 
                         <?php
                             $latest_sermon = new WP_Query(array(
-                                'orderby' => get_field('recent_sermon_order_by'),
-                                'order' => get_field('recent_sermon_order'),
+                                'orderby' => get_field('global_recent_sermon_order_by', 'option'),
+                                'order' => get_field('global_recent_sermon_order', 'option'),
                                 'posts_per_page' => 1,
                                 'post_type' => 'wpfc_sermon',
-                                'post_status' => get_field('recent_sermon_post_status'),
+                                'post_status' => 'publish',
                                 'no_found_rows' => true,
                                 'update_post_term_cache' => false,
-                                'update_post_meta_cache' => false
+                                'update_post_meta_cache' => false,
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'wpfc_sermon_series',
+                                        'operator' => 'NOT IN',
+                                        'field' => 'term_id',
+                                        'terms' => 
+                                            get_field('global_recent_sermon_exclude_series', 'option')
+                                        ,
+                                    )
+                                )
                             ));
+
+                            console_log(get_field('global_recent_sermon_exclude_series', 'option'));
                             
                             if ($latest_sermon->have_posts()) :
                                 while ($latest_sermon->have_posts()) :
@@ -243,9 +266,9 @@
                         </div>
 
                         <?php
-                                endwhile;
+                                endwhile; // $latest_sermon
                                 wp_reset_postdata();
-                            endif;
+                            endif; // $latest_sermon
                         ?>
                     </div>
 

@@ -23,23 +23,6 @@
     }
 }
 
-.btn-light {
-    background-color: transparent !important;
-    border: 2px solid $ccc-white !important;
-    color: $ccc-white !important;
-    @extend .fw-600;
-
-    &.btn-inverse {
-        background-color: $ccc-white !important;
-        color: $color-darkest !important;
-    }
-
-    &:hover {
-        transition: all 0.2s ease-in-out;
-        @include hoverOutline(2px, $ccc-white);
-    }
-}
-
 .btn-glow {
     border: 0;
     background-color: $ccc-white;
